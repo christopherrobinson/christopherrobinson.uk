@@ -1,6 +1,6 @@
 import { visit } from 'unist-util-visit'
 
-const site = 'https://www.christopherrobinson.uk'
+const site = 'https://christopherrobinson.uk'
 
 export const remarkExternalLinks = () => {
   return (tree) => {

@@ -35,7 +35,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  site: 'https://www.christopherrobinson.uk',
+  site: 'https://christopherrobinson.uk',
   trailingSlash: 'always',
   vite: {
     plugins: [
