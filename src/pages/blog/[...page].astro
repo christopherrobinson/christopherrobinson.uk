@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content'
+import BlogPostCard from '@/components/BlogPostCard.astro'
+import Container from '@/components/Container.astro'
+import { postsPerPage } from '@/config'
+import Pagination from '@/components/Helpers/Pagination.astro'
+import Layout from '@/layouts/Default.astro'
+
+export const getStaticPaths = async ({ paginate }) => {
+  const posts = (await getCollection('blog'))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+  return paginate(posts, { pageSize: postsPerPage })
+}
+
+const { page } = Astro.props
+const { currentPage, data, lastPage, url } = page
+const { pathname } = Astro.url
+---
+
+<Layout
+  heading={`Blog${currentPage > 1 ? ` <small>(Page ${currentPage})</small>` : ``}`}
+>
+  <Container>
+    <div class="gap-4  grid  py-8  sm:py-12  lg:gap-12">
+      {
+        data.map(async (post) => {
+          const { data, slug } = post
+          const { cover, date, title } = data
+          const { remarkPluginFrontmatter } = await post.render()
+
+          return (
+            <BlogPostCard
+              cover={cover}
+              date={date}
+              excerpt={remarkPluginFrontmatter.excerpt}
+              minutesRead={remarkPluginFrontmatter.minutesRead}
+              slug={slug}
+              title={title}
+            />
+          )
+        })
+      }
+    </div>
+  </Container>
+  <Pagination
+    baseUrl={`/${pathname.split("/")[1]}/`}
+    currentUrl={url.current}
+    length={lastPage}
+    nextUrl={url.next}
+    prevUrl={url.prev}
+  />
+</Layout>

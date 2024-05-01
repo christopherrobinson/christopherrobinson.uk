@@ -1,0 +1,15 @@
+[build]
+  environment = { NODE_VERSION = "20" }
+  base = "/"
+  command = "yarn add sharp --ignore-engines && yarn build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Feature-Policy = "accelerometer 'none' -light-sensor 'none'; autoplay 'none'; battery 'none'; camera 'none'; display-capture 'none'; document-domain 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; layout-animations 'none'; legacy-image-formats 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; oversized-images 'none'; payment 'none'; picture-in-picture 'none'; publickey-credentials-get 'none'; screen-wake-lock 'none'; sync-xhr 'none'; unoptimized-images 'none'; unsized-media 'none'; usb 'none'; vibrate 'none'; vr 'none'; wake-lock 'none'; xr 'none'; xr-spatial-tracking 'none;"
+    Referrer-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"

@@ -1,0 +1,36 @@
+---
+import { Picture } from 'astro:assets'
+import Container from '@/components/Container.astro'
+import LatestBlogPosts from '@/components/LatestBlogPosts.astro'
+import me from '@/images/christopher-robinson.jpg'
+import Layout from '@/layouts/Default.astro'
+---
+
+<Layout>
+  <div class="bg-primary-700  flex  items-center  grow  py-16  text-white  lg:py-32">
+    <Container>
+      <h1 class="font-extralight  text-3xl  text-center  lg:text-5xl">Hello! I'm Christopher 👋🏻</h1>
+    </Container>
+  </div>
+  <Container>
+    <div class="bg-white  border  border-zinc-200  float-right  hidden  ml-6  my-8  p-3  rotate-3  rounded-md  shadow-md  transform  sm:block  sm:my-12">
+      <Picture
+        alt="Photo of Christopher Robinson"
+        class="rounded-md"
+        densities={[2]}
+        formats={['avif', 'webp']}
+        height={240}
+        pictureAttributes={{ class: '!m-0' }}
+        src={me}
+        width={240}
+      />
+      <span class="block  mt-3  text-center  text-sm   text-zinc-600">Photo of Christopher Robinson</span>
+    </div>
+    <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
+      <p>I have <strong>over eighteen years of professional experience</strong> developing websites and applications of varying size and scale based on web-standard technologies; from clean coded HTML and reusable CSS components with responsive techniques and progressive enhancement, through to the modern headless web with <strong>React</strong>, <strong>styled-components</strong>, and <strong>GraphQL</strong> endpoints.</p>
+      <p>I am an <strong>Umbraco Certified Expert</strong> and have been creating Umbraco websites using ASP.NET (MVC, C#, Angular) for over 16 years. Although this site is <a href="https://astro.build/" rel="external  nofollow  noopener  noreferrer" target="_blank">built using Astro</a> and the source code is available on <a href="https://github.com/christopherrobinson" rel="external  nofollow  noopener  noreferrer" target="_blank">my GitHub profile</a>.</p>
+      <p>Want to know more? Head over to the <a href="/about/">About</a> page.</p>
+    </div>
+  </Container>
+  <LatestBlogPosts heading="Latest blog posts" />
+</Layout>

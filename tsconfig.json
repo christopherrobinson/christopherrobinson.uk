@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "noEmit": false,
+    "noImplicitAny": false,
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/config": ["src/config"],
+      "@/content/*": ["src/content/*"],
+      "@/data/*": ["src/data/*"],
+      "@/helpers": ["src/helpers"],
+      "@/images/*": ["src/images/*"],
+      "@/layouts/*": ["src/layouts/*"],
+      "@/schema": ["src/schema"],
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+    "target": "ES2022",
+    "types": ["astro/client"],
+    "verbatimModuleSyntax": true
+  },
+  "extends": "astro/tsconfigs/strict"
+}
