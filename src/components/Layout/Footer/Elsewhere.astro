@@ -1,0 +1,18 @@
+---
+import social from '@/data/social.json'
+---
+
+<ul>
+  {social.map(({ href, name, title }) => (
+    <li>
+      <a
+        class="hover:text-white"
+        href={href}
+        target="_blank"
+        title={title}
+      >
+        <Fragment set:html={name} />
+      </a>
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,60 @@
+---
+import Container from '@/components/Container.astro'
+
+const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props
+---
+
+<div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-12">
+  <Container>
+    <div class="grid  grid-cols-11  text-base">
+      <div class="col-span-5  flex  items-center  justify-start">
+        {baseUrl != currentUrl && (
+          <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={prevUrl}>
+            <svg
+              class="mr-1  size-3"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.7 267.3c-6.2-6.2-6.2-16.4 0-22.6l192-192c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6L54.6 256 235.3 436.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0l-192-192z"
+                fill="currentcolor"
+              />
+            </svg>
+            Newer posts
+          </a>
+        )}
+      </div>
+      <div class="flex  items-center  justify-center">
+        <a class="hover:text-primary" href={baseUrl}>
+          <svg
+            class="size-5"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224 32H32V224H224V32zm0 256H32V480H224V288zM288 32V224H480V32H288zM480 288H288V480H480V288z"
+              fill="currentcolor"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="col-span-5  flex  items-center  justify-end">
+        {`${baseUrl}${length}/` != currentUrl && (
+          <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={nextUrl}>
+            Older posts
+            <svg
+              class="ml-1  size-3"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M299.3 244.7c6.2 6.2 6.2 16.4 0 22.6l-192 192c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L265.4 256 84.7 75.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l192 192z"
+                fill="currentcolor"
+              />
+            </svg>
+          </a>
+        )}
+      </div>
+    </div>
+  </Container>
+</div>

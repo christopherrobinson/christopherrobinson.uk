@@ -1,0 +1,83 @@
+---
+import Container from '@/components/Container.astro'
+import Elsewhere from '@/components/Layout/Footer/Elsewhere.astro'
+
+import { site } from '@/config'
+
+const { minimal, ...props } = Astro.props
+---
+
+<footer class="bg-zinc-900  mt-auto  text-opacity-80  text-white">
+  {
+    !minimal && (
+      <div class="border-b  border-zinc-800  py-16  lg:py-32">
+        <Container>
+          <strong class="block  font-extralight  pb-12  text-2xl  lg:pb-24  lg:text-3xl">
+            Front-End Developer and Umbraco Certified Expert
+          </strong>
+          <div class="grid-cols-2  gap-12  grid  lg:grid-cols-12">
+            <div class="col-span-2  lg:col-span-8  lg:mb-0  lg:order-2">
+              <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+                About
+              </strong>
+              <p class="mb-6">
+                I have{" "}
+                <strong class="font-medium">
+                  over eighteen years of professional experience
+                </strong>{" "}
+                developing websites and applications of varying size and scale
+                based on web-standard technologies; from clean coded HTML and
+                reusable CSS components with responsive techniques and
+                progressive enhancement, through to the modern headless web with{" "}
+                <strong class="font-medium">React</strong>,{" "}
+                <strong class="font-medium">styled-components</strong>, and{" "}
+                <strong class="font-medium">GraphQL</strong> endpoints.
+              </p>
+            </div>
+            <div class="col-span-1  lg:col-span-2  lg:order-1">
+              <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+                Location
+              </strong>
+              <ul>
+                <li>Chester, England</li>
+              </ul>
+            </div>
+            <div class="col-span-1  lg:col-span-2  lg:order-3">
+              <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+                Elsewhere
+              </strong>
+              <Elsewhere />
+            </div>
+          </div>
+        </Container>
+      </div>
+    )
+  }
+  <div class="bg-zinc-950  py-4  text-sm">
+    <Container class="flex  items-center  justify-between">
+      <span>&copy;{new Date().getFullYear()} {site.name}</span>
+      <ul class="-mr-3  flex  items-center">
+        <li class="mx-3">
+          <a class="hover:text-white  hover:underline" href="/cookies/">
+            <span>Cookies</span>
+          </a>
+        </li>
+        <li class="mx-3">
+          <a class="flex  items-center  hover:text-white  hover:underline" href="/rss.xml">
+            <span>RSS</span>
+            <svg
+              class="size-3  ml-1"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </Container>
+  </div>
+</footer>

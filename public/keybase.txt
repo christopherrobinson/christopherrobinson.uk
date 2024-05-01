@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/edg3
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://christopherrobinson.uk
+  * I am edg3 (https://keybase.io/edg3) on keybase.
+  * I have a public key with fingerprint 5DF8 5989 37F1 ACAF 8F05  B2DC 6D98 A496 44CC F64D
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "5df8598937f1acaf8f05b2dc6d98a49644ccf64d",
+            "host": "keybase.io",
+            "key_id": "6d98a49644ccf64d",
+            "kid": "01017259f870c920de622590b27b3d7b73ac29f2f87f26b05be45ea8f285a8d9ee350a",
+            "uid": "ee203339bde57d2a74e7a2e1e5208100",
+            "username": "edg3"
+        },
+        "service": {
+            "hostname": "christopherrobinson.uk",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433271663,
+    "expire_in": 157680000,
+    "prev": "eeccbfe07a462ee96ea7efa5995fd008961bf2ed5ff158d017dc08856854ba61",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIhAnicbZJdSBVBFMevlklKJGVUCCqr+GSX2dnvm5G+mJRBlJoPxmV2Z+be7ebu
+de9ezUwiwQqCiqKy7IOw0sIgK0qSSKMg0Yj0RTL6oMhEkiKSsI/brNhb8zKcc/7n
+d+Y/nMdLFvjSkvZuf/fmcr94PWloYEPcV1n7227idBs3coEmLkLmLmpaIeJEHdNy
+uQAnYapKmqoJCuWRgahKgaRDbMhYU5GoyaJoGFQWMVfIhe2Y18EwOooRv2mzHAuC
+JmbZ/+gjcwXAA16BkkZVBRgaBJjIkIVAh4ouYEVXBGRAjUJWp1DW2XQiSgSpFKoS
+UrFGiCABxHDxORwhEAiCoOmYSAqGSBGJgiDhiQSBygPgCWPEsVAt8dQ4JHDNhRzL
+1JsG8ex7LuarRtgxY64dDRPHsXXTitmWPx5hhKhju7Zh72KasOtGYwGP4TZGvaYG
+ogfncUHWg9lvso564sRM2+ICPFMarunxeVEQoMLLslDIkd1R0yFB01NIiqwCdrw5
+pH7Ok2HolAAFiTIkRJMJUghFkqZJFAOgajKvU0iwRCkvqZj9JzaAqkqyKok6knnO
+M1hn2VxAY89EIYaMmSELuXGHcM2P+msW+pLSfItSkr198KUtzvi3Jdn3UxNNyZPf
+49qB6Gr/rp1/yrcsTryMrIs8PLGsh44/WNmfk9+dvqIkf0XmDC660zVTc/luWU44
+ZSZvW2kcJI5ztc2+zOHGaaMO39ygB09WHMkJHc5tLxm+2nbh87XZrIqNuWez3o9V
+r3ldbVW+vBSsyi06VJn4EtnT3uJ33I6DrVf0/YdaijuNnz/A0Nay0fX+X5n7equm
+7jw9VRb8NlAAbnW8HX7e0nt74MVIz/mKbvNV26bNTa3nypenPrk39vFFUuLi4dzV
+Uw2pq+oqvxSUtq8Nj6TPjuZNFg/erq56NtG4NHKjvO+h2XHUOJP/YSajfHr86+mu
+QXzsStWOT52wT8ie8P/4C7FCMUk=
+=UMI3
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/edg3
+
+==================================================================

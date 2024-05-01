@@ -1,0 +1,152 @@
+---
+const { actionUrl } = Astro.props
+---
+
+<div class="bg-zinc-100  border  border-zinc-200  mb-12  rounded  sm:p-4">
+  <form
+    action={actionUrl}
+    name="contact"
+    netlify
+    netlify-honeypot
+    method="post"
+  >
+    <input name="form-name" type="hidden" value="contact" />
+    <p class="hidden">
+      Don't fill this out if you're human: <input name="bot-field" />
+    </p>
+    <div class="m-4">
+      <div class="flex  items-baseline  justify-between  mb-2">
+        <label class="block  font-light" for="subject">Subject</label>
+        <span class="text-xs  text-zinc-600"><span data-remaining="subject">60</span> characters remaining</span>
+      </div>
+      <input
+        class="
+          block
+          border-zinc-200
+          px-4
+          py-3
+          rounded
+          shadow-sm
+          w-full
+          focus:border-blue-400
+          focus:ring-blue-400
+        "
+        id="subject"
+        maxlength="60"
+        name="subject"
+        type="text"
+      />
+    </div>
+    <div class="m-4">
+      <label class="block  font-light  mb-2" for="message">Message <span class="text-red-400">*</span></label>
+      <textarea
+        class="
+          block
+          border-zinc-200
+          px-4
+          py-3
+          rounded
+          shadow-sm
+          w-full
+          focus:border-blue-400
+          focus:ring-blue-400
+        "
+        id="message"
+        name="message"
+        rows="5"></textarea>
+    </div>
+    <div class="grid  grid-cols-1  m-4  mb-0  sm:gap-8  sm:grid-cols-2">
+      <div class="mb-4">
+        <label class="block  font-light  mb-2" for="name"
+          >Name <span class="text-red-400">*</span></label
+        >
+        <input
+          class="
+            block
+            border-zinc-200
+            px-4
+            py-3
+            rounded
+            shadow-sm
+            w-full
+            focus:border-blue-400
+            focus:ring-blue-400
+          "
+          id="name"
+          name="name"
+          required
+          type="text"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block  font-light  mb-2" for="email"
+          >Email address <span class="text-red-400">*</span></label
+        >
+        <input
+          class="
+            block
+            border-zinc-200
+            px-4
+            py-3
+            rounded
+            shadow-sm
+            w-full
+            focus:border-blue-400
+            focus:ring-blue-400
+          "
+          id="email"
+          name="email"
+          required
+          type="email"
+        />
+      </div>
+    </div>
+    <div class="flex  justify-end  m-4">
+      <button
+        type="submit"
+        class="
+          bg-primary-700
+          border
+          border-transparent
+          font-medium
+          inline-flex
+          items-center
+          px-8
+          py-3
+          rounded
+          shadow-sm
+          text-white
+          focus:outline-none
+          focus:ring-2
+          focus:ring-blue-400
+          focus:ring-offset-2
+        "
+      >
+        Send message
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+
+    const remaining      = document.querySelector('[data-remaining]')
+    const remainingInput = document.querySelector('[name="' + remaining?.getAttribute('data-remaining') + '"]')
+
+    if (remaining && remainingInput) {
+
+      remaining.innerHTML = remainingInput.maxLength;
+
+      remainingInput.addEventListener(
+        'keyup',
+        (() => {
+          remaining.innerHTML = (remainingInput.maxLength - remainingInput.value.length);
+        }),
+        { passive: true },
+      )
+
+    }
+
+  })
+</script>

@@ -1,0 +1,28 @@
+---
+import { Picture } from 'astro:assets'
+import Container from '@/components/Container.astro'
+import { Content } from '@/content/pages/about/index.md'
+import me from '@/images/christopher-robinson.jpg'
+import Layout from '@/layouts/Default.astro'
+---
+
+<Layout heading="Feeling nosy?">
+  <Container>
+    <div class="bg-white  border  border-zinc-200  float-right  hidden  mb-6  ml-6  mt-8  p-3  rotate-3  rounded-md  shadow-md  transform  sm:block  sm:mt-12">
+      <Picture
+        alt="Photo of Christopher Robinson"
+        class="rounded-md"
+        densities={[2]}
+        formats={['avif', 'webp']}
+        height={240}
+        pictureAttributes={{ class: '!m-0' }}
+        src={me}
+        width={240}
+      />
+      <span class="block  mt-3  text-center  text-sm   text-zinc-600">Photo of Christopher Robinson</span>
+    </div>
+    <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
+      <Content />
+    </div>
+  </Container>
+</Layout>

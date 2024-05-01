@@ -1,0 +1,54 @@
+---
+import FormattedDate from '@/components/Helpers/FormattedDate.astro'
+
+export interface Props {
+  cover?: any
+  date: Date
+  excerpt: string
+  minutesRead: number
+  slug: string
+  title: string
+}
+
+const { cover, date, excerpt, minutesRead, slug, title } = Astro.props
+---
+
+<div>
+  <a
+    class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  p-6  space-y-4  rounded-md  transition  hover:border-primary-700"
+    href={`/blog/${slug}/`}
+  >
+    <h2 class="font-light  text-xl  group-hover:text-primary-700">
+      {title}
+    </h2>
+    <p class="grow">{excerpt}</p>
+    <ul class="flex  flex-wrap  font-light  justify-between  mt-auto  pt-4  text-xs  text-zinc-600">
+      <li class="flex  items-center  space-x-2">
+        <svg
+          class="size-3"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M128 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V64H64C28.7 64 0 92.7 0 128v32 32V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 160 128c0-35.3-28.7-64-64-64H352V16c0-8.8-7.2-16-16-16s-16 7.2-16 16V64H128V16zM32 192H416V448c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V192zM64 96H384c17.7 0 32 14.3 32 32v32H32V128c0-17.7 14.3-32 32-32zm40 160h80c4.4 0 8 3.6 8 8v80c0 4.4-3.6 8-8 8H104c-4.4 0-8-3.6-8-8V264c0-4.4 3.6-8 8-8zm-40 8v80c0 22.1 17.9 40 40 40h80c22.1 0 40-17.9 40-40V264c0-22.1-17.9-40-40-40H104c-22.1 0-40 17.9-40 40z"
+            fill="currentcolor"
+          />
+        </svg>
+        <FormattedDate date={date} />
+      </li>
+      <li class="flex  items-center  space-x-2">
+        <svg
+          class="size-3"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M128 16c0-8.8 7.2-16 16-16H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H240V96.6c49.4 3.8 94 24.8 127.7 57l37-37c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-38.2 38.2C416 212.6 432 256.4 432 304c0 114.9-93.1 208-208 208S16 418.9 16 304c0-109.5 84.6-199.2 192-207.4V32H144c-8.8 0-16-7.2-16-16zM48 304a176 176 0 1 0 352 0A176 176 0 1 0 48 304zm192-96V320c0 8.8-7.2 16-16 16s-16-7.2-16-16V208c0-8.8 7.2-16 16-16s16 7.2 16 16z"
+            fill="currentcolor"
+          />
+        </svg>
+        <span>{minutesRead}</span>
+      </li>
+    </ul>
+  </a>
+</div>

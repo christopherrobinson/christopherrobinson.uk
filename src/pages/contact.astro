@@ -1,0 +1,24 @@
+---
+import ContactForm from '@/components/ContactForm.astro'
+import Container from '@/components/Container.astro'
+import Map from '@/components/Map.astro'
+import Layout from '@/layouts/Default.astro'
+---
+
+<Layout
+  meta={{
+    title: "Contact",
+  }}
+>
+  <Map class="h-[96px]  lg:h-[328px]" heading="Contact" />
+  <Container>
+    <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
+      <p>
+        The easiest way to get in touch is to send me a message. If you are
+        getting in touch regarding work, please contain as much detail as
+        possible in your message and I will aim to reply within 24hrs.
+      </p>
+    </div>
+    <ContactForm actionUrl="/contact/thank-you/" />
+  </Container>
+</Layout>
