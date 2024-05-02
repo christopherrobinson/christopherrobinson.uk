@@ -12,7 +12,7 @@ _**tl;dr** [https://codepen.io/christopher/pen/YxMmjW](https://codepen.io/christ
 
 ## HTML
 
-We start with an outer `.embed` wrapper for responsiveness and inside that setup our custom Vimeo embed element. It's important to note that a unique `id` is required by the Vimeo API.
+We start with an outer `.embed` wrapper for responsiveness and inside that setup our custom Vimeo embed element. It’s important to note that a unique `id` is required by the Vimeo API.
 
 ```html
 <div class="embed  embed-16by9">

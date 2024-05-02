@@ -4,7 +4,7 @@ date: 2007-01-21
 tags: [ "Development", "SSH" ]
 ---
 
-If you'd like to change the message displayed before logging in to the server
+If you’d like to change the message displayed before logging in to the server
 
 ```sh
 sudo nano /etc/ssh/sshd_config

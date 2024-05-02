@@ -4,7 +4,7 @@ date: 2018-07-22
 tags: [ "Development", "Umbraco" ]
 ---
 
-The name of the form isn't available by default, so you need to use `FormStorage()` to access it:
+The name of the form isn’t available by default, so you need to use `FormStorage()` to access it:
 
 ```csharp
 FormStorage formStorage = new FormStorage();
