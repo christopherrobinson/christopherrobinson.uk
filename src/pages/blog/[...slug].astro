@@ -52,11 +52,11 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
   }
   <Container>
     <div class="gap-8  grid  grid-cols-1  lg:grid-cols-12">
-      <div class="col-span-1  py-12  lg:col-span-2">
+      <div class="col-span-1  py-8  sm:py-12  lg:col-span-2">
         <div class="sticky  top-32">
-          <ul class="text-sm">
-            <li class="flex  my-2">
-              <span class="flex  items-center  mr-2  size-5">
+          <ul class="space-y-2  text-sm">
+            <li class="flex  items-start">
+              <span class="flex  items-center  mr-1  size-5">
                 <svg
                   class="size-4"
                   viewBox="0 0 448 512"
@@ -69,8 +69,8 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
               </span>
               <FormattedDate date={date} />
             </li>
-            <li class="flex my-2">
-              <span class="flex  items-center  mr-2  size-5">
+            <li class="flex  items-start">
+              <span class="flex  items-center  mr-1  size-5">
                 <svg
                   class="h-4 w-4"
                   viewBox="0 0 448 512"
@@ -83,8 +83,8 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
               </span>
               {remarkPluginFrontmatter.minutesRead}
             </li>
-            <li class="flex  my-2">
-              <span class="flex  items-center  mr-2  size-5">
+            <li class="flex  items-start">
+              <span class="flex  items-center  mr-1  size-5">
                 <svg
                   class="h-4  w-4"
                   viewBox="0 0 448 512"
@@ -100,14 +100,14 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
                   <li class={`
                     ${((i + 1 !== tags.length) ? `after:content-[',']` : '')}
                     mx-0.5
-                    `}><a href={`/blog/tag/${createSlug(tag)}/`}>{tag}</a></li>
+                    `}><a class="hover:underline" href={`/blog/tag/${createSlug(tag)}/`}>{tag}</a></li>
                 ))}
               </ol>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-span-1  font-light  max-w-none  prose  py-12  md:prose-md  lg:col-span-10  lg:prose-lg">
+      <div class="col-span-1  font-light  max-w-none  -mt-16  prose  py-8  lg:-mt-0  sm:py-12  md:prose-md  lg:col-span-10  lg:prose-lg">
         <Content />
       </div>
     </div>
