@@ -6,7 +6,7 @@ export const remarkReadingTime = () => {
     const textOnPage  = toString(tree)
     const readingTime = getReadingTime(textOnPage)
     const minutes     = Math.ceil(readingTime.minutes)
-    
-    data.astro.frontmatter.minutesRead = `${minutes} minute${(minutes > 1 ? `s` : ``)} read`
+
+    data.astro.frontmatter.minutesRead = `${minutes} minute${(minutes > 1 ? `s` : ``)}`
   }
 }
