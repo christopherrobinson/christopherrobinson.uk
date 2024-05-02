@@ -108,6 +108,11 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
         </div>
       </div>
       <div class="col-span-1  font-light  max-w-none  -mt-16  prose  py-8  lg:-mt-0  sm:py-12  md:prose-md  lg:col-span-10  lg:prose-lg">
+        {(new Date().setMonth(new Date().getMonth() - 3) > date) && (
+          <div class="bg-zinc-100  border  border-zinc-200  p-4  text-center  text-sm">
+            <strong>Note:</strong> This post is over 3 months old and may be outdated or superseded by additional information.
+          </div>
+        )}
         <Content />
       </div>
     </div>
