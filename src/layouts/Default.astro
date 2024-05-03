@@ -25,7 +25,7 @@ const { heading, layout, meta } = Astro.props
     <BaseHead title={meta?.title || heading || ``} description={meta?.description} />
   </head>
 
-  <body>
+  <body class="min-w-[360px]">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDWQC7T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
