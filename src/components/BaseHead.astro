@@ -1,20 +1,20 @@
 ---
-import { getImage } from 'astro:assets'
-import { ViewTransitions } from 'astro:transitions'
-import { stripHtml } from 'string-strip-html'
-import { site } from '@/config'
-import faviconSrc from '@/images/favicon.png'
-import faviconSvgSrc from '@/images/favicon.svg'
+import { getImage } from 'astro:assets';
+import { ViewTransitions } from 'astro:transitions';
+import { stripHtml } from 'string-strip-html';
+import { site } from '@/config';
+import faviconSrc from '@/images/favicon.png';
+import faviconSvgSrc from '@/images/favicon.svg';
 
 export interface Props {
   title?: string
   description?: string
 }
 
-const { title, description } = Astro.props
-const appleTouchIcon = await getImage({ format: 'png', height: 180, src: faviconSrc, width: 180 })
-const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
+const { title, description } = Astro.props;
+const appleTouchIcon = await getImage({ format: 'png', height: 180, src: faviconSrc, width: 180 });
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' });
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <meta charset="utf-8">

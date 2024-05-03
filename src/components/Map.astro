@@ -1,9 +1,13 @@
 ---
-import 'mapbox-gl/dist/mapbox-gl.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import Container from '@/components/Container.astro';
 
-import Container from './Container.astro'
+export interface Props {
+  class?: string;
+  heading: string;
+}
 
-const { class: className, heading, ...props } = Astro.props
+const { class: className, heading, ...props } = Astro.props;
 ---
 
 <div class="relative">
@@ -19,14 +23,12 @@ const { class: className, heading, ...props } = Astro.props
 </div>
 
 <script>
-  import mapboxgl from 'mapbox-gl'
+  import mapboxgl from 'mapbox-gl';
 
   document.addEventListener('astro:page-load', () => {
-
-    const map = document.querySelector<HTMLElement>('#map')
+    const map = document.querySelector<HTMLElement>('#map');
 
     if (map) {
-
       const mapbox = new mapboxgl.Map({
         accessToken: import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN,
         attributionControl: false,
@@ -36,9 +38,7 @@ const { class: className, heading, ...props } = Astro.props
         interactive: false,
         logoPosition: 'bottom-right',
         zoom: 9,
-      })
-
+      });
     }
-
-  })
+  });
 </script>

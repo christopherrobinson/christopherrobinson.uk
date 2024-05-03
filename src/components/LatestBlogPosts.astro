@@ -1,18 +1,17 @@
 ---
-import { getCollection } from 'astro:content'
-import BlogPostCard from '@/components/BlogPostCard.astro'
-import Container from '@/components/Container.astro'
+import { getCollection } from 'astro:content';
+import BlogPostCard from '@/components/BlogPostCard.astro';
+import Container from '@/components/Container.astro';
 
 export interface Props {
-  heading?: string
-  limit?: number
+  heading?: string;
+  limit?: number;
 }
 
-const { heading, limit } = Astro.props
-
+const { heading, limit } = Astro.props;
 const posts = (await getCollection('blog'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, limit ?? 3)
+    .slice(0, limit ?? 3);
 ---
 
 <div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-12">
@@ -24,12 +23,11 @@ const posts = (await getCollection('blog'))
       {
         posts.map(async (post) => {
           const { data, slug } = post
-          const { cover, date, title } = data
+          const { date, title } = data
           const { remarkPluginFrontmatter } = await post.render()
 
           return (
             <BlogPostCard
-              cover={cover}
               date={date}
               excerpt={remarkPluginFrontmatter.excerpt}
               minutesRead={remarkPluginFrontmatter.minutesRead}

@@ -1,7 +1,9 @@
 ---
-import Container from '@/components/Container.astro'
-import NavItem from '@/components/Layout/Header/NavItem.astro'
-import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.astro'
+import Container from '@/components/Container.astro';
+import NavItem from '@/components/Layout/Header/NavItem.astro';
+import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.astro';
+
+type Props = Record<string, never>;
 ---
 
 <header class="backdrop-blur  bg-opacity-80  bg-white  border-b  border-t-2  border-zinc-200  sticky  top-0  z-20">
@@ -22,9 +24,9 @@ import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.as
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0 88c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm0 160c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm448 160c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h400c13.3 0 24 10.7 24 24z"/>
+            <path d="M0 88c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm0 160c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm448 160c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h400c13.3 0 24 10.7 24 24z" />
           </svg>
-         </button>
+        </button>
       </div>
       <div class="hidden  -mr-4  sm:block">
         <ul class="flex  items-center  lowercase  text-sm">

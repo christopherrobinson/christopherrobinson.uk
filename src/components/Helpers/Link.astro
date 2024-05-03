@@ -1,17 +1,15 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+export interface Props {
+  children: any;
+  class?: string;
+  href: string;
+}
 
-type Props = HTMLAttributes<'a'>
-
-const { href, class: className, ...props } = Astro.props
-const { pathname } = Astro.url
-const isActive = href === pathname || href === pathname.replace(/\/$/, '')
+const { class: className, href, ...props } = Astro.props;
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
-<a
-  class:list={[className, { underline: isActive }]}
-  href={href}
-  {...props}
->
+<a class:list={[className, { underline: isActive }]} href={href} {...props}>
   <slot />
 </a>
