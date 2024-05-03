@@ -8,18 +8,18 @@ import Layout from '@/layouts/Default.astro'
 
 <Layout heading="Feeling nosy?">
   <Container>
-    <div class="bg-white  border  border-zinc-200  float-right  hidden  mb-6  ml-6  mt-8  p-3  rotate-3  rounded-md  shadow-md  transform  sm:block  sm:mt-12">
+    <div class="bg-white  border  border-zinc-200  float-right  mb-6  ml-6  mt-8  p-2  rotate-3  rounded-md  shadow-md  transform  w-32  sm:mt-12  sm:p-3  sm:w-56  md:w-64">
       <Picture
         alt="Photo of Christopher Robinson"
         class="rounded-md"
         densities={[2]}
         formats={['avif', 'webp']}
-        height={240}
+        height={300}
         pictureAttributes={{ class: '!m-0' }}
         src={me}
-        width={240}
+        width={300}
       />
-      <span class="block  mt-3  text-center  text-sm   text-zinc-600">Photo of Christopher Robinson</span>
+      <span class="hidden  mt-3  text-center  text-sm   text-zinc-600  sm:block">Photo of Christopher Robinson</span>
     </div>
     <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
       <Content />
