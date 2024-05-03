@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets'
 import { ViewTransitions } from 'astro:transitions'
+import { stripHtml } from 'string-strip-html'
 import { site } from '@/config'
 import faviconSrc from '@/images/favicon.png'
 import faviconSvgSrc from '@/images/favicon.svg'
@@ -17,13 +18,15 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <meta charset="utf-8">
-<title>{title ? `${title} | ` : ``}{site.name}</title>
+<title>{title ? `${stripHtml(title).result} | ` : ``}{site.name}</title>
 <link rel="apple-touch-icon" href={appleTouchIcon.src} />
 <link rel="canonical" href={canonicalUrl}>
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
 <link rel="manifest" href="/manifest.json" />
-<meta name="description" content={description}>
+{description && (
+  <meta name="description" content={stripHtml(description).result}>
+)}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
   @font-face {
