@@ -1,7 +1,15 @@
 ---
-import Container from '@/components/Container.astro'
+import Container from '@/components/Container.astro';
 
-const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props
+export interface Props {
+  baseUrl: string;
+  currentUrl: string;
+  length: number;
+  nextUrl: string;
+  prevUrl: string;
+}
+
+const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props;
 ---
 
 <div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-12">
@@ -9,7 +17,10 @@ const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props
     <div class="grid  grid-cols-11  text-base">
       <div class="col-span-5  flex  items-center  justify-start">
         {baseUrl != currentUrl && (
-          <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={prevUrl}>
+          <a
+            class="flex  items-center  justify-start  hover:text-primary  hover:underline"
+            href={prevUrl}
+          >
             <svg
               class="mr-1  size-3"
               viewBox="0 0 320 512"
@@ -40,7 +51,10 @@ const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props
       </div>
       <div class="col-span-5  flex  items-center  justify-end">
         {`${baseUrl}${length}/` != currentUrl && (
-          <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={nextUrl}>
+          <a
+            class="flex  items-center  justify-end  hover:text-primary  hover:underline"
+            href={nextUrl}
+          >
             Older posts
             <svg
               class="ml-1  size-3"

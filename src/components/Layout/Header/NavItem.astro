@@ -1,26 +1,31 @@
 ---
-const { href, mobile, ...props } = Astro.props
-const { pathname } = Astro.url
-const isActive = (href === pathname) || (href === `/${pathname.split('/')[1]}/`)
+export interface Props {
+  href: string;
+  mobile?: boolean;
+}
+
+const { href, mobile, ...props } = Astro.props;
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === `/${pathname.split('/')[1]}/`;
 ---
 
 <li>
-  {mobile && (
+  {(mobile && (
     <a
       class={
-        `block  font-medium  my-2  px-4  py-2  text-2xl  
-        ${isActive && 'text-primary-600  underline' || 'text-zinc-800  hover:underline'}
+        `block  font-medium  my-2  px-4  py-2  text-2xl
+        ${(isActive && 'text-primary-600  underline') || 'text-zinc-800  hover:underline'}
       `}
       href={href}
       {...props}
     >
       <slot />
     </a>
-  ) || (
+  )) || (
     <a
-      class={
-        `block  px-4  py-2  text-zinc-800
-        ${isActive && 'underline' || 'hover:underline'}
+      class={`
+        block  px-4  py-2  text-zinc-800
+        ${(isActive && 'underline') || 'hover:underline'}
       `}
       href={href}
       {...props}

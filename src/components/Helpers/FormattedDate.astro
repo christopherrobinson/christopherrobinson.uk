@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  date: Date
+  date: Date;
 }
 
-const { date, ...props } = Astro.props
+const { date, ...props } = Astro.props;
 ---
 
 <time {...props} datetime={date.toISOString()}>

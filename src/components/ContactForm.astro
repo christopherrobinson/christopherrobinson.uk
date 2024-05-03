@@ -1,5 +1,9 @@
 ---
-const { actionUrl } = Astro.props
+export interface Props {
+  actionUrl: string;
+}
+
+const { actionUrl } = Astro.props;
 ---
 
 <div class="bg-zinc-100  border  border-zinc-200  mb-12  rounded  sm:p-4">
@@ -16,8 +20,12 @@ const { actionUrl } = Astro.props
     </p>
     <div class="m-4">
       <div class="flex  items-baseline  justify-between  mb-2">
-        <label class="block  font-light" for="subject">Subject</label>
-        <span class="text-xs  text-zinc-600"><span data-remaining="subject">60</span> characters remaining</span>
+        <label class="block  font-light" for="subject">
+          Subject
+        </label>
+        <span class="text-xs  text-zinc-600">
+          <span data-remaining="subject">60</span> characters remaining
+        </span>
       </div>
       <input
         class="
@@ -38,7 +46,9 @@ const { actionUrl } = Astro.props
       />
     </div>
     <div class="m-4">
-      <label class="block  font-light  mb-2" for="message">Message <span class="text-red-400">*</span></label>
+      <label class="block  font-light  mb-2" for="message">
+        Message <span class="text-red-400">*</span>
+      </label>
       <textarea
         class="
           block
@@ -53,13 +63,14 @@ const { actionUrl } = Astro.props
         "
         id="message"
         name="message"
-        rows="5"></textarea>
+        rows="5"
+      ></textarea>
     </div>
     <div class="grid  grid-cols-1  m-4  mb-0  sm:gap-8  sm:grid-cols-2">
       <div class="mb-4">
-        <label class="block  font-light  mb-2" for="name"
-          >Name <span class="text-red-400">*</span></label
-        >
+        <label class="block  font-light  mb-2" for="name">
+          Name <span class="text-red-400">*</span>
+        </label>
         <input
           class="
             block
@@ -79,9 +90,9 @@ const { actionUrl } = Astro.props
         />
       </div>
       <div class="mb-4">
-        <label class="block  font-light  mb-2" for="email"
-          >Email address <span class="text-red-400">*</span></label
-        >
+        <label class="block  font-light  mb-2" for="email">
+          Email address <span class="text-red-400">*</span>
+        </label>
         <input
           class="
             block
@@ -130,23 +141,18 @@ const { actionUrl } = Astro.props
 
 <script>
   document.addEventListener('astro:page-load', () => {
-
-    const remaining      = document.querySelector('[data-remaining]')
-    const remainingInput = document.querySelector('[name="' + remaining?.getAttribute('data-remaining') + '"]')
+    const remaining      = document.querySelector<HTMLElement>('[data-remaining]');
+    const remainingInput = document.querySelector<HTMLInputElement>('[name="' + remaining?.getAttribute('data-remaining') + '"]');
 
     if (remaining && remainingInput) {
-
-      remaining.innerHTML = remainingInput.maxLength;
-
+      remaining.innerHTML = remainingInput.maxLength.toString();
       remainingInput.addEventListener(
         'keyup',
         (() => {
-          remaining.innerHTML = (remainingInput.maxLength - remainingInput.value.length);
+          remaining.innerHTML = (remainingInput.maxLength - remainingInput.value.length).toString();
         }),
         { passive: true },
       )
-
     }
-
-  })
+  });
 </script>

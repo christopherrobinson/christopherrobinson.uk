@@ -1,16 +1,15 @@
 ---
-import FormattedDate from '@/components/Helpers/FormattedDate.astro'
+import FormattedDate from '@/components/Helpers/FormattedDate.astro';
 
 export interface Props {
-  cover?: any
-  date: Date
-  excerpt: string
-  minutesRead: number
-  slug: string
-  title: string
+  date: Date;
+  excerpt: string;
+  minutesRead: number;
+  slug: string;
+  title: string;
 }
 
-const { cover, date, excerpt, minutesRead, slug, title } = Astro.props
+const { date, excerpt, minutesRead, slug, title } = Astro.props;
 ---
 
 <div>
@@ -18,9 +17,7 @@ const { cover, date, excerpt, minutesRead, slug, title } = Astro.props
     class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  p-6  space-y-4  rounded-md  transition  hover:border-primary-700"
     href={`/blog/${slug}/`}
   >
-    <h2 class="font-light  text-xl  group-hover:text-primary-700">
-      {title}
-    </h2>
+    <h2 class="font-light  text-xl  group-hover:text-primary-700">{title}</h2>
     <p class="grow">{excerpt}</p>
     <ul class="flex  flex-wrap  font-light  justify-between  mt-auto  pt-4  text-xs  text-zinc-600">
       <li class="flex  items-center  space-x-2">
