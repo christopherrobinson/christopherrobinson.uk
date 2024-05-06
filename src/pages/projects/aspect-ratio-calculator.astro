@@ -1,0 +1,21 @@
+---
+import Container from '@/components/Container.astro';
+import AspectRatioCalculator from '@/components/Projects/AspectRatioCalculator';
+import Layout from '@/layouts/Default.astro';
+---
+
+<Layout
+  heading="Aspect Ratio Calculator"
+  meta={{
+    description: "Computes the unspecified dimension (either width or height) while maintaining a specific aspect ratio.",
+  }}
+>
+  <Container>
+    <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
+      <p>Computes the unspecified dimension (either width or height) while maintaining a specific aspect ratio.</p>
+    </div>
+    <div class="pb-8  sm:pb-12">
+      <AspectRatioCalculator client:load height={1080} width={1920} />
+    </div>
+  </Container>
+</Layout>
