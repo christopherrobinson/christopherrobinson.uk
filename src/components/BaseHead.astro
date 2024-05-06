@@ -11,7 +11,7 @@ export interface Props {
   description?: string
 }
 
-const { title, description } = Astro.props;
+const { description, title } = Astro.props;
 const appleTouchIcon = await getImage({ format: 'png', height: 180, src: faviconSrc, width: 180 });
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' });
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
