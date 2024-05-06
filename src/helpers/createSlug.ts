@@ -1,4 +1,4 @@
-export const createSlug = (title: string) => (
+export const createSlug = (title: string): string => (
   title
     .trim()                         // remove leading & trailing whitespace
     .replace(/[^A-Za-z0-9 ]/g, '')  // remove special characters
