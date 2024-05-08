@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { getAspectRatio, getInputValue } from '@/helpers';
 
 interface AspectRatioCalculatorProps {
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
 }
 
 const AspectRatioCalculator = ({
@@ -69,7 +69,7 @@ const AspectRatioCalculator = ({
           </div>
         </div>
       </div>
-      <div className="flex  items-center  justify-center  py-8">
+      <div className="flex  items-center  justify-center  py-6">
         <span className="block  font-medium  text-5xl">{aspectRatio}</span>
       </div>
       <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
@@ -112,7 +112,7 @@ const AspectRatioCalculator = ({
         </div>
       </div>
     </div>
-	)
+  );
 }
 
-export default AspectRatioCalculator
+export default AspectRatioCalculator;
