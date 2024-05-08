@@ -5,8 +5,8 @@ export interface Props {
   baseUrl: string;
   currentUrl: string;
   length: number;
-  nextUrl: string;
-  prevUrl: string;
+  nextUrl?: string;
+  prevUrl?: string;
 }
 
 const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props;
@@ -16,7 +16,7 @@ const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props;
   <Container>
     <div class="grid  grid-cols-11  text-base">
       <div class="col-span-5  flex  items-center  justify-start">
-        {baseUrl != currentUrl && (
+        {(prevUrl && (baseUrl != currentUrl)) && (
           <a
             class="flex  items-center  justify-start  hover:text-primary  hover:underline"
             href={prevUrl}
@@ -50,7 +50,7 @@ const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props;
         </a>
       </div>
       <div class="col-span-5  flex  items-center  justify-end">
-        {`${baseUrl}${length}/` != currentUrl && (
+        {(nextUrl && (`${baseUrl}${length}/` != currentUrl)) && (
           <a
             class="flex  items-center  justify-end  hover:text-primary  hover:underline"
             href={nextUrl}

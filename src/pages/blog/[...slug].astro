@@ -18,8 +18,8 @@ export const getStaticPaths = async () => {
       slug: post.slug,
     },
     props: {
-      post,
       nextPost: i === 0 ? null : posts[i - 1],
+      post,
       prevPost: i + 1 === posts.length ? null : posts[i + 1],
     },
   }))
@@ -56,9 +56,9 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
         <div class="sticky  top-32">
           <ul class="space-y-2  text-sm">
             <li class="flex  items-start">
-              <span class="flex  items-center  mr-1  size-5">
+              <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
-                  class="size-4"
+                  class="h-4"
                   viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -70,9 +70,9 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
               <FormattedDate date={date} />
             </li>
             <li class="flex  items-start">
-              <span class="flex  items-center  mr-1  size-5">
+              <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
-                  class="h-4 w-4"
+                  class="h-4"
                   viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -81,12 +81,12 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
                   ></path>
                 </svg>
               </span>
-              {remarkPluginFrontmatter.minutesRead}
+              {remarkPluginFrontmatter.minutesRead} read
             </li>
             <li class="flex  items-start">
-              <span class="flex  items-center  mr-1  size-5">
+              <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
-                  class="h-4  w-4"
+                  class="h-4"
                   viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
