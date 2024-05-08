@@ -27,7 +27,7 @@ const { heading, layout, meta } = Astro.props
 
   <body class="min-w-[360px]">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDWQC7T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${import.meta.env.PUBLIC_GOOGLE_TAG_MANAGER_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="bg-white  flex  flex-col   font-light  min-h-screen  relative  text-zinc-800">
       <Header />
