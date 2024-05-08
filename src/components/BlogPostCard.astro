@@ -17,12 +17,12 @@ const { date, excerpt, minutesRead, slug, title } = Astro.props;
     class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  p-6  space-y-4  rounded-md  transition  hover:border-primary-700"
     href={`/blog/${slug}/`}
   >
-    <h2 class="font-light  text-xl  group-hover:text-primary-700">{title}</h2>
+    <h2 class="font-light  text-xl  transition  group-hover:text-primary-700">{title}</h2>
     <p class="grow">{excerpt}</p>
     <ul class="flex  flex-wrap  font-light  justify-between  mt-auto  pt-4  text-xs  text-zinc-600">
       <li class="flex  items-center  space-x-2">
         <svg
-          class="size-3"
+          class="h-3"
           viewBox="0 0 448 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -35,7 +35,7 @@ const { date, excerpt, minutesRead, slug, title } = Astro.props;
       </li>
       <li class="flex  items-center  space-x-2">
         <svg
-          class="size-3"
+          class="h-3"
           viewBox="0 0 448 512"
           xmlns="http://www.w3.org/2000/svg"
         >
