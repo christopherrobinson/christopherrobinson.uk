@@ -20,17 +20,31 @@ const { cover, date, excerpt, minutesRead, slug, title } = Astro.props;
   href={`/blog/${slug}/`}
 >
   {(cover) && (
-    <Picture
-      alt={title}
-      class="aspect-video  object-cover  overflow-hidden  shrink-0  w-full"
-      densities={[2]}
-      formats={['avif', 'webp']}
-      src={cover}
-      width={360}
-    />
+    <div class="aspect-video  relative">
+      <Picture
+        alt={title}
+        class="aspect-video  object-cover  shrink-0  w-full"
+        densities={[2]}
+        formats={['avif', 'webp']}
+        src={cover}
+        width={360}
+      />
+      <div class="absolute  backdrop-blur  bg-zinc-950/30  flex  items-center  inset-0  justify-center  opacity-0  text-white  transition  group-focus:opacity-100  group-hover:opacity-100">
+        <svg
+          class="size-8"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M507.3 267.3c6.2-6.2 6.2-16.4 0-22.6l-128-128c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L457.4 240 176 240c-8.8 0-16 7.2-16 16s7.2 16 16 16l281.4 0L356.7 372.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l128-128zM176 64c8.8 0 16-7.2 16-16s-7.2-16-16-16L80 32C35.8 32 0 67.8 0 112L0 400c0 44.2 35.8 80 80 80l96 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-96 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48l96 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
   )}
   <div class="flex  flex-col  h-full  p-5  space-y-4">
-    <h2 class="font-light  text-xl  transition  group-hover:text-primary-700">{title}</h2>
+    <h2 class="font-light  text-xl  transition  group-focus:text-primary-700  group-hover:text-primary-700">{title}</h2>
     <p class="grow">{excerpt}</p>
     <ul class="flex  flex-wrap  font-light  justify-between  mt-auto  pt-1  text-xs  text-zinc-600">
       <li class="flex  items-start">
