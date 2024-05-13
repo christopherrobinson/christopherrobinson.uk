@@ -26,12 +26,11 @@ const { pathname } = Astro.url
       {
         data.map(async (post) => {
           const { data, slug } = post
-          const { cover, date, title } = data
+          const { date, title } = data
           const { remarkPluginFrontmatter } = await post.render()
 
           return (
             <BlogPostCard
-              cover={cover}
               date={date}
               excerpt={remarkPluginFrontmatter.excerpt}
               minutesRead={remarkPluginFrontmatter.minutesRead}
