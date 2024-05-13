@@ -1,11 +1,11 @@
 ---
 title: Thoughts on the BMW Z4M a few months on
 date: 2016-09-23
+cover: ./images/cover.jpg
 tags: [ "Cars", "Personal" ]
-cover: "./z4m.jpg"
 ---
 
-I bought my <span class="bmw-m-logo"><span>/</span><span>/</span><span>/</span>M</span> back in June (2016) from an independent dealer with about 52k miles on the clock.
+I bought my BMW Z4M back in June (2016) from an independent dealer with about 52k miles on the clock.
 
 History was decent but was missing the valve clearance check from the Inspection II; however I bought it and had that done a couple of days later at [SJR Automotive](http://www.sjrautomotive.co.uk/) (when checked they were all within tolerances and only one was adjusted). Additionally the differential oil was due a change, so that was done, and annoyingly while that was carried out I was advised that the pinion seal was leaking, which I told them to replace (however the more I read about this now the more I don’t believe it was actually needed, but that’s another matter).
 
@@ -29,6 +29,6 @@ It’s due a basic oil service in approximately 2,700 miles; should be nice and 
 
 ## Conclusion
 
-Read all of this as you will, it’s my experiences so far. I considered the 3.0 (E85) and the 3.5iS (E89) but the heart won and the <span class="bmw-m-logo"><span>/</span><span>/</span><span>/</span>M</span> ended up in the garage. There’s just something about an <span class="bmw-m-logo"><span>/</span><span>/</span><span>/</span>M</span> car that makes you smile, and I definitely look twice when closing the garage door.
+Read all of this as you will, it’s my experiences so far. I considered the 3.0 (E85) and the 3.5iS (E89) but the heart won and the Z4M ended up in the garage. There’s just something about an ///M car that makes you smile, and I definitely look twice when closing the garage door.
 
 

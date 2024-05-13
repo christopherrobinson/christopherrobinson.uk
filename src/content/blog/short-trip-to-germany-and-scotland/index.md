@@ -16,7 +16,7 @@ Go straight for the automated check-in, arrived 3 hours earlier than I’d booke
 
 Nobody on the English booths, good start. Lots of French at theirs though. Please don’t get stopped. Please. Ease up to the booth with ticket in hand and say hello. A quick glance and waves me through without wanting to look at my passport. Yippee! Didn’t much fancy the trek home and back!
 
-![](./DSC04917.jpg)
+![](./images/DSC04917.jpg)
 
 Less than an hour later I’m on the French motorways heading for the hotel in Aalst, Belgium. Tag onto the back of an English plated Nissan GTR doing about 100mph. Stay behind it for about 80 miles until we hit a bit of traffic and give each other the thumbs up and I filter through. The sound of that GTR accelerating from 40-120mph was gorgeous! Enter services just before the Aalst turn off to fuel up ready for the morning then head to the hotel and check-in. Get ready to put the bike into the underground car park (one of the main reasons I use this hotel) only to be told it’s undergoing cleaning and out of bounds. Not having much luck so far. Ah well bike left round the back out of the way. Up to my room, shower, change, then walk the mile and a half into the centre of Aalst. Been snacking throughout the day and not all that hungry. Find a kebab house and get a chicken kebab with a ton of salad and chips in it. Washed down with a bottle of Jupiler. Yummy.
 
@@ -28,19 +28,19 @@ Awake at 6am to the sound of heavy rain. Get up and look out of the window. Haha
 
 Couple more hours in bed and up for a shower at 8.30am with the rain stopped and skies starting to clear. Plan a slightly more scenic route once over the border into Germany then check-out and load up the bike, on the road for 10am. 100 miles or so covered and I’m getting peckish. Pull into the services around Spa for fuel and food/coffee.
 
-![](./DSC04922.jpg)
+![](./images/DSC04922.jpg)
 
 Come off the autobahn and go through bits of the German-Luxembourg Nature Park. Satnav told to favour tiny roads. It finds them. Switchback after switchback covered in gravel. After 600 miles of motorway the tyres aren’t feeling too great here. Pull over and redo the satnav for slightly larger roads. This is more like it. Fast sweeping bends, after a bit the tyres are feeling better.
 
 Tag onto the back of a few German bikes fully loaded. End up going past them as they’re not moving very quickly. The middle one of the group splits and follows me. Errm. End up doing about 20 miles with us doing a decent pace before he flies up alongside, nods, then eases off and pulls over next to a junction. Presumably to wait for the others.
 
-![](./DSC04924.jpg)
+![](./images/DSC04924.jpg)
 
 Not far from Mike’s place now. Going through a town called Wittlich and spot a fun fair. One of the many examples of all the wine/beer festivals taking place over the coming month in this region. Attempt to go through the centre to see what’s there but they’re all cordoned off. Can’t be bothered trying to find a way in or parking up and walking as it’s starting to get hot.
 
 Off again and nearing Mosel you can see the constant mile upon mile of grapevines. See signs for Zeltingen-Rachtig, almost there!
 
-![](./DSC04926.jpg)
+![](./images/DSC04926.jpg)
 
 Arrive at 2.45pm. Told Mike I’d be there around 3pm so not a bad guess. Get to a large house and there’s lot’s of names on the door, it’s split into two. Ring the one that says Michael. No answer. Not to worry. Sit outside for 10 minutes when a neighbour opposite comes out to say he’s out in the car.
 
@@ -70,7 +70,7 @@ Just want to get back so hit the autobahn as should be more like 45 minutes. Roa
 
 A proper hello when I get back, then a quick shower and change. That’s better. Cup of tea. Bit of a chat. Beer. More talk. The dogs – greyhounds – are all very curious about the visitor… all very friendly and inquisitive.
 
-![](./DSC04992.jpg)
+![](./images/DSC04992.jpg)
 
 10.45pm and the dogs need to go out. Mike takes then and I write a few notes of the day’s events. Reliving the horrible moment on the ‘ring with the M5.
 
@@ -86,7 +86,7 @@ Set off with Heidelberg as the destination on the back roads after Mike and his 
 
 Within an hour and a half the heat is immense. Go through a load of villages and one of them is basically being torn up by the looks of it. Every road is either closed or has sections of the road missing. The main street looks the best of the bunch, just a section about 50 metres long with a bit of a kerb at either end down into gravel/rock. Decide to take my chances and ride through past the no entry blockades. Will play the dozy foreigner if I get stopped and hope for the best. Out the other end and back onto tarmac then some very nice little roads once out of the village.
 
-![](./DSC04938.jpg)
+![](./images/DSC04938.jpg)
 
 It’s around 35°C when I get into Heidelberg. In leathers. Trying to walk round without any breeze. The air is still. Sorry Heidelberg, another time maybe. Find a café and grab lunch plus drinks then make a move after taking a photo of some random sculpture and speaking with a crazy jazz playing American who sparked up a conversation as I was gearing up. Didn’t want to speak to him to start with as I was boiling and wanted to get riding and feel the air to cool down but he was an interesting guy and we spent close to an hour talking in the end.
 
@@ -128,7 +128,7 @@ Come up behind two German bikes but like most I encountered while over here, the
 
 Couple of corners later and the skies are darkening and there are flashes of lightning in the distance. Urgh. Please stay away. Onto a longish straight and towards the end see a wall of rain! Damn. Consider slamming on and turning round to try and out run it but the way the road twists and turns it wouldn’t have made much difference. Ride into it. Then realise my jacket is virtually unzipped to let air in and I get drenched. Do it up while on the move but getting soaked here.
 
-![](./DSC05001.jpg)
+![](./images/DSC05001.jpg)
 
 See a farm with an outhouse up a short path a little further up the road so dive up there and park the bike and make a run for cover. Start to get waterproofs on when a short tubby German bloke waddles over wondering why I’m there.
 
