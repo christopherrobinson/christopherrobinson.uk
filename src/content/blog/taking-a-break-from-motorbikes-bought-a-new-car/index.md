@@ -1,8 +1,8 @@
 ---
 title: Taking a break from motorbikes, bought a new car
 date: 2016-06-04
+cover: ./images/z4m_engine.jpg
 tags: [ "Cars", "Personal" ]
-cover: "./z4m_engine.jpg"
 ---
 
 After about 18 months of limited use with the motorbike, I decided to cross something else off my ‘bucket list’. I’ve wanted a rear-wheel drive convertible for some time, and after looking at various Mazda MX5’s and Honda S2000’s, I decided to blow the budget and picked up a BMW Z4M instead.
@@ -15,11 +15,10 @@ The only slight reservation is around the limited storage space as I’d like to
 
 Now enough blurb, have a couple of photos taken from the sellers advert! I’ll get some of my own once it’s been detailed and tidied up a little…
 
-![Z4M Front](./z4m_front.jpg)
+![Z4M Front](./images/z4m_front.jpg)
 
-![Z4M Rear](./z4m_rear.jpg)
+![Z4M Rear](./images/z4m_rear.jpg)
 
-![Z4M Interior](./z4m_interior.jpg)
+![Z4M Interior](./images/z4m_interior.jpg)
 
-![Z4M Engine](./z4m_engine.jpg)
-
+![Z4M Engine](./images/z4m_engine.jpg)

@@ -1,6 +1,7 @@
 ---
 title: Easy way to reset the Umbraco admin password
 date: 2019-06-20
+cover: ./images/cover.jpg
 tags: [ "Development", "Umbraco" ]
 ---
 

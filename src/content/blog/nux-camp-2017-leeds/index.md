@@ -1,8 +1,8 @@
 ---
 title: NUX Camp 2017, Leeds
 date: 2017-05-02
+cover: ./images/the-rose-bowl-leeds.jpg
 tags: [ "Learning", "UX" ]
-cover: "./the-rose-bowl-leeds.jpg"
 ---
 
 **Do, Learn, Enjoy. A full day of awesome UX workshops.**

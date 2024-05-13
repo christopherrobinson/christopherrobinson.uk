@@ -1,6 +1,7 @@
 ---
 title: How to add Font Awesome (v5) icons using Iconic in Umbraco
 date: 2018-09-14
+cover: ./images/cover.jpg
 tags: [ "Development", "Umbraco" ]
 ---
 
@@ -12,13 +13,13 @@ A couple of people were asking on the [Umbraco Forum](https://our.umbraco.com/pa
 
 ## The result
 
-![Umbraco Iconic Font Awesome Icons](./Umbraco-Iconic-Font-Awesome-Icons.gif)
+![Umbraco Iconic Font Awesome Icons](./images/Umbraco-Iconic-Font-Awesome-Icons.gif)
 
 ## What’s needed
 
 You will need the following files (this uses _Font Awesome Free 5.3.1_ which is the latest freely available version as of this post):
 
-*   [Font Awesome 5 Free files for use with Iconic in Umbraco](/download/Font-Awesome-5-Free-files-for-use-with-Iconic-in-Umbraco.zip)
+* [Font Awesome 5 Free files for use with Iconic in Umbraco](/download/Font-Awesome-5-Free-files-for-use-with-Iconic-in-Umbraco.zip)
 
 These should be uploaded to the root of your site, so you end up with this structure:
 
@@ -51,7 +52,7 @@ Once these files are uploaded we can go and configure Iconic.
 
 Go ahead and create your new data type inside of ‘Settings’ and choose the Iconic property editor, then in its configuration select ‘Add’ and use the following settings:
 
-![Iconic configuration for Font Awesome 5 brands](./Iconic-configuration-for-Font-Awesome-5-brands.png)
+![Iconic configuration for Font Awesome 5 brands](./images/Iconic-configuration-for-Font-Awesome-5-brands.png)
 
 For ease of copy and paste, here’s the text:
 
@@ -83,7 +84,7 @@ Rules source file    /css/font-awesome/fas.css
 
 Once done you should end up with a final configuration of:
 
-![Iconic configuration for Font Awesome 5](./Iconic-configuration-for-Font-Awesome-5.png)
+![Iconic configuration for Font Awesome 5](./images/Iconic-configuration-for-Font-Awesome-5.png)
 
 Don’t forget to ‘Save’ the data type; then you can go and use it in your document types.
 
