@@ -1,22 +1,21 @@
 ---
-import { getCollection } from 'astro:content'
-
-import Container from '@/components/Container.astro'
-import Layout from '@/layouts/Default.astro'
+import { getCollection } from 'astro:content';
+import Container from '@/components/Container.astro';
+import Layout from '@/layouts/Default.astro';
 
 export const getStaticPaths = async () => {
-  const pages = await getCollection('pages')
+  const pages = await getCollection('pages');
 
   return pages.map((page) => ({
     params: { slug: page.slug },
     props: { page },
-  }))
+  }));
 }
 
-const { page } = Astro.props
-const { data } = page
-const { meta, title } = data
-const { Content } = await page.render()
+const { page } = Astro.props;
+const { data } = page;
+const { meta, title } = data;
+const { Content } = await page.render();
 ---
 
 <Layout heading={title} meta={meta}>

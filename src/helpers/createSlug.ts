@@ -5,4 +5,4 @@ export const createSlug = (title: string): string => (
     .replace(/\s+/g, '-')           // replace spaces
     .replace(/^-+|-+$/g, '')        // remove leading & trailing separtors
     .toLowerCase()                  // output lowercase
-)
+);

@@ -1,11 +1,11 @@
-import type { APIRoute } from 'astro'
-import { getCollection } from 'astro:content'
-import rss from '@astrojs/rss'
-import { site } from 'src/config'
+import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
+import rss from '@astrojs/rss';
+import { site } from 'src/config';
 
 export const GET: APIRoute = async (context) => {
   const posts = (await getCollection('blog'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return rss({
     customData: '<language>en-gb</language>',
@@ -17,5 +17,5 @@ export const GET: APIRoute = async (context) => {
     })),
     site: context.site,
     title: site.name,
-  })
+  });
 }

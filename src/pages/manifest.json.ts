@@ -1,9 +1,9 @@
-import type { APIRoute } from 'astro'
-import { getImage } from 'astro:assets'
-import favicon from '@/images/favicon.png'
-import { site } from '@/config'
+import type { APIRoute } from 'astro';
+import { getImage } from 'astro:assets';
+import { site } from '@/config';
+import favicon from '@/images/favicon.png';
 
-const faviconPngSizes = [192, 512]
+const faviconPngSizes = [192, 512];
 
 export const GET: APIRoute = async (context) => {
   const icons = await Promise.all(
@@ -21,7 +21,7 @@ export const GET: APIRoute = async (context) => {
         type: `image/${image.options.format}`,
       }
     })
-  )
+  );
 
   const manifest = {
     display: 'standalone',
@@ -29,7 +29,7 @@ export const GET: APIRoute = async (context) => {
     icons: icons,
     name: site.name,
     start_url: '/',
-  }
+  };
 
-  return new Response(JSON.stringify(manifest))
+  return new Response(JSON.stringify(manifest));
 }

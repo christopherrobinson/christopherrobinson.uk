@@ -1,4 +1,4 @@
-import { z } from 'astro:content'
+import { z } from 'astro:content';
 
 export const pagesSchema = () => z.object({
   meta: z.object({
@@ -6,4 +6,4 @@ export const pagesSchema = () => z.object({
     title: z.string().optional(),
   }).optional(),
   title: z.string(),
-})
+});
