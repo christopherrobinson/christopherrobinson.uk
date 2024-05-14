@@ -7,10 +7,10 @@ export interface Props {
   heading: string;
 }
 
-const { class: className, heading, ...props } = Astro.props;
+const { class: className, heading } = Astro.props;
 ---
 
-<div class="relative">
+<div class:list={['relative', className]}>
   <div class="absolute  bottom-0  left-0  right-0  z-10">
     <Container>
       <div class="inline-block  bg-opacity-80  bg-zinc-900  -ml-6  p-6">
