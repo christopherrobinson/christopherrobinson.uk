@@ -1,0 +1,16 @@
+---
+import Container from '@/components/Container.astro';
+import PXtoREMConverter from '@/components/Projects/PXtoREMConverter';
+import Layout from '@/layouts/Default.astro';
+---
+
+<Layout
+  heading="PX to REM Converter"
+  meta={{
+    description: "Converter of css units to convert PX to REM easily.",
+  }}
+>
+  <Container>
+    <PXtoREMConverter client:load baseFontSize={16} />
+  </Container>
+</Layout>
