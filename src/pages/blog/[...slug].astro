@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import Container from '@/components/Container.astro';
 import FormattedDate from '@/components/Helpers/FormattedDate.astro';
 import { createSlug } from '@/helpers';
@@ -54,43 +55,19 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
           <ul class="grid  grid-cols-2  justify-between  text-sm  sm:grid-cols-3  lg:block  lg:space-y-2">
             <li class="flex  items-start  mb-2  lg:mb-0">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <svg
-                  class="h-4"
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M128 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V64H64C28.7 64 0 92.7 0 128v32 32V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 160 128c0-35.3-28.7-64-64-64H352V16c0-8.8-7.2-16-16-16s-16 7.2-16 16V64H128V16zM32 192H416V448c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V192zM64 96H384c17.7 0 32 14.3 32 32v32H32V128c0-17.7 14.3-32 32-32zm40 160h80c4.4 0 8 3.6 8 8v80c0 4.4-3.6 8-8 8H104c-4.4 0-8-3.6-8-8V264c0-4.4 3.6-8 8-8zm-40 8v80c0 22.1 17.9 40 40 40h80c22.1 0 40-17.9 40-40V264c0-22.1-17.9-40-40-40H104c-22.1 0-40 17.9-40 40z"
-                    fill="currentcolor"></path>
-                </svg>
+                <Icon class="text-zinc-600  h-4" name="calendar-day" />
               </span>
               <FormattedDate date={date} />
             </li>
             <li class="flex  items-start  mb-2  lg:mb-0">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <svg
-                  class="h-4"
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M128 16c0-8.8 7.2-16 16-16H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H240V96.6c49.4 3.8 94 24.8 127.7 57l37-37c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-38.2 38.2C416 212.6 432 256.4 432 304c0 114.9-93.1 208-208 208S16 418.9 16 304c0-109.5 84.6-199.2 192-207.4V32H144c-8.8 0-16-7.2-16-16zM48 304a176 176 0 1 0 352 0A176 176 0 1 0 48 304zm192-96V320c0 8.8-7.2 16-16 16s-16-7.2-16-16V208c0-8.8 7.2-16 16-16s16 7.2 16 16z"
-                  ></path>
-                </svg>
+                <Icon class="text-zinc-600  h-4" name="stopwatch" />
               </span>
               {remarkPluginFrontmatter.minutesRead} read
             </li>
             <li class="col-span-2  flex  items-start  sm:col-span-1">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <svg
-                  class="h-4"
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M32 229.5V80c0-8.8 7.2-16 16-16H197.5c8.5 0 16.6 3.4 22.6 9.4l176 176c12.5 12.5 12.5 32.8 0 45.3L262.6 428.1c-12.5 12.5-32.8 12.5-45.3 0l-176-176L18.7 274.7l22.6-22.6c-6-6-9.4-14.1-9.4-22.6zm-32 0c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80V229.5zM112 168a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"
-                  />
-                </svg>
+                <Icon class="text-zinc-600  h-4" name="tag" />
               </span>
               <ol class="flex  flex-wrap  -mx-0.5">
                 {tags.map((tag, i, tags) => (
@@ -120,48 +97,21 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
         <div class="col-span-5  flex  items-center  justify-start">
           {nextPost && (
             <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={`/blog/${nextPost.slug}/`}>
-              <svg
-                class="mr-1  size-3"
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.7 267.3c-6.2-6.2-6.2-16.4 0-22.6l192-192c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6L54.6 256 235.3 436.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0l-192-192z"
-                  fill="currentcolor"
-                />
-              </svg>
+              <Icon class="mr-1  size-3" name="chevron-left" />
               {nextPost.data.title}
             </a>
           )}
         </div>
         <div class="flex  items-center  justify-center">
           <a class="hover:text-primary" href="/blog/">
-            <svg
-              class="size-5"
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M224 32H32V224H224V32zm0 256H32V480H224V288zM288 32V224H480V32H288zM480 288H288V480H480V288z"
-                fill="currentcolor"
-              />
-            </svg>
+            <Icon class="size-5" name="grid-2" />
           </a>
         </div>
         <div class="col-span-5  flex  items-center  justify-end">
           {prevPost && (
             <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={`/blog/${prevPost.slug}/`}>
               {prevPost.data.title}
-              <svg
-                class="ml-1  size-3"
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M299.3 244.7c6.2 6.2 6.2 16.4 0 22.6l-192 192c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L265.4 256 84.7 75.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l192 192z"
-                  fill="currentcolor"
-                />
-              </svg>
+              <Icon class="ml-1  size-3" name="chevron-right" />
             </a>
           )}
         </div>

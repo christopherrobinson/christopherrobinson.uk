@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import icon from 'astro-icon';
 import remarkDescription from 'astro-remark-description';
 import prefetch from '@astrojs/prefetch';
 import react from '@astrojs/react';
@@ -17,6 +18,7 @@ export default defineConfig({
   },
   integrations: [
     (await import('@playform/compress')).default(),
+    icon({ iconDir: './src/images/icons' }),
     prefetch(),
     react(),
     sitemap(),
