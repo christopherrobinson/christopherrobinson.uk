@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Container from '@/components/Container.astro';
 import Layout from '@/layouts/Default.astro';
 ---
@@ -23,16 +24,7 @@ import Layout from '@/layouts/Default.astro';
             class="bg-transparent  border  border-zinc-950  duration-150  flex  items-center  no-underline  py-2  px-3  rounded  space-x-2  transition  w-fit  hover:bg-zinc-900  hover:text-white"
             href="/"
           >
-            <svg
-              class="size-4"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 239c-9.4 9.4-9.4 24.6 0 33.9L207 465c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L65.9 256 241 81c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L15 239z"
-                fill="currentcolor"
-              />
-            </svg>
+            <Icon class="size-4" name="chevron-left" />
             <span>Return Home</span>
           </a>
         </div>

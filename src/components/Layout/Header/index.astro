@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Container from '@/components/Container.astro';
 import NavItem from '@/components/Layout/Header/NavItem.astro';
 import NavItemMobile from '@/components/Layout/Header/NavItemMobile.astro';
@@ -12,16 +13,7 @@ type Props = Record<string, never>;
   <Container>
     <div class="flex  items-center  justify-between  py-2  sm:py-4">
       <a class="flex  items-center  -mx-2  p-2  text-base" href="/" transition:persist>
-        <svg
-          class="mr-1  size-4  text-primary-700"
-          viewBox="0 0 640 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M399.1 1.1c-12.7-3.9-26.1 3.1-30 15.8l-144 464c-3.9 12.7 3.1 26.1 15.8 30s26.1-3.1 30-15.8l144-464c3.9-12.7-3.1-26.1-15.8-30zm71.4 118.5c-9.1 9.7-8.6 24.9 1.1 33.9L580.9 256 471.6 358.5c-9.7 9.1-10.2 24.3-1.1 33.9s24.3 10.2 33.9 1.1l128-120c4.8-4.5 7.6-10.9 7.6-17.5s-2.7-13-7.6-17.5l-128-120c-9.7-9.1-24.9-8.6-33.9 1.1zm-301 0c-9.1-9.7-24.3-10.2-33.9-1.1l-128 120C2.7 243 0 249.4 0 256s2.7 13 7.6 17.5l128 120c9.7 9.1 24.9 8.6 33.9-1.1s8.6-24.9-1.1-33.9L59.1 256l109.3-102.5c9.7-9.1 10.2-24.3 1.1-33.9z"
-            fill="currentColor"
-          />
-        </svg>
+        <Icon class="mr-1  size-4  text-primary-700" name="code" />
         christopher<span class="font-medium">robinson</span>
       </a>
       <div class="sm:hidden">
@@ -31,13 +23,7 @@ type Props = Record<string, never>;
           id="openNavigation"
           type="button"
         >
-          <svg
-            class="flex-shrink-0  size-4"
-            viewBox="0 0 448 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 88c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm0 160c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm448 160c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h400c13.3 0 24 10.7 24 24z" />
-          </svg>
+          <Icon class="flex-shrink-0  size-4" name="bars" />
         </button>
       </div>
       <div class="hidden  -mr-4  sm:block">
@@ -63,13 +49,7 @@ type Props = Record<string, never>;
       id="closeNavigation"
       type="button"
     >
-      <svg
-        class="flex-shrink-0  size-4"
-        viewBox="0 0 384 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M378.4 71.4c8.5-10.1 7.2-25.3-2.9-33.8s-25.3-7.2-33.8 2.9L192 218.7 42.4 40.6c-8.5-10.2-23.7-11.5-33.8-3s-11.5 23.7-3 33.8L160.7 256 5.6 440.6c-8.5 10.2-7.2 25.3 2.9 33.8s25.3 7.2 33.8-2.9L192 293.3l149.6 178.1c8.5 10.1 23.7 11.5 33.8 2.9s11.5-23.7 2.9-33.8L223.3 256l155-184.6z" />
-      </svg>
+      <Icon class="flex-shrink-0  size-4" name="x" />
     </button>
     <ul class="flex  flex-col  items-center  text-sm">
       <NavItemMobile href="/">Home</NavItemMobile>
