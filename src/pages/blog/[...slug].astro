@@ -34,7 +34,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
     cover && (cover.width >= 1920) && (
       <div class="relative">
         <div
-          class={`bg-center  bg-cover  h-[96px]  lg:h-[328px]  w-100`}
+          class={`bg-center  bg-cover  h-60  lg:h-[328px]  w-100`}
           style={{ backgroundImage: `url('${backgroundImage.src}')` }}
         />
         <div class="absolute  bottom-0  left-0  right-0">
@@ -49,10 +49,10 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
   }
   <Container>
     <div class="gap-8  grid  grid-cols-1  lg:grid-cols-12">
-      <div class="col-span-1  py-8  sm:py-12  lg:col-span-2">
-        <div class="sticky  top-32">
-          <ul class="space-y-2  text-sm">
-            <li class="flex  items-start">
+      <div class="col-span-1  py-5  lg:py-12  lg:col-span-2">
+        <div class="lg:sticky  lg:top-32">
+          <ul class="grid  grid-cols-2  justify-between  text-sm  sm:grid-cols-3  lg:block  lg:space-y-2">
+            <li class="flex  items-start  mb-2  lg:mb-0">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
                   class="h-4"
@@ -66,7 +66,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
               </span>
               <FormattedDate date={date} />
             </li>
-            <li class="flex  items-start">
+            <li class="flex  items-start  mb-2  lg:mb-0">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
                   class="h-4"
@@ -80,7 +80,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
               </span>
               {remarkPluginFrontmatter.minutesRead} read
             </li>
-            <li class="flex  items-start">
+            <li class="col-span-2  flex  items-start  sm:col-span-1">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
                 <svg
                   class="h-4"
@@ -104,7 +104,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
           </ul>
         </div>
       </div>
-      <div class="col-span-1  font-light  max-w-none  -mt-16  prose  py-8  lg:-mt-0  sm:py-12  md:prose-md  lg:col-span-10  lg:prose-lg">
+      <div class="col-span-1  font-light  max-w-none  -mt-16  prose  py-8  lg:-mt-0  md:prose-md  lg:col-span-10  lg:prose-lg  lg:py-12">
         {(new Date().setMonth(new Date().getMonth() - 3) > date) && (
           <div class="bg-amber-100  border  border-amber-200  p-3  rounded-md  text-amber-800  text-center  text-sm">
             <strong class="text-amber-800">Note:</strong> This post is over 3 months old and may be outdated or superseded by additional information.
