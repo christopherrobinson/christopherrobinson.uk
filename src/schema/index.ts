@@ -1,2 +1,2 @@
-export { blogSchema } from './blog'
-export { pagesSchema } from './pages'
+export { blogSchema } from './blog';
+export { pagesSchema } from './pages';

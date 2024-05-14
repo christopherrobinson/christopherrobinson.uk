@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content'
-import BlogPostCard from '@/components/BlogPostCard.astro'
-import Container from '@/components/Container.astro'
-import { createSlug } from '@/helpers'
-import Layout from '@/layouts/Default.astro'
+import { getCollection } from 'astro:content';
+import BlogPostCard from '@/components/BlogPostCard.astro';
+import Container from '@/components/Container.astro';
+import { createSlug } from '@/helpers';
+import Layout from '@/layouts/Default.astro';
 
 export const getStaticPaths = async () => {
   const posts = (await getCollection('blog'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())]
+  const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag))
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
 
     return {
       params: {
@@ -23,10 +23,10 @@ export const getStaticPaths = async () => {
         tag,
       },
     }
-  })
+  });
 }
 
-const { posts, tag } = Astro.props
+const { posts, tag } = Astro.props;
 ---
 
 <Layout

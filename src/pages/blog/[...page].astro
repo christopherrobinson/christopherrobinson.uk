@@ -1,21 +1,21 @@
 ---
-import { getCollection } from 'astro:content'
-import BlogPostCard from '@/components/BlogPostCard.astro'
-import Container from '@/components/Container.astro'
-import { postsPerPage } from '@/config'
-import Pagination from '@/components/Helpers/Pagination.astro'
-import Layout from '@/layouts/Default.astro'
+import { getCollection } from 'astro:content';
+import BlogPostCard from '@/components/BlogPostCard.astro';
+import Container from '@/components/Container.astro';
+import Pagination from '@/components/Helpers/Pagination.astro';
+import { postsPerPage } from '@/config';
+import Layout from '@/layouts/Default.astro';
 
 export const getStaticPaths = async ({ paginate }) => {
   const posts = (await getCollection('blog'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  return paginate(posts, { pageSize: postsPerPage })
+  return paginate(posts, { pageSize: postsPerPage });
 }
 
-const { page } = Astro.props
-const { currentPage, data, lastPage, url } = page
-const { pathname } = Astro.url
+const { page } = Astro.props;
+const { currentPage, data, lastPage, url } = page;
+const { pathname } = Astro.url;
 ---
 
 <Layout

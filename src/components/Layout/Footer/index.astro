@@ -4,10 +4,10 @@ import Elsewhere from '@/components/Layout/Footer/Elsewhere.astro';
 import { site } from '@/config';
 
 export interface Props {
-  minimal: boolean;
+  minimal?: boolean;
 }
 
-const { minimal, ...props } = Astro.props;
+const { minimal } = Astro.props;
 ---
 
 <footer class="bg-zinc-900  mt-auto  text-opacity-80  text-white">
@@ -54,7 +54,7 @@ const { minimal, ...props } = Astro.props;
       </Container>
     </div>
   )}
-  <div class="bg-zinc-950  py-4  text-center  text-sm">
+  <div class="bg-zinc-950  py-4  text-center  text-sm" transition:persist>
     <Container class="sm:flex  sm:items-center  sm:justify-between">
       <span class="block  mb-4  sm:mb-0">
         &copy;{new Date().getFullYear()} {site.name}
