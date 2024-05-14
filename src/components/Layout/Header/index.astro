@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/Container.astro';
 import NavItem from '@/components/Layout/Header/NavItem.astro';
+import NavItemMobile from '@/components/Layout/Header/NavItemMobile.astro';
 import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.astro';
 
 type Props = Record<string, never>;
@@ -10,7 +11,7 @@ type Props = Record<string, never>;
   <PercentageScrolled />
   <Container>
     <div class="flex  items-center  justify-between  py-2  sm:py-4">
-      <a class="flex  items-center  -mx-2  p-2  text-base" href="/">
+      <a class="flex  items-center  -mx-2  p-2  text-base" href="/" transition:persist>
         <svg
           class="mr-1  size-4  text-primary-700"
           viewBox="0 0 640 512"
@@ -71,11 +72,11 @@ type Props = Record<string, never>;
       </svg>
     </button>
     <ul class="flex  flex-col  items-center  text-sm">
-      <NavItem href="/" mobile={true}>Home</NavItem>
-      <NavItem href="/about/" mobile={true}>About</NavItem>
-      <NavItem href="/blog/" mobile={true}>Blog</NavItem>
-      <NavItem href="/projects/" mobile={true}>Projects</NavItem>
-      <NavItem href="/contact/" mobile={true}>Contact</NavItem>
+      <NavItemMobile href="/">Home</NavItemMobile>
+      <NavItemMobile href="/about/">About</NavItemMobile>
+      <NavItemMobile href="/blog/">Blog</NavItemMobile>
+      <NavItemMobile href="/projects/">Projects</NavItemMobile>
+      <NavItemMobile href="/contact/">Contact</NavItemMobile>
     </ul>
   </div>
 </div>
