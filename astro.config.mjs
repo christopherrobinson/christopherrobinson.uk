@@ -5,9 +5,9 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import basicSsl from '@vitejs/plugin-basic-ssl';
+import { site } from './src/config';
 import { remarkExternalLinks } from './src/helpers/remarkExternalLinks';
 import { remarkReadingTime } from './src/helpers/remarkReadingTime';
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,7 +36,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  site: 'https://christopherrobinson.uk',
+  site: site.url,
   trailingSlash: 'always',
   vite: {
     plugins: [
