@@ -1,4 +1,5 @@
 ---
+import { Head } from 'astro-capo';
 import Footer from '@/components/Layout/Footer/index.astro';
 import Header from '@/components/Layout/Header/index.astro';
 import BaseHead from '@/components/BaseHead.astro';
@@ -21,9 +22,9 @@ const { heading, layout, meta } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
+  <Head>
     <BaseHead title={meta?.title || heading || ``} description={meta?.description} />
-  </head>
+  </Head>
 
   <body class="min-w-[360px]">
     <!-- Google Tag Manager (noscript) -->
