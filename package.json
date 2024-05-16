@@ -30,7 +30,6 @@
     "astro": "^4.8.5",
     "astro-icon": "^1.1.0",
     "astro-remark-description": "^1.1.2",
-    "mapbox-gl": "^3.3.0",
     "mdast-util-from-markdown": "^2.0.0",
     "mdast-util-to-string": "^4.0.0",
     "react": "^18.3.1",

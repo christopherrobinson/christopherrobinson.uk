@@ -2,7 +2,7 @@
 /// <reference path="../.astro/types.d.ts" />
 
 interface ImportMetaEnv {
-  readonly PUBLIC_MAPBOX_ACCESS_TOKEN: string;
+  readonly PUBLIC_GOOGLE_TAG_MANAGER_ID: string;
 }
 
 interface ImportMeta {

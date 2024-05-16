@@ -1,16 +1,10 @@
 ---
 import ContactForm from '@/components/ContactForm.astro';
 import Container from '@/components/Container.astro';
-import Map from '@/components/Map.astro';
 import Layout from '@/layouts/Default.astro';
 ---
 
-<Layout
-  meta={{
-    title: "Contact",
-  }}
->
-  <Map class="h-[96px]  lg:h-[328px]" heading="Contact" />
+<Layout heading="Contact">
   <Container>
     <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
       <p>
