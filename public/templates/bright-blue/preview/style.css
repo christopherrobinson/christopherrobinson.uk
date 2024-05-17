@@ -1,0 +1,118 @@
+/*
+		Author	:	Christopher Robinson
+		Email		:	christopher@edg3.co.uk
+		Website	:	http://www.edg3.co.uk/
+*/
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+.left {
+	float:left;
+	padding:0 10px 0 0;
+}
+.right {
+	float:right;
+	padding:0 0 0 10px;
+}
+a {
+	color:#01a5ec;
+	text-decoration:none;
+}
+a:hover {
+	color:#666;
+	text-decoration:underline;
+}
+p {
+	padding:0 0 10px;
+}
+
+/* body */
+body {
+	background:#0070b8 url('image/background_body.jpg') center repeat-y;
+	color:#666;
+	font:12px "Trebuchet ms", Helvetica, sans-serif;
+}
+
+/* header */
+#header {
+	background:#0070b8 url('image/background_header.jpg') center no-repeat;
+	height:100px;
+	margin:0 auto;
+	width:548px;
+}
+#header h1 {
+	color:#fff;
+	display:block;
+	font:36px "Trebuchet MS",Verdana,sans-serif;
+	padding:50px 0 0 25px;
+}
+#header h1 span {
+	color:#01a5ec;
+}
+
+/* content */
+#content {
+	margin:0 auto;
+	width:550px;
+}
+#content h1 {
+	color:#01a5ec;
+	font:23px Verdana,sans-serif;
+	margin:15px 0 5px 0;
+}
+#main {
+	float:left;
+	padding:5px 10px 0 15px;
+	width:335px;
+}
+#sidebar {
+	width:160px;
+	float:right;
+	padding:15px;
+}
+#sidebar .navigation {
+	list-style:none;
+}
+#sidebar .navigation li {
+	list-style:none;
+}
+#sidebar .navigation li a {
+	border-bottom:1px solid #ddd;
+	color:#4e4b44;
+	display:block;
+	padding:9px 5px;
+	width:150px;
+}
+#sidebar .navigation li a.active {
+	color:#333;
+	font-weight:bold;
+}
+#sidebar .navigation li a:hover {
+	color:#666;
+}
+#sidebar h1 {
+	color:#908a7e;
+	font:18px "Trebuchet MS",Verdana,sans-serif;
+	margin:15px 0 5px 0;
+}
+#sidebar li {
+	list-style:none;
+	margin:8px 0 0;
+}
+
+/* footer */
+#footer {
+	background:#0070b8 url('image/background_footer.jpg') center no-repeat;
+	clear:both;
+	height:50px;
+	margin:0 auto;
+	text-align:center;
+	width:548px;
+}
+#footer p {
+	color:#666;
+	line-height:18px;
+	padding:7px 0 0
+}
