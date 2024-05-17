@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Container from '@/components/Container.astro';
+import { Content } from '@/content/pages/templates/index.md';
+import { createSlug } from '@/helpers';
+import Layout from '@/layouts/Default.astro';
+import templates from '@/data/templates.json';
+
+const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
+---
+
+<Layout heading="Templates">
+  <Container>
+    <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
+      <Content />
+    </div>
+    <div class="gap-8  grid  pb-8  sm:pb-12  sm:grid-cols-2   lg:grid-cols-3">
+      {templates.map(({ name }) => (
+        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  rounded-md">
+          <div class="aspect-4/3  overflow-hidden  w-full">
+            <Image
+              alt={name}
+              class="w-full"
+              densities={[1.5, 2]}
+              height="360"
+              src={images[`/src/images/templates/${createSlug(name)}.png`]()}
+              width="360"
+            />
+          </div>
+          <div class="flex  gap-4  items-center  justify-between  p-4">
+            <h2 class="font-light  text-xl">{name}</h2>
+            <ul class="flex  space-x-4">
+              <li>
+                <a href={`/templates/${createSlug(name)}/preview/`} target="_blank" title="Preview">
+                  <Icon class="size-5  text-zinc-600  transition  hover:text-primary-700" name="arrow-up-right-from-square" />
+                </a>
+              </li>
+              <li>
+                <a href={`/download/${createSlug(name)}.zip`} target="_blank" title="Download">
+                  <Icon class="size-5  text-zinc-600  transition  hover:text-primary-700" name="download" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Layout>

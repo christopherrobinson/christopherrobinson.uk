@@ -12,8 +12,8 @@ Having nearly two decades of professional commercial experience in the industry,
 
 Outside of web development a large passion is motorcycles, and I’ve owned a few different bikes over the years. I currently have a **Suzuki GSX-R750** sitting in the garage and have taken various trips over to continental Europe on it (taking in parts of Austria, Andorra, Belgium, Croatia, Czech Republic, France, Germany, Italy, Luxembourg, Netherlands, Slovenia, Spain, Switzerland and more) which included riding many alpine passes and mountain roads as well as blasting around the [Nürburgring](http://www.nuerburgring.de/en/) at silly speeds. Closer to home I enjoy taking it to [Oulton Park](http://www.oultonpark.co.uk) and [Trac Môn](https://www.angleseycircuit.co.uk/) to do the odd track day. I also enjoy hiking, sports such as squash and tennis, mountain biking, and have also taken a handful of skydiving lessons.
 
-Free HTML Templates
--------------------
+[Free HTML Templates](/templates/)
+----------------------------------
 
 When I was first starting front-end web development I created various website templates for practice and experience which I gave away for free on sites such as [Open Source Web Design](http://oswd.org), [Open Web Design](http://openwebdesign.org) and [Open Designs](http://opendesigns.org) (where I was a founding member and site administrator).
 

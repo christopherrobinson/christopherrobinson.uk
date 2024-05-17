@@ -1,0 +1,136 @@
+/*
+	Author	:	Christopher Robinson
+	Email		:	christopher@edg3.co.uk
+	Website	:	http://www.edg3.co.uk/
+*/
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+/* general */
+a {
+	color:#624f2f;
+}
+img {
+	border:2px solid #333;
+}
+
+/* body */
+body {
+	background:#d8c6a6 url('image/content.jpg') center repeat-y;
+	color:#333;
+	font:0.9em Arial, Helvetica, sans-serif, "bitstream vera sans";
+}
+
+/****************************************************************************************************
+Begin Header
+****************************************************************************************************/
+#header
+{
+	background:#7e673e url('image/header.jpg') top center no-repeat;
+	height:100px;
+	top:0;
+	width:100%;
+}
+#header_inside {
+	height:100px;
+	margin:0 auto;
+	width:760px;
+}
+#header_inside h1 {
+	color:#3b2a0c;
+	font:bold 300% "trebuchet ms", helvetica, sans-serif;
+	letter-spacing:-3px;
+	margin:0 0 -10px;
+	padding:15px 0 0;
+	text-align:right;
+}
+#header_inside h2 {
+	color:#ccc;
+	font:200% "trebuchet ms", helvetica, sans-serif;
+	letter-spacing:-2px;
+	text-align:right;
+}
+
+/* navigation */
+#navigation {
+	left:50%; 
+	margin:0 0 0 -61px;
+	position:absolute;
+	width:122px;
+}
+#navigation li {
+	list-style:none;
+}
+#navigation li a {
+	color:#fff;
+	display:block;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	text-decoration:none; 
+}
+#navigation li a:hover {
+	background:#7e673e;
+	color:#332407;
+}
+#navigation li a.active {
+	background:#7e673e;
+	color:#332407;
+}
+
+/*content */
+#content {
+	left:50%; 
+	margin:0 0 0 -380px;
+	position:absolute;
+	width:760px;
+}
+
+/* left */
+.left {
+	float:left;
+	padding:10px 0 0;
+	width:304px;
+}
+.left p {
+	padding:10px;
+}
+.left h1 {
+	border-bottom:1px solid #888;
+	font-size:1.3em;
+	padding:10px 0 0;
+}
+
+.left code {
+	border:1px solid #624f2f;
+	border-left:9px solid #624f2f;
+	display:block;
+	margin:10px;
+	padding:10px;
+	text-align:left;
+}
+.left li {
+	list-style:circle;
+	margin:0 0 0 30px;
+}
+
+/* center */
+.center {
+	float:left;
+	width:152px;
+}
+
+/* right */
+.right {
+	float:right;
+	padding:10px 0 0;
+	width:304px;
+}
+.right h1 {
+	 font-size:1.2em;
+	 padding:0 0 10px;
+	 text-align:left;
+}
