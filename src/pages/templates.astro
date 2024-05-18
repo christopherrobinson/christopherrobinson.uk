@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import Container from '@/components/Container.astro';
 import { Content } from '@/content/pages/templates/index.md';
@@ -10,7 +10,7 @@ import templates from '@/data/templates.json';
 const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
 ---
 
-<Layout heading="Templates">
+<Layout heading="Free HTML Templates">
   <Container>
     <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
       <Content />
@@ -19,13 +19,14 @@ const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
       {templates.map(({ name }) => (
         <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  rounded-md">
           <div class="aspect-4/3  overflow-hidden  w-full">
-            <Image
+            <Picture
               alt={name}
               class="w-full"
-              densities={[1.5, 2]}
-              height="360"
+              densities={[2]}
+              formats={['avif', 'webp']}
+              height={360}
               src={images[`/src/images/templates/${createSlug(name)}.png`]()}
-              width="360"
+              width={360}
             />
           </div>
           <div class="flex  gap-4  items-center  justify-between  p-4">
