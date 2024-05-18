@@ -7,6 +7,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import { site } from './src/config';
+import templates from './src/data/templates.json';
+import { createSlug } from './src/helpers/createSlug';
 import { remarkExternalLinks } from './src/helpers/remarkExternalLinks';
 import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
@@ -21,7 +23,12 @@ export default defineConfig({
     icon({ iconDir: './src/images/icons' }),
     prefetch(),
     react(),
-    sitemap(),
+    sitemap({
+      customPages: [
+        ...templates.map(({ name }) =>
+          `${site.url}/templates/${createSlug(name)}/preview/`),
+      ],
+    }),
     tailwind(),
   ],
   markdown: {
