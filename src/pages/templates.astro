@@ -15,7 +15,7 @@ const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
     <div class="max-w-none  prose  py-8  sm:py-12  md:prose-md  lg:prose-lg">
       <Content />
     </div>
-    <div class="gap-8  grid  pb-8  sm:pb-12  sm:grid-cols-2   lg:grid-cols-3">
+    <div class="gap-4  grid  pb-8  sm:pb-12  sm:grid-cols-2  lg:gap-8  lg:grid-cols-3">
       {templates.map(({ name }) => (
         <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  rounded-md">
           <div class="aspect-4/3  overflow-hidden  w-full">

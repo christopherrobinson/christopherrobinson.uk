@@ -27,7 +27,7 @@ const { post, prevPost, nextPost } = Astro.props;
 const { data } = post;
 const { cover, date, meta, tags, title } = data;
 const { remarkPluginFrontmatter, Content } = await post.render();
-const backgroundImage = cover && (await getImage({ format: 'webp', src: cover }));
+const backgroundImage = cover && (await getImage({ src: cover }));
 ---
 
 <Layout heading={(!cover || (cover.width < 1920)) && title} meta={meta}>
@@ -35,7 +35,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
     cover && (cover.width >= 1920) && (
       <div class="relative">
         <div
-          class={`bg-center  bg-cover  h-60  lg:h-[328px]  w-100`}
+          class={`bg-center  bg-cover  h-60  lg:h-[328px]  w-full`}
           style={{ backgroundImage: `url('${backgroundImage.src}')` }}
         />
         <div class="absolute  bottom-0  left-0  right-0">
@@ -49,7 +49,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
     )
   }
   <Container>
-    <div class="gap-8  grid  grid-cols-1  lg:grid-cols-12">
+    <div class="gap-4  grid  grid-cols-1  lg:gap-8  lg:grid-cols-12">
       <div class="col-span-1  py-5  lg:py-12  lg:col-span-2">
         <div class="lg:sticky  lg:top-32">
           <ul class="grid  grid-cols-2  justify-between  text-sm  sm:grid-cols-3  lg:block  lg:space-y-2">
@@ -81,7 +81,7 @@ const backgroundImage = cover && (await getImage({ format: 'webp', src: cover })
           </ul>
         </div>
       </div>
-      <div class="col-span-1  font-light  max-w-none  -mt-16  prose  py-8  lg:-mt-0  md:prose-md  lg:col-span-10  lg:prose-lg  lg:py-12">
+      <div class="col-span-1  font-light  max-w-none  -mt-12  prose  py-8  lg:-mt-0  md:prose-md  lg:col-span-10  lg:prose-lg  lg:py-12">
         {(new Date().setMonth(new Date().getMonth() - 3) > date) && (
           <div class="bg-amber-100  border  border-amber-200  p-3  rounded-md  text-amber-800  text-center  text-sm">
             <strong class="text-amber-800">Note:</strong> This post is over 3 months old and may be outdated or superseded by additional information.

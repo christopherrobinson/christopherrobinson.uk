@@ -54,7 +54,7 @@ const PXtoREMConverter = ({
         </p>
       </div>
       <div className="pb-8  sm:pb-12">
-        <div className="lg:flex  gap-8">
+        <div className="lg:flex  lg:gap-8">
           <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
             <div className="flex  flex-col  gap-4">
               <div className="flex  items-center">
