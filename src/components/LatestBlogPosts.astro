@@ -29,7 +29,7 @@ const posts = (await getCollection('blog'))
         </a>
       </div>
     )}
-    <div class="gap-4  grid  lg:gap-12  lg:grid-cols-3">
+    <div class="gap-4  grid  lg:gap-8  lg:grid-cols-3">
       {
         posts.map(async (post) => {
           const { data, slug } = post

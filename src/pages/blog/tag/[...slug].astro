@@ -33,7 +33,7 @@ const { posts, tag } = Astro.props;
   heading={`Blog <small>(Tagged with ${tag})</small>`}
 >
   <Container>
-    <div class="gap-4  grid  py-8  sm:py-12  lg:gap-12  lg:grid-cols-3">
+    <div class="gap-4  grid  py-8  sm:py-12  lg:gap-8  lg:grid-cols-3">
       {
         posts.map(async (post) => {
           const { data, slug } = post

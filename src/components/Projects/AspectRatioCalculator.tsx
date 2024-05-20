@@ -17,7 +17,7 @@ const AspectRatioCalculator = ({
 	const [aspectRatio, setAspectRatio] = useState(getAspectRatio(width, height));
 
 	return (
-    <div className="lg:flex  gap-8">
+    <div className="lg:flex  lg:gap-8">
       <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
         <h3 className="font-medium  mb-4  text-2xl">Original Width/Height</h3>
         <div className="flex  flex-col  gap-4">
