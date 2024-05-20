@@ -569,11 +569,11 @@ __metadata:
   linkType: hard
 
 "@emnapi/runtime@npm:^1.1.0, @emnapi/runtime@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@emnapi/runtime@npm:1.1.1"
+  version: 1.2.0
+  resolution: "@emnapi/runtime@npm:1.2.0"
   dependencies:
     tslib: "npm:^2.4.0"
-  checksum: 10c0/c11ee57abf0ec643e64ccdace4b4fcc0b0c7b1117a191f969e84ae3669841aa90d2c17fa35b73f5a66fc0c843c8caca7bf11187faaeaa526bcfb7dbfb9b85de9
+  checksum: 10c0/7005ff8b67724c9e61b6cd79a3decbdb2ce25d24abd4d3d187472f200ee6e573329c30264335125fb136bd813aa9cf9f4f7c9391d04b07dd1e63ce0a3427be57
   languageName: node
   linkType: hard
 
@@ -1497,10 +1497,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/core@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@shikijs/core@npm:1.5.2"
-  checksum: 10c0/d5990ccd53b40fed54060b7a92c778e8a48cb0f722b464105ac1d5bf2a85006a9fed1269ac2e2f5d0e7f028aec2e356bf3702e8f0cdcd5a0ef0630c76a7170dd
+"@shikijs/core@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@shikijs/core@npm:1.6.0"
+  checksum: 10c0/017c8ff1264edf4d9cb9d556b8e6614eab1ccc11d74b89eca7afb39b6c72072e34d32a97b4fb7828acc40e4f38162ae049e287fd66830891eb55e983d6940bd6
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/container-queries@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@tailwindcss/container-queries@npm:0.1.1"
+  peerDependencies:
+    tailwindcss: ">=3.2.0"
+  checksum: 10c0/336546ddcc60280723f2a92e311cac0acb8b05624c6519675d4b11ae13ed01dba5e622705a9be69cd66ca2c8019032551176546e6920d9634750165ac4c15d8e
   languageName: node
   linkType: hard
 
@@ -2540,6 +2549,7 @@ __metadata:
     "@astrojs/sitemap": "npm:^3.1.4"
     "@astrojs/tailwind": "npm:^5.1.0"
     "@playform/compress": "npm:^0.0.4"
+    "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/forms": "npm:^0.5.7"
     "@tailwindcss/typography": "npm:^0.5.13"
     "@types/react": "npm:^18.3.2"
@@ -3007,9 +3017,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.773
-  resolution: "electron-to-chromium@npm:1.4.773"
-  checksum: 10c0/eef684e2d64848418080715a76bc4147373d75ade07f65e64a97a3efd52d8c83dd8dd0daadba0d5ca891e3738144f8e97e1b7fe4545de3d15e71cd70ff14b2f1
+  version: 1.4.774
+  resolution: "electron-to-chromium@npm:1.4.774"
+  checksum: 10c0/dc957ee574d14838abd16f48fb3e4bd069bf47807fe02144b850d4903265810e17abc5800a361941f787bd78692cf4f81eab70046a6757eb39e44c91ff520dd4
   languageName: node
   linkType: hard
 
@@ -3084,9 +3094,9 @@ __metadata:
   linkType: hard
 
 "es-module-lexer@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "es-module-lexer@npm:1.5.2"
-  checksum: 10c0/20b6c668691ee81781a0ae56930560c23aa28fb934fce9137820f12ae3726a25626010cbd8ed1775c217d3bae108e23dd7b805f923133dc633bfbbc2b0020524
+  version: 1.5.3
+  resolution: "es-module-lexer@npm:1.5.3"
+  checksum: 10c0/0f50b655490d1048432eac6eec94d99d3933119666ae82be578c3db1ea4b2c594118a336f6b7a3c4e2815355dcc9a469d880acef1c45aa656a5aae8c8ae8e5f6
   languageName: node
   linkType: hard
 
@@ -3385,13 +3395,13 @@ __metadata:
   linkType: hard
 
 "fast-xml-parser@npm:^4.3.6":
-  version: 4.3.6
-  resolution: "fast-xml-parser@npm:4.3.6"
+  version: 4.4.0
+  resolution: "fast-xml-parser@npm:4.4.0"
   dependencies:
     strnum: "npm:^1.0.5"
   bin:
     fxparser: src/cli/cli.js
-  checksum: 10c0/9ebe2ac142c6978cae423c39c2a9b561edb76be584317d578768ed4a006a61fc0e83abf8c6fe31029139c4ad15ea1f2e7b6720ba9e6eda0e5266d7f2770fb079
+  checksum: 10c0/ce32fad713471a40bea67959894168f297a5dd0aba64b89a2abc71a4fec0b1ae1d49c2dd8d8719ca8beeedf477824358c8a486b360b9f3ef12abc2e355d11318
   languageName: node
   linkType: hard
 
@@ -6405,11 +6415,11 @@ __metadata:
   linkType: hard
 
 "shiki@npm:^1.1.2, shiki@npm:^1.5.0, shiki@npm:^1.5.1":
-  version: 1.5.2
-  resolution: "shiki@npm:1.5.2"
+  version: 1.6.0
+  resolution: "shiki@npm:1.6.0"
   dependencies:
-    "@shikijs/core": "npm:1.5.2"
-  checksum: 10c0/0546fb02d7daad4784f2fed1f887ef69f956e7ce3c47ab2def86a52a02e255e45e88dcc286a34b65523485add7833b0348eff5e8b620fc20627be1b5b0bb7944
+    "@shikijs/core": "npm:1.6.0"
+  checksum: 10c0/9a3a5a123029b52cf881be3e14007b50c5dc7f2222c809904323b1a9b415ec1a12009b0cf28c0b00370c22372d5b445e3ef7d60d14db932f069abc38c246cfa0
   languageName: node
   linkType: hard
 

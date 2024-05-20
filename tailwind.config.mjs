@@ -5,6 +5,7 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
   darkMode: 'class',
   plugins: [
+    require('@tailwindcss/container-queries'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography')
   ],
