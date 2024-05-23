@@ -55,25 +55,25 @@ const { minimal } = Astro.props;
       </Container>
     </div>
   )}
-  <div class="bg-zinc-950  py-4  text-center  text-sm" transition:persist>
+  <div class="bg-zinc-950  py-4  text-center  text-opacity-60  text-sm  text-white" transition:persist>
     <Container class="sm:flex  sm:items-center  sm:justify-between">
       <span class="block  mb-4  sm:mb-0">
         &copy;{new Date().getFullYear()} {site.name}
       </span>
       <ul class="flex  items-center  justify-center  sm:-mr-3">
         <li class="mx-3">
-          <a class="hover:text-white  hover:underline" href="/privacy/">
+          <a class="transition  hover:text-white  hover:underline" href="/privacy/">
             Privacy
           </a>
         </li>
         <li class="mx-3">
-          <a class="hover:text-white  hover:underline" href="/cookies/">
+          <a class="transition  hover:text-white  hover:underline" href="/cookies/">
             Cookies
           </a>
         </li>
         <li class="mx-3">
           <a
-            class="flex  items-center  hover:text-white  hover:underline"
+            class="flex  items-center  transition  hover:text-white  hover:underline"
             href="/rss.xml"
           >
             <span>RSS</span>
