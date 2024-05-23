@@ -30,7 +30,7 @@ const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
             />
           </div>
           <div class="flex  gap-4  items-center  justify-between  p-4">
-            <h2 class="font-light  text-xl">{name}</h2>
+            <h2 class="text-xl">{name}</h2>
             <ul class="flex  space-x-4">
               <li>
                 <a href={`/templates/${createSlug(name)}/preview/`} target="_blank" title="Preview">
