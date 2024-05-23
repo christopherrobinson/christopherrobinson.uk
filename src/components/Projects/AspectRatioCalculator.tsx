@@ -22,7 +22,7 @@ const AspectRatioCalculator = ({
         <h3 className="font-medium  mb-4  text-2xl">Original Width/Height</h3>
         <div className="flex  flex-col  gap-4">
           <div className="flex  items-center">
-            <label className="block  font-light  w-20" htmlFor="width">Width</label>
+            <label className="block  w-20" htmlFor="width">Width</label>
             <input
               className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
               defaultValue={width}
@@ -45,7 +45,7 @@ const AspectRatioCalculator = ({
             />
           </div>
           <div className="flex  items-center">
-            <label className="block  font-light  w-20" htmlFor="height">Height</label>
+            <label className="block  w-20" htmlFor="height">Height</label>
             <input
               className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
               defaultValue={height}
@@ -76,7 +76,7 @@ const AspectRatioCalculator = ({
         <h3 className="font-medium  mb-4  text-2xl">New Width/Height</h3>
         <div className="flex  flex-col  gap-4">
           <div className="flex  items-center">
-            <label className="block  font-light  w-20" htmlFor="newWidth">Width</label>
+            <label className="block  w-20" htmlFor="newWidth">Width</label>
             <input
               className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
               id="newWidth"
@@ -93,7 +93,7 @@ const AspectRatioCalculator = ({
             />
           </div>
           <div className="flex  items-center">
-            <label className="block  font-light  w-20" htmlFor="newHeight">Height</label>
+            <label className="block  w-20" htmlFor="newHeight">Height</label>
             <input
               className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
               id="newHeight"

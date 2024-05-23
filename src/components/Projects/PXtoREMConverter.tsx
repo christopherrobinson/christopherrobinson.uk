@@ -58,7 +58,7 @@ const PXtoREMConverter = ({
           <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
             <div className="flex  flex-col  gap-4">
               <div className="flex  items-center">
-                <label className="block  font-light  w-20" htmlFor="px">PX</label>
+                <label className="block  w-20" htmlFor="px">PX</label>
                 <input
                   className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
                   defaultValue={px}
@@ -92,7 +92,7 @@ const PXtoREMConverter = ({
           <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
             <div className="flex  flex-col  gap-4">
               <div className="flex  items-center">
-                <label className="block  font-light  w-20" htmlFor="rem">REM</label>
+                <label className="block  w-20" htmlFor="rem">REM</label>
                 <input
                   className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-zinc-200  focus:ring-zinc-200"
                   defaultValue={rem}
