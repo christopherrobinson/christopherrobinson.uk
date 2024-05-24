@@ -39,14 +39,14 @@ const backgroundImage = cover && (await getImage({ src: cover }));
     <div class="flex  flex-col  grow  h-full  p-5  space-y-4">
       <h2 class="text-xl  transition  group-focus:text-primary-700  group-hover:text-primary-700">{title}</h2>
       <p class="grow">{excerpt}</p>
-      <ul class="flex  flex-wrap  justify-between  mt-auto  pt-1  text-xs  text-zinc-600">
-        <li class="flex  items-start">
+      <ul class="flex  flex-wrap  justify-between  mt-auto  pt-1  text-sm  text-zinc-600">
+        <li class="flex  items-center">
           <span class="flex  items-center  justify-center  h-4  mr-1  w-4">
             <Icon class="text-zinc-600  h-3" name="calendar-day" />
           </span>
           <FormattedDate date={date} />
         </li>
-        <li class="flex  items-start">
+        <li class="flex  items-center">
           <span class="flex  items-center  justify-center  h-4  mr-1  w-4">
             <Icon class="text-zinc-600  h-3" name="stopwatch" />
           </span>
