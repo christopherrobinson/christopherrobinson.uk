@@ -148,9 +148,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/react@npm:^3.3.4":
-  version: 3.3.4
-  resolution: "@astrojs/react@npm:3.3.4"
+"@astrojs/react@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@astrojs/react@npm:3.4.0"
   dependencies:
     "@vitejs/plugin-react": "npm:^4.2.1"
     ultrahtml: "npm:^1.5.3"
@@ -159,7 +159,7 @@ __metadata:
     "@types/react-dom": ^17.0.17 || ^18.0.6
     react: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
-  checksum: 10c0/f09c94a1c56460956b70c65ebfd491d1c1e2e04421611a211aec81347d14c9a0957a70a8312f9692fc441e0fde420ee24277655e2120d2d86e4c8cb906f67808
+  checksum: 10c0/87ccd8e54246da36ed5af4e3e1d7b193661bf95ff15f6c60878d8efab2855b5708dd1b8641866cc8009d0c36b1f80d802723ce3ff7f5664f4cb58fde5696b8c4
   languageName: node
   linkType: hard
 
@@ -173,14 +173,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "@astrojs/sitemap@npm:3.1.4"
+"@astrojs/sitemap@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "@astrojs/sitemap@npm:3.1.5"
   dependencies:
     sitemap: "npm:^7.1.1"
     stream-replace-string: "npm:^2.0.0"
-    zod: "npm:^3.22.4"
-  checksum: 10c0/883ce35c18957212c1c2d87048a3e783d3cbdf05a796a0af8d0dc6aa5f6fcf2e13d2adc152a9446beacf7ec90dac8f59d5cc932b615c062edff042350ec63fc7
+    zod: "npm:^3.23.8"
+  checksum: 10c0/1ae7ff76f645cf30a40e80a93779583db79f2c85c81288f6785a76649fbd64f702a7067f7d450c5c40dbc443915f20320918e65f0ceb71f2b19ba76fa9a766b6
   languageName: node
   linkType: hard
 
@@ -1741,13 +1741,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.3.2":
+"@types/react@npm:*":
   version: 18.3.2
   resolution: "@types/react@npm:18.3.2"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/9fb2f1fcf7e889ee4ea7c3c5978df595c66e770e5fd3a245dbdd2589b9b911524c11dab25a6275d8af4e336e4cb5fa850d447884b84c335a187a338c89df99ba
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.3.3":
+  version: 18.3.3
+  resolution: "@types/react@npm:18.3.3"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/fe455f805c5da13b89964c3d68060cebd43e73ec15001a68b34634604a78140e6fc202f3f61679b9d809dde6d7a7c2cb3ed51e0fd1462557911db09879b55114
   languageName: node
   linkType: hard
 
@@ -2185,9 +2195,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^4.8.6":
-  version: 4.8.6
-  resolution: "astro@npm:4.8.6"
+"astro@npm:^4.9.1":
+  version: 4.9.1
+  resolution: "astro@npm:4.9.1"
   dependencies:
     "@astrojs/compiler": "npm:^2.8.0"
     "@astrojs/internal-helpers": "npm:0.4.0"
@@ -2258,7 +2268,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/4d5db593524f305a178973fd2044604a08a45b07031bcbac9d1550a88ef363c7ff398e9f8c7cf0d1ed07dc783816f6add4c98e78b8c23bbaa510e157965b2241
+  checksum: 10c0/0a8c9cd0fb5eeb9abe0bce34b70a605b183ab2a94545ff93ee807d4b9984a4a2e663dcd4258351d1c2e2f4e3ebfdfdeae54ca1ea75a7efaea6e5117655c9d815
   languageName: node
   linkType: hard
 
@@ -2544,18 +2554,18 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.7.0"
     "@astrojs/prefetch": "npm:^0.4.1"
-    "@astrojs/react": "npm:^3.3.4"
+    "@astrojs/react": "npm:^3.4.0"
     "@astrojs/rss": "npm:^4.0.6"
-    "@astrojs/sitemap": "npm:^3.1.4"
+    "@astrojs/sitemap": "npm:^3.1.5"
     "@astrojs/tailwind": "npm:^5.1.0"
     "@playform/compress": "npm:^0.0.4"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/forms": "npm:^0.5.7"
     "@tailwindcss/typography": "npm:^0.5.13"
-    "@types/react": "npm:^18.3.2"
+    "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-basic-ssl": "npm:^1.1.0"
-    astro: "npm:^4.8.6"
+    astro: "npm:^4.9.1"
     astro-capo: "npm:^0.0.1"
     astro-icon: "npm:^1.1.0"
     astro-remark-description: "npm:^1.1.2"
@@ -7667,7 +7677,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.22.4, zod@npm:^3.23.8":
+"zod@npm:^3.23.8":
   version: 3.23.8
   resolution: "zod@npm:3.23.8"
   checksum: 10c0/8f14c87d6b1b53c944c25ce7a28616896319d95bc46a9660fe441adc0ed0a81253b02b5abdaeffedbeb23bdd25a0bf1c29d2c12dd919aef6447652dd295e3e69
