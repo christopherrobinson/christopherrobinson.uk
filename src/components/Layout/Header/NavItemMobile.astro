@@ -8,10 +8,10 @@ const { pathname } = Astro.url;
 const isActive = href === pathname || href === `/${pathname.split('/')[1]}/`;
 ---
 
-<li>
+<li class="border-b  border-zinc-200">
   <a
     class={
-      `block  font-medium  my-2  px-4  py-2  text-2xl
+      `block  px-4  py-3
       ${(isActive && 'text-primary-600  underline') || 'text-zinc-800  hover:underline'}
     `}
     href={href}
