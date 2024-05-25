@@ -19,7 +19,6 @@ export default defineConfig({
     locales: ['en'],
   },
   integrations: [
-    (await import('@playform/compress')).default(),
     icon({ iconDir: './src/images/icons' }),
     prefetch(),
     react(),
@@ -30,6 +29,7 @@ export default defineConfig({
       ],
     }),
     tailwind(),
+    (await import('astro-compress')).default(),
   ],
   markdown: {
     remarkPlugins: [
