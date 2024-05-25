@@ -39,44 +39,52 @@ type Props = Record<string, never>;
 </header>
 
 <div
-  class="absolute  bottom-0   bg-white  hidden  items-center  justify-center  left-0  right-0  top-0  z-20"
+  class="bg-black  bg-opacity-80  fixed  hidden  inset-0  opacity-0  transition-opacity  z-20  sm:hidden"
+  id="navigationOverlay"
+>
+</div>
+<div
+  class="bottom-0   border-l  border-zinc-200  bg-white  fixed  flex  h-screen  position  pt-[58px]  -right-80  transition-all  w-80  z-20  sm:hidden"
   id="navigation"
 >
-  <div class="fixed  flex  h-screen  items-center  justify-center  left-0  top-[2px]  w-screen  z-10">
     <button
       aria-label="Close navigation"
-      class="absolute  flex  items-center  justify-center  mr-2  mt-3  p-2  right-0  size-8  top-0"
+      class="absolute  flex  items-center  justify-center  mr-2  mt-3  p-2  right-0  size-8  top-[2px]"
       id="closeNavigation"
       type="button"
     >
       <Icon class="flex-shrink-0  size-4" name="x" />
     </button>
-    <ul class="flex  flex-col  items-center  text-sm">
+    <ul class="border-t  border-zinc-200  text-base  w-full">
       <NavItemMobile href="/">Home</NavItemMobile>
       <NavItemMobile href="/about/">About</NavItemMobile>
       <NavItemMobile href="/blog/">Blog</NavItemMobile>
       <NavItemMobile href="/projects/">Projects</NavItemMobile>
       <NavItemMobile href="/contact/">Contact</NavItemMobile>
     </ul>
-  </div>
 </div>
 
 <script>
   document.addEventListener('astro:page-load', () => {
 
-    const navigation            = document.getElementById('navigation')
-    const openNavigationButton  = document.getElementById('openNavigation')
-    const closeNavigationButton = document.getElementById('closeNavigation')
+    const navigation            = document.getElementById('navigation');
+    const navigationOverlay     = document.getElementById('navigationOverlay');
+    const openNavigationButton  = document.getElementById('openNavigation');
+    const closeNavigationButton = document.getElementById('closeNavigation');
 
     openNavigationButton?.addEventListener('click', () => {
-      navigation?.classList.remove('hidden')
-      navigation?.classList.add('block')
-    })
+      navigation?.classList.remove('-right-80');
+      navigation?.classList.add('right-0');
+      navigationOverlay?.classList.remove('hidden', 'opacity-0');
+      navigationOverlay?.classList.add('block', 'opacity-1000');
+    });
 
     closeNavigationButton?.addEventListener('click', () => {
-      navigation?.classList.add('hidden')
-      navigation?.classList.remove('block')
-    })
+      navigation?.classList.add('-right-80');
+      navigation?.classList.remove('right-0');
+      navigationOverlay?.classList.add('hidden', 'opacity-0');
+      navigationOverlay?.classList.remove('block', 'opacity-100');
+    });
 
-  })
+  });
 </script>
