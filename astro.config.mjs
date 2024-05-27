@@ -6,6 +6,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import basicSsl from '@vitejs/plugin-basic-ssl';
+import Unimport from 'unimport/unplugin';
 import { site } from './src/config';
 import templates from './src/data/templates.json';
 import { createSlug } from './src/helpers/createSlug';
@@ -50,6 +51,20 @@ export default defineConfig({
   vite: {
     plugins: [
       basicSsl(),
+      Unimport.vite({
+        dirs: [
+          './src/config/*',
+          './src/helpers/*',
+          './src/schema/*',
+        ],
+        dts: true,
+        include: [/\.astro$/, /\.[jt]sx?$/],
+        presets: [
+          { from: 'astro:assets',          imports: [ 'getImage', 'Picture' ] },
+          { from: 'astro:content',         imports: [ 'getCollection' ] },
+          { from: 'astro-icon/components', imports: [ 'Icon' ] },
+        ],
+      }),
     ],
     server: {
       https: true,

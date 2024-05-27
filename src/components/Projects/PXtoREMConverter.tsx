@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { convertToRem, getInputValue } from '@/helpers';
 
 interface PXtoREMConverterProps {
   baseFontSize: number;

@@ -14,13 +14,10 @@
     "noImplicitAny": false,
     "paths": {
       "@/components/*": ["src/components/*"],
-      "@/config": ["src/config"],
       "@/content/*": ["src/content/*"],
       "@/data/*": ["src/data/*"],
-      "@/helpers": ["src/helpers"],
       "@/images/*": ["src/images/*"],
       "@/layouts/*": ["src/layouts/*"],
-      "@/schema": ["src/schema"]
     },
     "skipLibCheck": true,
     "strict": true,
