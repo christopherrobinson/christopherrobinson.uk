@@ -1,5 +1,3 @@
-import { gcd } from '@/helpers';
-
 export const getAspectRatio = (width: number, height: number): string => {
   const divisor = gcd(width, height);
 

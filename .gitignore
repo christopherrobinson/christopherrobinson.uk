@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# unimport
+unimport.d.ts
+
 # yarn modern
 .yarn/*
 !.yarn/cache
