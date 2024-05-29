@@ -1,5 +1,3 @@
-import { z } from 'astro:content';
-
 export const blogSchema = ({ image }) => z.object({
   date: z.string().or(z.date()).transform((v) => new Date(v)),
   cover: image().optional(),

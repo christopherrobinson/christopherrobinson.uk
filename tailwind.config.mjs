@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
@@ -23,15 +23,15 @@ module.exports = {
           400: '#33d4a6',
           500: '#0fba8f',
           600: '#049372',
-          700: '#037960',
+          700: '#037960', // DEFAULT
           800: '#05604d',
           900: '#064e41',
           950: '#022c25',
         },
       },
       fontFamily: {
-        sans: ['Geist Sans', ...defaultTheme.fontFamily.sans],
-        mono: ['Geist Mono', ...defaultTheme.fontFamily.mono],
+        sans: ['Geist Sans', ...fontFamily.sans],
+        mono: ['Geist Mono', ...fontFamily.mono],
       },
       transitionDuration: {
         DEFAULT: '300ms',
@@ -45,6 +45,9 @@ module.exports = {
               color: theme('colors.zinc.600'),
               fontWeight: theme('fontWeight.light'),
               quotes: 'none',
+            },
+            h2: {
+              fontWeight: theme('fontWeight.medium'),
             },
             strong: {
               fontWeight: theme('fontWeight.medium'),

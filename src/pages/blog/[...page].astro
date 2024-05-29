@@ -11,9 +11,10 @@ export const getStaticPaths = async ({ paginate }) => {
   return paginate(posts, { pageSize: postsPerPage });
 }
 
-const { page } = Astro.props;
-const { currentPage, data, lastPage, url } = page;
 const { pathname } = Astro.url;
+const { page } = Astro.props;
+const { currentPage, data = [], lastPage, url } = page;
+const { current, next, prev } = url;
 ---
 
 <Layout
@@ -26,13 +27,14 @@ const { pathname } = Astro.url;
           const { data, slug } = post
           const { cover, date, title } = data
           const { remarkPluginFrontmatter } = await post.render()
+          const { excerpt, minutesRead } = remarkPluginFrontmatter
 
           return (
             <BlogPostCard
               cover={cover}
               date={date}
-              excerpt={remarkPluginFrontmatter.excerpt}
-              minutesRead={remarkPluginFrontmatter.minutesRead}
+              excerpt={excerpt}
+              minutesRead={minutesRead}
               slug={slug}
               title={title}
             />
@@ -43,9 +45,9 @@ const { pathname } = Astro.url;
   </Container>
   <Pagination
     baseUrl={`/${pathname.split("/")[1]}/`}
-    currentUrl={url.current}
+    currentUrl={current}
     length={lastPage}
-    nextUrl={url.next}
-    prevUrl={url.prev}
+    nextUrl={next}
+    prevUrl={prev}
   />
 </Layout>

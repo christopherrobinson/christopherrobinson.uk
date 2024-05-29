@@ -1,5 +1,5 @@
 import { visit } from 'unist-util-visit';
-import { site } from '../config';
+import { site } from '../config/index.ts';
 
 export const remarkExternalLinks = () => {
   return (tree) => {

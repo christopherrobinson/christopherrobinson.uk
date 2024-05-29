@@ -61,8 +61,12 @@ export default defineConfig({
         include: [/\.astro$/, /\.[jt]sx?$/],
         presets: [
           { from: 'astro:assets',          imports: [ 'getImage', 'Picture' ] },
-          { from: 'astro:content',         imports: [ 'getCollection' ] },
+          { from: 'astro:content',         imports: [ 'defineCollection', 'getCollection', 'z' ] },
+          { from: 'astro:transitions',     imports: [ 'ViewTransitions' ] },
+          { from: 'astro-capo',            imports: [ 'Head' ] },
           { from: 'astro-icon/components', imports: [ 'Icon' ] },
+          { from: 'react',                 imports: [ 'useState' ] },
+          { from: 'string-strip-html',     imports: [ 'stripHtml' ] },
         ],
       }),
     ],

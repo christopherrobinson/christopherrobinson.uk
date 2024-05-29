@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
 import rss from '@astrojs/rss';
-import { site } from 'src/config';
 
 export const GET: APIRoute = async (context) => {
   const posts = (await getCollection('blog'))
@@ -10,11 +9,11 @@ export const GET: APIRoute = async (context) => {
     customData: '<language>en-gb</language>',
     description: 'Blog Posts',
     items: posts.map(({ data, slug }) => ({
-      title: data.title,
       link: `/blog/${slug}/`,
       pubDate: data.date,
+      title: data.title,
     })),
-    site: context.site,
+    site: context.site ?? '',
     title: site.name,
   });
 }

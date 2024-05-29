@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface AspectRatioCalculatorProps {
   height?: number;
   width?: number;

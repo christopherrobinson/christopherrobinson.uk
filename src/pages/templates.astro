@@ -1,10 +1,11 @@
 ---
+import type { ImageMetadata } from 'astro';
 import Container from '@/components/Container.astro';
 import { Content } from '@/content/pages/templates/index.md';
 import Layout from '@/layouts/Default.astro';
 import templates from '@/data/templates.json';
 
-const images = import.meta.glob<{ default }>('/src/images/templates/*.png')
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/templates/*.png')
 ---
 
 <Layout heading="Free HTML Templates">

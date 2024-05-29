@@ -2,7 +2,7 @@
 import type { ImageMetadata } from 'astro';
 import FormattedDate from '@/components/Helpers/FormattedDate.astro';
 
-export interface Props {
+export interface BlogPostCardProps {
   cover?: ImageMetadata;
   date: Date;
   excerpt: string;
@@ -17,7 +17,7 @@ const backgroundImage = cover && (await getImage({ src: cover }));
 
 <div class="@container">
   <a
-    class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  overflow-hidden  rounded-md  transition  hover:border-primary-700  @[608px]:flex-row"
+    class="bg-white  border  border-zinc-100  flex  flex-col  group  h-full  overflow-hidden  rounded-md  shadow  transition  hover:border-zinc-200  hover:shadow-md  @[608px]:flex-row"
     href={`/blog/${slug}/`}
   >
     <div

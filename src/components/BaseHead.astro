@@ -1,10 +1,8 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import { stripHtml } from 'string-strip-html';
 import faviconSrc from '@/images/favicon.png';
 import faviconSvgSrc from '@/images/favicon.svg';
 
-export interface Props {
+export interface BaseHeadProps {
   description?: string;
   title?: string;
 }
