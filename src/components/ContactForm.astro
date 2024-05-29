@@ -1,5 +1,5 @@
 ---
-export interface Props {
+export interface ContactFormProps {
   actionUrl: string;
 }
 
@@ -9,15 +9,11 @@ const { actionUrl } = Astro.props;
 <div class="bg-zinc-100  border  border-zinc-200  mb-8  rounded  sm:mb-12  sm:p-4">
   <form
     action={actionUrl}
+    data-netlify="true"
     name="contact"
-    netlify
-    netlify-honeypot
     method="post"
   >
     <input name="form-name" type="hidden" value="contact" />
-    <p class="hidden">
-      Don't fill this out if you're human: <input name="bot-field" />
-    </p>
     <div class="m-4">
       <div class="flex  items-baseline  justify-between  mb-2">
         <label class="block" for="subject">

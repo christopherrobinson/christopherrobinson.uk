@@ -2,7 +2,7 @@
 import Container from '@/components/Container.astro';
 import Elsewhere from '@/components/Layout/Footer/Elsewhere.astro';
 
-export interface Props {
+export interface FooterProps {
   minimal?: boolean;
 }
 
@@ -11,7 +11,7 @@ const { minimal } = Astro.props;
 
 <footer class="bg-zinc-900  mt-auto  text-opacity-80  text-white">
   {!minimal && (
-    <div class="border-b  border-zinc-800  py-16  lg:py-32">
+    <div class="py-16  lg:py-32">
       <Container>
         <strong class="block  font-extralight  pb-12  text-2xl  lg:pb-24  lg:text-3xl">
           Front-End Developer and Umbraco Certified Expert
@@ -53,7 +53,7 @@ const { minimal } = Astro.props;
       </Container>
     </div>
   )}
-  <div class="bg-zinc-950  py-4  text-center  text-opacity-60  text-sm  text-white" transition:persist>
+  <div class="bg-zinc-950  border-t  border-zinc-800  py-4  text-center  text-opacity-60  text-sm  text-white" transition:persist>
     <Container class="sm:flex  sm:items-center  sm:justify-between">
       <span class="block  mb-4  sm:mb-0">
         &copy;{new Date().getFullYear()} {site.name}

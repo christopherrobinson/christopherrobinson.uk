@@ -1,11 +1,10 @@
 ---
-import { Head } from 'astro-capo';
 import Footer from '@/components/Layout/Footer/index.astro';
 import Header from '@/components/Layout/Header/index.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import Container from '@/components/Container.astro';
 
-export interface Props {
+export interface DefaultLayoutProps {
   heading?: string;
   layout?: {
     footer?: {

@@ -1,6 +1,6 @@
 ---
 import Container from '@/components/Container.astro';
-import AspectRatioCalculator from '@/components/Projects/AspectRatioCalculator';
+import AspectRatioCalculatorComponent from '@/components/Projects/AspectRatioCalculator';
 import Layout from '@/layouts/Default.astro';
 ---
 
@@ -15,7 +15,7 @@ import Layout from '@/layouts/Default.astro';
       <p>Computes the unspecified dimension (either width or height) while maintaining a specific aspect ratio.</p>
     </div>
     <div class="pb-8  sm:pb-12">
-      <AspectRatioCalculator client:load height={1080} width={1920} />
+      <AspectRatioCalculatorComponent client:load height={1080} width={1920} />
     </div>
   </Container>
 </Layout>
