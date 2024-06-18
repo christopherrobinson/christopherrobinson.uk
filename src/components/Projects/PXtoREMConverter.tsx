@@ -12,7 +12,7 @@ const PXtoREMConverter = ({
 
   return (
     <>
-      <div className="leading-7  max-w-none  py-8  sm:py-12  lg:leading-8  lg:text-lg">
+      <div className="leading-7  max-w-none  py-8  sm:py-16  lg:leading-8  lg:text-lg">
         <p className="flex  items-center  space-x-1">
           <span>Calculation based on a root font-size of</span>
           {rootFontSizeEditable && (
@@ -50,7 +50,7 @@ const PXtoREMConverter = ({
           <span>pixels.</span>
         </p>
       </div>
-      <div className="pb-8  sm:pb-12">
+      <div className="pb-8  sm:pb-16">
         <div className="lg:flex  lg:gap-8">
           <div className="bg-zinc-100  border  border-zinc-200  grow  p-4  rounded">
             <div className="flex  flex-col  gap-4">

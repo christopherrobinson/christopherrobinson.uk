@@ -17,7 +17,7 @@ const backgroundImage = cover && (await getImage({ src: cover }));
 
 <div class="@container">
   <a
-    class="bg-white  border  border-zinc-100  flex  flex-col  group  h-full  overflow-hidden  rounded-md  shadow  transition  hover:border-zinc-200  hover:shadow-md  @[608px]:flex-row"
+    class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  overflow-hidden  rounded-md  transition  hover:border-zinc-200  hover:shadow  @[608px]:flex-row"
     href={`/blog/${slug}/`}
   >
     <div
@@ -34,7 +34,7 @@ const backgroundImage = cover && (await getImage({ src: cover }));
         <Icon class="size-8" name="arrow-right-from-bracket" />
       </div>
     </div>
-    <div class="flex  flex-col  grow  h-full  p-5  space-y-4">
+    <div class="flex  flex-col  grow  h-full  p-6  space-y-4">
       <h2 class="text-xl  transition  group-focus:text-primary-700  group-hover:text-primary-700">{title}</h2>
       <p class="grow">{excerpt}</p>
       <ul class="flex  flex-wrap  justify-between  mt-auto  pt-1  text-sm  text-zinc-600">
