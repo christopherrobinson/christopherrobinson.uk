@@ -1,4 +1,5 @@
 ---
+import { GOOGLE_TAG_MANAGER_ID } from 'astro:env/client';
 import Footer from '@/components/Layout/Footer/index.astro';
 import Header from '@/components/Layout/Header/index.astro';
 import BaseHead from '@/components/BaseHead.astro';
@@ -27,7 +28,7 @@ const { heading, layout, meta } = Astro.props;
 
   <body class="min-w-[360px]">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${import.meta.env.PUBLIC_GOOGLE_TAG_MANAGER_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="bg-white  flex  flex-col  font-light  min-h-screen  relative  text-zinc-800">
       <Header />
