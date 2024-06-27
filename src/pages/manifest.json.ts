@@ -3,7 +3,7 @@ import favicon from '@/images/favicon.png';
 
 const faviconPngSizes = [192, 512];
 
-export const GET: APIRoute = async (context) => {
+export const GET: APIRoute = async () => {
   const icons = await Promise.all(
     faviconPngSizes.map(async (size) => {
       const image = await getImage({
