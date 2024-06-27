@@ -23,7 +23,7 @@ const { current, next, prev } = url;
   <Container>
     <div class="gap-4  grid  py-8  sm:py-16  lg:gap-8">
       {
-        data.map(async (post) => {
+        data.map(async (post: any) => {
           const { data, slug } = post
           const { cover, date, title } = data
           const { remarkPluginFrontmatter } = await post.render()

@@ -12,7 +12,7 @@ const PXtoREMConverter = ({
 
   return (
     <>
-      <div className="leading-7  max-w-none  py-8  sm:py-16  lg:leading-8  lg:text-lg">
+      <div className="leading-7  max-w-none  py-8  sm:pt-16  lg:leading-8  lg:text-lg">
         <p className="flex  items-center  space-x-1">
           <span>Calculation based on a root font-size of</span>
           {rootFontSizeEditable && (
@@ -94,9 +94,6 @@ const PXtoREMConverter = ({
                   className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-zinc-200  focus:ring-zinc-200"
                   defaultValue={rem}
                   id="rem"
-                  onChange={(e) => {
-                    const value = parseInt(getInputValue(e)) || 1;
-                  }}
                   pattern="[0-9]*"
                   placeholder={rem.toString()}
                   readOnly
