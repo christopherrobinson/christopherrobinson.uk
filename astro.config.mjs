@@ -15,12 +15,13 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    env: {
-      schema: {
-        GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
-      },
+  env: {
+    schema: {
+      GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
     },
+  },
+  experimental: {
+    contentIntellisense: true,
   },
   i18n: {
     defaultLocale: 'en',
