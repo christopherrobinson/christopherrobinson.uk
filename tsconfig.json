@@ -18,6 +18,7 @@
       "@/data/*": ["src/data/*"],
       "@/images/*": ["src/images/*"],
       "@/layouts/*": ["src/layouts/*"],
+      "@/schema/*": ["src/schema/*"],
     },
     "skipLibCheck": true,
     "strict": true,
@@ -29,5 +30,7 @@
     ],
     "verbatimModuleSyntax": true
   },
-  "extends": "astro/tsconfigs/strict"
+  "exclude": ["dist"],
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"]
 }
