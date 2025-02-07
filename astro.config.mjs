@@ -63,7 +63,6 @@ export default defineConfig({
         dirs: [
           './src/config/*',
           './src/helpers/*',
-          './src/schema/*',
         ],
         dts: true,
         include: [/\.astro$/, /\.[jt]sx?$/],
