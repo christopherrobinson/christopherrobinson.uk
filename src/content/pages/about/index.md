@@ -2,9 +2,9 @@
 title: About
 ---
 
-Hello! I’m Christopher 👋🏻 I have **over eighteen years of professional experience** developing websites and applications of varying size and scale based on web-standard technologies; from clean coded HTML and reusable CSS components with responsive techniques and progressive enhancement, through to the modern headless web with **React**, **styled-components**, and **GraphQL** endpoints.
+Hello! I’m Christopher 👋🏻 I have **two decades of professional experience** developing websites and applications of varying size and scale based on web-standard technologies; from clean coded HTML and reusable CSS components with responsive techniques and progressive enhancement, through to the modern headless web with **React**, **styled-components**, and **GraphQL** endpoints.
 
-I am an **Umbraco Certified Expert** and have been creating Umbraco websites using ASP.NET (MVC, C#, Angular) for over 16 years. Although this site is [built using Astro](https://astro.build/) and the source code is available on [my GitHub profile](https://github.com/christopherrobinson/christopherrobinson.uk).
+I am an **Umbraco Certified Expert** and have been creating Umbraco websites using ASP.NET (MVC, C#, Angular) for over seventeen years. Although this site is [built using Astro](https://astro.build/) and the source code is available on [my GitHub profile](https://github.com/christopherrobinson/christopherrobinson.uk).
 
 Having nearly two decades of professional commercial experience in the industry, I have worked for and alongside digital agencies both in the United Kingdom and abroad. Throughout projects I test on a multitude of devices and have used various assistive technologies including eye-tracking which has proven invaluable for understanding and optimising the decisions users make while browsing, particularly on eCommerce sites where the primary focus is to increase conversions.
 
