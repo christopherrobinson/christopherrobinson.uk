@@ -25,14 +25,16 @@ const { heading, layout, meta } = Astro.props;
   <Head>
     <BaseHead title={meta?.title || heading || ``} description={meta?.description} />
   </Head>
-
-  <body class="min-w-[360px]">
+  <body class="font-light  min-w-[360px]  text-zinc-800">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="bg-white  flex  flex-col  font-light  min-h-screen  relative  text-zinc-800">
+    <a class="absolute  bg-yellow-100  border-yellow-200  border-t-2  block  left-0  py-4  text-center  text-yellow-900  -translate-y-[59px]  w-full  z-50  sm:py-6  sm:-translate-y-[74px]  focus:outline-none  focus:translate-y-0" href="#content">
+      <span class="border-2  border-yellow-700  p-2  rounded">Skip to Main Content</span>
+    </a>
+    <div class="bg-white  flex  flex-col  min-h-screen  relative">
       <Header />
-      <main class="bg-white  flex  flex-col  grow">
+      <main class="bg-white  flex  flex-col  grow" id="content">
         {heading && (
           <div class="bg-primary-700  py-8  text-white  lg:py-16">
             <Container>
