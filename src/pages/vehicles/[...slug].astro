@@ -1,0 +1,93 @@
+---
+import Container from '@/components/Container.astro';
+import FormattedDate from '@/components/Helpers/FormattedDate.astro';
+import Layout from '@/layouts/Default.astro';
+
+export const getStaticPaths = async () => {
+  const pages = await getCollection('vehicles');
+
+  return pages.map((page) => ({
+    params: {
+      slug: page.id,
+    },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { data } = page;
+const { fuelups, name } = data;
+
+const totalCost = fuelups.reduce((n: number, { litres, price }) => n + (litres * price), 0).toLocaleString('en-gb', { maximumFractionDigits: 2 });
+const totalFuelups = fuelups.length;
+const totalLitres = fuelups.reduce((n: number, { litres }) => n + litres, 0);
+const totalMiles = fuelups.reduce((n: number, { miles }) => n + miles, 0);
+const averageMpg = calculateMpg(totalLitres, totalMiles);
+---
+
+<Layout heading={name}>
+  <Container>
+    <!-- <Debug {fuelups} /> -->
+    <div class="gap-4  grid  py-8  sm:py-16  lg:gap-8">
+      <div class="gap-4  grid  grid-cols-2  sm:grid-cols-5  lg:gap-8">
+        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
+          <h2 class="text-sm  text-zinc-600">Average MPG</h2>
+          <p class="font-normal  text-xl">{averageMpg}</p>
+        </div>
+        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
+          <h2 class="text-sm  text-zinc-600">Total Fuelups</h2>
+          <p class="font-normal  text-xl">{totalFuelups}</p>
+        </div>
+        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
+          <h2 class="text-sm  text-zinc-600">Total Miles</h2>
+          <p class="font-normal  text-xl">{totalMiles.toLocaleString('en-gb')}</p>
+        </div>
+        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
+          <h2 class="text-sm  text-zinc-600">Total Litres</h2>
+          <p class="font-normal  text-xl">{totalLitres.toLocaleString('en-gb')}</p>
+        </div>
+        <div class="bg-white  border  border-zinc-200  col-span-2  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1  sm:col-span-1">
+          <h2 class="text-sm  text-zinc-600">Total Spent</h2>
+          <p class="font-normal  text-xl">&pound;{totalCost}</p>
+        </div>
+      </div>
+      <div class="border  border-zinc-200  overflow-x-auto  rounded-md  sm:overflow-hidden">
+        <table class="border-collapse  -mb-[1px]  table-auto  text-left  text-sm  w-full  whitespace-nowrap">
+          <thead>
+            <tr class="border-b  border-zinc-200  bg-zinc-100">
+              <th class="px-3  py-2">Date</th>
+              <th class="px-3  py-2">Miles</th>
+              <th class="px-3  py-2">Litres</th>
+              <th class="px-3  py-2">MPG</th>
+              <th class="px-3  py-2">Price</th>
+              <th class="px-3  py-2">Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-solid  divide-y  divide-zinc-200  text-zinc-600">
+            {fuelups?.sort((a, b) => b.date.valueOf() - a.date.valueOf()).map(({ date, litres, miles, price }: { date: Date, litres: number, miles: number, price: number }) => {
+              const fuelupMpg = calculateMpg(litres, miles)
+
+              return (
+                <tr>
+                  <td class="px-3  py-2"><FormattedDate date={date} /></td>
+                  <td class="px-3  py-2">{miles.toLocaleString('en-gb', { minimumFractionDigits: 1 })}</td>
+                  <td class="px-3  py-2">{litres.toLocaleString('en-gb', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                  <td class="px-3  py-2">
+                    <span class="justify-between  flex  w-12">
+                      {fuelupMpg}
+                      <span class={fuelupMpg > averageMpg ? 'text-primary-700' : 'text-red-400'}>
+                        {fuelupMpg == averageMpg ? '' : fuelupMpg > averageMpg ? '↑' : '↓'}
+                      </span>
+                    </span>
+                  </td>
+                  <td class="px-3  py-2">{price}</td>
+                  <td class="px-3  py-2">&pound;{(litres * price).toLocaleString('en-gb', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </Container>
+</Layout>
