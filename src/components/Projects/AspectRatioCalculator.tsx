@@ -21,7 +21,7 @@ const AspectRatioCalculator = ({
           <div className="flex  items-center">
             <label className="block  w-20" htmlFor="width">Width</label>
             <input
-              className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
+              className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-blue-400  focus:ring-blue-400"
               defaultValue={width}
               id="width"
               onChange={(e) => {
@@ -44,7 +44,7 @@ const AspectRatioCalculator = ({
           <div className="flex  items-center">
             <label className="block  w-20" htmlFor="height">Height</label>
             <input
-              className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
+              className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-blue-400  focus:ring-blue-400"
               defaultValue={height}
               id="height"
               onChange={(e) => {
@@ -75,7 +75,7 @@ const AspectRatioCalculator = ({
           <div className="flex  items-center">
             <label className="block  w-20" htmlFor="newWidth">Width</label>
             <input
-              className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
+              className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-blue-400  focus:ring-blue-400"
               id="newWidth"
               onChange={(e) => {
                 const value = parseInt(getInputValue(e)) || 0;
@@ -92,7 +92,7 @@ const AspectRatioCalculator = ({
           <div className="flex  items-center">
             <label className="block  w-20" htmlFor="newHeight">Height</label>
             <input
-              className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
+              className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-blue-400  focus:ring-blue-400"
               id="newHeight"
               onChange={(e) => {
                 const value = parseInt(getInputValue(e)) || 0;

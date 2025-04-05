@@ -4,6 +4,7 @@ import Footer from '@/components/Layout/Footer/index.astro';
 import Header from '@/components/Layout/Header/index.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import Container from '@/components/Container.astro';
+import '@/styles/tailwind.css';
 
 export interface DefaultLayoutProps {
   heading?: string;
@@ -29,7 +30,7 @@ const { heading, layout, meta } = Astro.props;
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <a class="absolute  bg-yellow-100  border-yellow-200  border-t-2  block  left-0  py-4  text-center  text-yellow-900  -translate-y-[59px]  w-full  z-50  sm:py-6  sm:-translate-y-[74px]  focus:outline-none  focus:translate-y-0" href="#content">
+    <a class="absolute  bg-yellow-100  border-yellow-200  border-t-2  block  left-0  py-4  text-center  text-yellow-900  -translate-y-[59px]  w-full  z-50  sm:py-6  sm:-translate-y-[74px]  focus:outline-hidden  focus:translate-y-0" href="#content">
       <span class="border-2  border-yellow-700  p-2  rounded">Skip to Main Content</span>
     </a>
     <div class="bg-white  flex  flex-col  min-h-screen  relative">

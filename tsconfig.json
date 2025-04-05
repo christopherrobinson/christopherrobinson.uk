@@ -19,6 +19,7 @@
       "@/images/*": ["src/images/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/schema/*": ["src/schema/*"],
+      "@/styles/*": ["src/styles/*"],
     },
     "skipLibCheck": true,
     "strict": true,
