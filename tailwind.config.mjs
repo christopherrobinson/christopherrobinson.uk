@@ -3,17 +3,8 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
-  darkMode: 'class',
-  plugins: [
-    require('@tailwindcss/container-queries'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')
-  ],
   theme: {
     extend: {
-      aspectRatio: {
-        '4/3': '4 / 3',
-      },
       colors: {
         primary: {
            50: '#ecfdf6',

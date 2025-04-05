@@ -7,7 +7,7 @@ import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.as
 type Props = Record<string, never>;
 ---
 
-<header class="backdrop-blur  bg-opacity-80  bg-white  border-b  border-t-2  border-zinc-200  sticky  top-0  z-20">
+<header class="backdrop-blur  bg-white/80  border-b  border-t-2  border-zinc-200  sticky  top-0  z-20">
   <PercentageScrolled />
   <Container>
     <div class="flex  items-center  justify-between  py-2  sm:py-4">
@@ -22,7 +22,7 @@ type Props = Record<string, never>;
           id="openNavigation"
           type="button"
         >
-          <Icon class="flex-shrink-0  size-4" name="bars" />
+          <Icon class="shrink-0  size-4" name="bars" />
         </button>
       </div>
       <div class="hidden  -mr-4  sm:block">
@@ -38,7 +38,7 @@ type Props = Record<string, never>;
 </header>
 
 <div
-  class="bg-black  bg-opacity-80  fixed  hidden  inset-0  opacity-0  transition-opacity  z-20  sm:hidden"
+  class="bg-black/80  fixed  hidden  inset-0  opacity-0  transition-opacity  z-20  sm:hidden"
   id="navigationOverlay"
 >
 </div>
@@ -52,7 +52,7 @@ type Props = Record<string, never>;
       id="closeNavigation"
       type="button"
     >
-      <Icon class="flex-shrink-0  size-4" name="x" />
+      <Icon class="shrink-0  size-4" name="x" />
     </button>
     <ul class="border-t  border-zinc-200  text-base  w-full">
       <NavItemMobile href="/">Home</NavItemMobile>

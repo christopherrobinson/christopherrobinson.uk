@@ -9,7 +9,7 @@ export interface FooterProps {
 const { minimal } = Astro.props;
 ---
 
-<footer class="bg-zinc-900  mt-auto  text-opacity-80  text-white">
+<footer class="bg-zinc-900  mt-auto  text-white/80">
   {!minimal && (
     <div class="py-16  lg:py-32">
       <Container>
@@ -18,7 +18,7 @@ const { minimal } = Astro.props;
         </strong>
         <div class="grid-cols-2  gap-12  grid  lg:grid-cols-12">
           <div class="col-span-2  lg:col-span-8  lg:mb-0  lg:order-2">
-            <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+            <strong class="border-b  border-white/60  inline-block  mb-4  pb-1  text-lg  font-extralight">
               About
             </strong>
             <p class="mb-6">
@@ -36,7 +36,7 @@ const { minimal } = Astro.props;
             </p>
           </div>
           <div class="col-span-1  lg:col-span-2  lg:order-1">
-            <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+            <strong class="border-b  border-white/60  inline-block  mb-4  pb-1  text-lg  font-extralight">
               Location
             </strong>
             <ul>
@@ -44,7 +44,7 @@ const { minimal } = Astro.props;
             </ul>
           </div>
           <div class="col-span-1  lg:col-span-2  lg:order-3">
-            <strong class="border-b  border-opacity-60  border-white  inline-block  mb-4  pb-1  text-lg  font-extralight">
+            <strong class="border-b  border-white/60  inline-block  mb-4  pb-1  text-lg  font-extralight">
               Elsewhere
             </strong>
             <Elsewhere />
@@ -53,7 +53,7 @@ const { minimal } = Astro.props;
       </Container>
     </div>
   )}
-  <div class="bg-zinc-950  border-t  border-zinc-800  py-6  text-center  text-opacity-60  text-sm  text-white" transition:persist>
+  <div class="bg-zinc-950  border-t  border-zinc-800  py-6  text-center  text-sm  text-white/60" transition:persist>
     <Container class="sm:flex  sm:items-center  sm:justify-between">
       <span class="block  mb-4  sm:mb-0">
         &copy;{new Date().getFullYear()} {site.name}

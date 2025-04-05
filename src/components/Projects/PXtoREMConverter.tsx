@@ -17,7 +17,7 @@ const PXtoREMConverter = ({
           <span>Calculation based on a root font-size of</span>
           {rootFontSizeEditable && (
             <input
-              className="block  border-zinc-200  mx-1  px-1  py-0  rounded  shadow-sm  text-center  w-8  focus:border-blue-400  focus:ring-blue-400  [appearance:textfield]  [&::-webkit-outer-spin-button]:appearance-none  [&::-webkit-inner-spin-button]:appearance-none"
+              className="block  border-zinc-200  mx-1  px-1  py-0  rounded-sm  shadow-xs  text-center  w-8  focus:border-blue-400  focus:ring-blue-400  [appearance:textfield]  [&::-webkit-outer-spin-button]:appearance-none  [&::-webkit-inner-spin-button]:appearance-none"
               defaultValue={rootFontSize}
               id="px"
               max={99}
@@ -57,7 +57,7 @@ const PXtoREMConverter = ({
               <div className="flex  items-center">
                 <label className="block  w-20" htmlFor="px">PX</label>
                 <input
-                  className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-blue-400  focus:ring-blue-400"
+                  className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-blue-400  focus:ring-blue-400"
                   defaultValue={px}
                   id="px"
                   min={1}
@@ -91,7 +91,7 @@ const PXtoREMConverter = ({
               <div className="flex  items-center">
                 <label className="block  w-20" htmlFor="rem">REM</label>
                 <input
-                  className="block  border-zinc-200  px-3  py-2  rounded  shadow-sm  w-full  focus:border-zinc-200  focus:ring-zinc-200"
+                  className="block  border-zinc-200  px-3  py-2  rounded-sm  shadow-xs  w-full  focus:border-zinc-200  focus:ring-zinc-200"
                   defaultValue={rem}
                   id="rem"
                   pattern="[0-9]*"
