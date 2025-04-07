@@ -31,6 +31,15 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            a: {
+              color: theme('colors.primary.700'),
+              fontWeight: theme('fontWeight.light'),
+              textDecoration: 'none',
+              '&:hover': {
+                color: theme('colors.primary.900'),
+                textDecoration: 'underline',
+              },
+            },
             color: theme('colors.zinc.800'),
             blockquote: {
               borderColor: theme('colors.primary.600'),
