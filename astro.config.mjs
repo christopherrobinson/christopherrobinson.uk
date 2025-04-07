@@ -1,7 +1,6 @@
 import { defineConfig, envField } from 'astro/config';
 import icon from 'astro-icon';
 import remarkDescription from 'astro-remark-description';
-import prefetch from '@astrojs/prefetch';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from "@tailwindcss/vite";
@@ -29,7 +28,6 @@ export default defineConfig({
   },
   integrations: [
     icon({ iconDir: './src/images/icons' }),
-    prefetch(),
     react(),
     sitemap({
       customPages: [
@@ -51,7 +49,7 @@ export default defineConfig({
     },
   },
   prefetch: {
-    prefetchAll: true,
+    defaultStrategy: 'hover',
   },
   site: site.url,
   trailingSlash: 'always',
