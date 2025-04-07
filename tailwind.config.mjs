@@ -22,6 +22,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Geist Sans', ...fontFamily.sans],
+        serif: ['Noto Serif', ...fontFamily.serif],
         mono: ['Geist Mono', ...fontFamily.mono],
       },
       transitionDuration: {
