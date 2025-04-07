@@ -23,6 +23,13 @@ const totalFuelups = fuelups.length;
 const totalLitres = fuelups.reduce((n: number, { litres }) => n + litres, 0);
 const totalMiles = fuelups.reduce((n: number, { miles }) => n + miles, 0);
 const averageMpg = calculateMpg(totalLitres, totalMiles);
+const summary = [
+  { name: 'Average MPG', value: averageMpg },
+  { name: 'Total Fuelups', value: totalFuelups },
+  { name: 'Total Miles', value: totalMiles },
+  { name: 'Total Litres', value: totalLitres },
+  { name: 'Total Spent', value: `£${totalCost}` },
+];
 ---
 
 <Layout heading={name}>
@@ -30,26 +37,12 @@ const averageMpg = calculateMpg(totalLitres, totalMiles);
     <!-- <Debug {fuelups} /> -->
     <div class="gap-4  grid  py-8  sm:py-16  lg:gap-8">
       <div class="gap-4  grid  grid-cols-2  sm:grid-cols-5  lg:gap-8">
-        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
-          <h2 class="text-sm  text-zinc-600">Average MPG</h2>
-          <p class="font-normal  text-xl">{averageMpg}</p>
-        </div>
-        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
-          <h2 class="text-sm  text-zinc-600">Total Fuelups</h2>
-          <p class="font-normal  text-xl">{totalFuelups}</p>
-        </div>
-        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
-          <h2 class="text-sm  text-zinc-600">Total Miles</h2>
-          <p class="font-normal  text-xl">{totalMiles.toLocaleString('en-gb')}</p>
-        </div>
-        <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
-          <h2 class="text-sm  text-zinc-600">Total Litres</h2>
-          <p class="font-normal  text-xl">{totalLitres.toLocaleString('en-gb')}</p>
-        </div>
-        <div class="bg-white  border  border-zinc-200  col-span-2  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1  sm:col-span-1">
-          <h2 class="text-sm  text-zinc-600">Total Spent</h2>
-          <p class="font-normal  text-xl">&pound;{totalCost}</p>
-        </div>
+        {summary.map(({ name, value }) => (
+          <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
+            <h2 class="text-sm  text-zinc-600">{name}</h2>
+            <p class="font-normal  text-xl">{value.toLocaleString('en-gb')}</p>
+          </div>
+        ))}
       </div>
       <div class="border  border-zinc-200  overflow-x-auto  rounded-md  sm:overflow-hidden">
         <table class="border-collapse  -mb-[1px]  table-auto  text-left  text-sm  w-full  whitespace-nowrap">
