@@ -3,7 +3,7 @@ import { pagesSchema } from '@/schema/pages.ts'
 import { vehiclesSchema } from '@/schema/vehicles.ts'
 
 export const collections = {
-  blog: defineCollection({ type: 'content', schema: blogSchema }),
-  pages: defineCollection({ type: 'content', schema: pagesSchema }),
-  vehicles: defineCollection({ type: 'data', schema: vehiclesSchema }),
+  blog: defineCollection({ schema: blogSchema, type: 'content',  }),
+  pages: defineCollection({ schema: pagesSchema, type: 'content' }),
+  vehicles: defineCollection({ schema: vehiclesSchema, type: 'data' }),
 }
