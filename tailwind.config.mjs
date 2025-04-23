@@ -33,7 +33,7 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.primary.700'),
-              fontWeight: theme('fontWeight.light'),
+              fontWeight: theme('fontWeight.normal'),
               textDecoration: 'none',
               '&:hover': {
                 color: theme('colors.primary.900'),
