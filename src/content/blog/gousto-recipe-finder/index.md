@@ -1,11 +1,11 @@
 ---
-title: Gousto Recipe Finder - An easy way to explore 5,000+ meals
+title: Gousto Recipe Finder - An easy way to explore almost 6,000 meals
 date: 2025-04-23
 cover: ./images/gousto-recipe-finder.jpg
 tags: [ "Food", "Projects" ]
 ---
 
-I am excited to launch a brand new way to explore Gousto's incredible recipe collection - say hello to the **[Gousto Recipe Finder](https://gousto.wiki)**, a fast, lightweight, and beautifully simple tool for discovering your next delicious meal.
+I am excited to launch a brand new way to explore [Gousto's](https://gousto.wiki/signup) incredible recipe collection - say hello to the **[Gousto Recipe Finder](https://gousto.wiki)**, a fast, lightweight, and beautifully simple tool for discovering your next delicious meal.
 
 ## 🔎 A better way to explore 5,000+ meal recipes
 
@@ -38,4 +38,4 @@ This project is **not affiliated with or endorsed by Gousto**. All recipe conten
 
 ---
 
-Ready to get inspired? Head to the site, search for something tasty, and let dinner practically plan itself, and you can also [get 60% off your first box](https://www.gousto.co.uk/raf/?promo_code=CHRIS45125288) 👀.
+Ready to get inspired? Head to the site, search for something tasty, and let dinner practically plan itself, and you can also [get 65% off your first box](https://www.gousto.co.uk/raf/?promo_code=CHRIS45125288) 👀.
