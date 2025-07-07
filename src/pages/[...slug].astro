@@ -6,7 +6,7 @@ export const getStaticPaths = async () => {
   const pages = await getCollection('pages');
 
   return pages.map((page) => ({
-    params: { slug: page.slug },
+    params: { slug: page.id },
     props: { page },
   }));
 }
@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
 const { page } = Astro.props;
 const { data } = page;
 const { meta, title } = data;
-const { Content } = await page.render();
+const { Content } = await render(page);
 ---
 
 <Layout heading={title} meta={meta}>

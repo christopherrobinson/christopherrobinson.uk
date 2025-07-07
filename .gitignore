@@ -7,22 +7,13 @@ dist/
 # unimport
 unimport.d.ts
 
-# yarn modern
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# netlify
+.netlify/
 
 # dependencies
 node_modules/
 
 # logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 
 # environment variables

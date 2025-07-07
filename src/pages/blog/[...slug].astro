@@ -9,7 +9,7 @@ export const getStaticPaths = async () => {
 
   return posts.map((post, i) => ({
     params: {
-      slug: post.slug,
+      slug: post.id,
     },
     props: {
       nextPost: i === 0 ? null : posts[i - 1],
@@ -22,7 +22,7 @@ export const getStaticPaths = async () => {
 const { post, prevPost, nextPost } = Astro.props;
 const { data } = post;
 const { cover, date, meta, tags, title } = data;
-const { remarkPluginFrontmatter, Content } = await post.render();
+const { remarkPluginFrontmatter, Content } = await render(post);
 const backgroundImage = cover && (await getImage({ src: cover }));
 ---
 
@@ -92,7 +92,7 @@ const backgroundImage = cover && (await getImage({ src: cover }));
       <div class="grid  grid-cols-11">
         <div class="col-span-5  flex  items-center  justify-start">
           {nextPost && (
-            <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={`/blog/${nextPost.slug}/`}>
+            <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={`/blog/${nextPost.id}/`}>
               <Icon class="mr-1  size-3" name="chevron-left" />
               {nextPost.data.title}
             </a>
@@ -105,7 +105,7 @@ const backgroundImage = cover && (await getImage({ src: cover }));
         </div>
         <div class="col-span-5  flex  items-center  justify-end">
           {prevPost && (
-            <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={`/blog/${prevPost.slug}/`}>
+            <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={`/blog/${prevPost.id}/`}>
               {prevPost.data.title}
               <Icon class="ml-1  size-3" name="chevron-right" />
             </a>
