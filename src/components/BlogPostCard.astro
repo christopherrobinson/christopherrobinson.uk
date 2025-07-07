@@ -6,19 +6,19 @@ export interface BlogPostCardProps {
   cover?: ImageMetadata;
   date: Date;
   excerpt: string;
+  id: string;
   minutesRead: number;
-  slug: string;
   title: string;
 }
 
-const { cover, date, excerpt, minutesRead, slug, title } = Astro.props;
+const { cover, date, excerpt, id, minutesRead, title } = Astro.props;
 const backgroundImage = cover && (await getImage({ src: cover }));
 ---
 
 <div class="@container">
   <a
     class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  overflow-hidden  rounded-md  transition  hover:border-zinc-200  hover:shadow-sm  @min-[608px]:flex-row"
-    href={`/blog/${slug}/`}
+    href={`/blog/${id}/`}
   >
     <div
       class={`

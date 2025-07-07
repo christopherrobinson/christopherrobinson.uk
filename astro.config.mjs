@@ -1,6 +1,7 @@
 import { defineConfig, envField } from 'astro/config';
 import icon from 'astro-icon';
 import remarkDescription from 'astro-remark-description';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from "@tailwindcss/vite";
@@ -14,6 +15,9 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: netlify({
+    imageCDN: false,
+  }),
   env: {
     schema: {
       GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
@@ -67,8 +71,9 @@ export default defineConfig({
         presets: [
           { from: 'astro:assets',          imports: [ 'getImage', 'Picture' ] },
           { from: 'astro:components',      imports: [ 'Debug' ] },
-          { from: 'astro:content',         imports: [ 'defineCollection', 'getCollection', 'z' ] },
+          { from: 'astro:content',         imports: [ 'defineCollection', 'getCollection', 'render', 'z' ] },
           { from: 'astro:transitions',     imports: [ 'ViewTransitions' ] },
+          { from: 'astro/loaders',         imports: [ 'glob' ] },
           { from: 'astro-capo',            imports: [ 'Head' ] },
           { from: 'astro-icon/components', imports: [ 'Icon' ] },
           { from: 'react',                 imports: [ 'useState' ] },

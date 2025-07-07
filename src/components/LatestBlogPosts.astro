@@ -29,17 +29,17 @@ const posts = (await getCollection('blog'))
     )}
     <div class="gap-4  grid  lg:gap-8  lg:grid-cols-3">
       {posts.map(async (post) => {
-        const { data, slug } = post
+        const { data, id } = post
         const { cover, date, title } = data
-        const { remarkPluginFrontmatter } = await post.render()
+        const { remarkPluginFrontmatter } = await render(post);
 
         return (
           <BlogPostCard
             cover={cover}
             date={date}
             excerpt={remarkPluginFrontmatter.excerpt}
+            id={id}
             minutesRead={remarkPluginFrontmatter.minutesRead}
-            slug={slug}
             title={title}
           />
         )
