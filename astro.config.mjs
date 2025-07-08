@@ -15,17 +15,7 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify({
-    imageCDN: false,
-    redirects: [
-      {
-        from: '/api/mpg/:slug.png',
-        to: '/api/mpg/:slug/',
-        status: 200,
-        force: true,
-      },
-    ],
-  }),
+  adapter: netlify({ imageCDN: false }),
   env: {
     schema: {
       GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
