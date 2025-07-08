@@ -54,7 +54,7 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
   site: site.url,
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   vite: {
     plugins: [
       basicSsl(),

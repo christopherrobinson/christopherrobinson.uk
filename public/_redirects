@@ -4,7 +4,3 @@ https://www.christopherrobinson.co.uk/* https://christopherrobinson.uk/:splat 30
 
 # General
 /snippets/weather-location-codes/*      /projects/weather-location-codes/
-
-# API
-/api/mpg/land-rover-freelander-2.png    /api/mpg/land-rover-freelander-2/     200!
-/api/mpg/:vehicle.png                   /api/mpg/:vehicle/                    200!
