@@ -15,9 +15,7 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify({
-    imageCDN: false,
-  }),
+  adapter: netlify({ imageCDN: false }),
   env: {
     schema: {
       GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
@@ -56,7 +54,7 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
   site: site.url,
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   vite: {
     plugins: [
       basicSsl(),

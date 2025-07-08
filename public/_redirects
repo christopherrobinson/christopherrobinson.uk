@@ -1,8 +1,6 @@
 # Domain aliases
-
-https://christopherrobinson.co.uk/*      https://christopherrobinson.uk/:splat                       301!
-https://www.christopherrobinson.co.uk/*  https://christopherrobinson.uk/:splat                       301!
+https://christopherrobinson.co.uk/*     https://christopherrobinson.uk/:splat 301!
+https://www.christopherrobinson.co.uk/* https://christopherrobinson.uk/:splat 301!
 
 # General
-
-/snippets/weather-location-codes/*       /projects/weather-location-codes/
+/snippets/weather-location-codes/*      /projects/weather-location-codes/
