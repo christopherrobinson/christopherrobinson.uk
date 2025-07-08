@@ -15,7 +15,6 @@
     X-XSS-Protection = "1; mode=block"
 
 [[redirects]]
-  from = "/api/mpg/:vehicle.png"
-  to = "/api/mpg/:vehicle/"
+  from = "/api/mpg/land-rover-freelander-2.png"
+  to = "/api/mpg/land-rover-freelander-2/"
   status = 200
-  force = true
