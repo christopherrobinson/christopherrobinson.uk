@@ -17,6 +17,14 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 export default defineConfig({
   adapter: netlify({
     imageCDN: false,
+    redirects: [
+      {
+        from: '/api/mpg/:slug.png',
+        to: '/api/mpg/:slug/',
+        status: 200,
+        force: true,
+      },
+    ],
   }),
   env: {
     schema: {

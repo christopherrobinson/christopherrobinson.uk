@@ -13,9 +13,3 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-
-[[redirects]]
-  from = "/api/mpg/land-rover-freelander-2.png"
-  to = "/api/mpg/land-rover-freelander-2/"
-  status = 200
-  force = true
