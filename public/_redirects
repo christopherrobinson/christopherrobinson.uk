@@ -3,12 +3,6 @@
 https://christopherrobinson.co.uk/*     https://christopherrobinson.uk/:splat 301!
 https://www.christopherrobinson.co.uk/* https://christopherrobinson.uk/:splat 301!
 
-
 # General
 
 /snippets/weather-location-codes/*      /projects/weather-location-codes/
-
-
-# API
-
-/api/mpg/:slug.png                      /api/mpg/:slug/                       200
