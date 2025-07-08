@@ -18,3 +18,4 @@
   from = "/api/mpg/land-rover-freelander-2.png"
   to = "/api/mpg/land-rover-freelander-2/"
   status = 200
+  force = true
