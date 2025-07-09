@@ -76,6 +76,7 @@ export default defineConfig({
           { from: 'astro-icon/components', imports: [ 'Icon' ] },
           { from: 'react',                 imports: [ 'useState' ] },
           { from: 'string-strip-html',     imports: [ 'stripHtml' ] },
+          { from: 'vitest',                imports: [ 'describe', 'expect', 'it' ] },
         ],
       }),
     ],
