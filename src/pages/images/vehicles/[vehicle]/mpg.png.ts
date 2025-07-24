@@ -2,7 +2,15 @@ import type { APIRoute } from 'astro';
 import { getEntry } from 'astro:content';
 import path from 'path';
 
-export const prerender = false;
+export const getStaticPaths = async () => {
+  const vehicles = await getCollection('vehicles');
+
+  return vehicles.map((vehicle) => ({
+    params: {
+      vehicle: vehicle.id,
+    },
+  }));
+}
 
 export const GET: APIRoute = async ({ params }) => {
   const vehicleSlug = params.vehicle;
@@ -27,7 +35,7 @@ export const GET: APIRoute = async ({ params }) => {
     }
 
     const imagePath = path.resolve(`public/images/vehicles/${vehicleSlug}.jpg`);
-    const buffer = await generateMpgImage(((totalMiles / totalLitres) * 4.544), imagePath);
+    const buffer = await generateMpgImage(((totalMiles / totalLitres) * 4.546), imagePath);
 
     return new Response(buffer, {
       status: 200,
