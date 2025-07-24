@@ -1,7 +1,8 @@
+packages:
+  - .
+
 onlyBuiltDependencies:
+  - '@parcel/watcher'
   - '@tailwindcss/oxide'
   - esbuild
   - sharp
-
-packages:
-  - '.'
