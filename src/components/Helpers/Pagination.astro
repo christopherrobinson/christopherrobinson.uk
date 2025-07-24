@@ -1,47 +1,74 @@
 ---
-import Container from '@/components/Container.astro';
+import { type PaginationProps } from '@/types/Pagination';
 
-export interface PaginationProps {
-  baseUrl: string;
-  currentUrl: string;
-  length: number;
-  nextUrl?: string;
-  prevUrl?: string;
-}
-
-const { baseUrl, currentUrl, length, nextUrl, prevUrl } = Astro.props;
+const { baseUrl, currentPage, forceQueryString, total, totalPages } = Astro.props as PaginationProps;
+const { searchParams } = Astro.url;
+const itemsPerPage = {
+  '/blog/' : postsPerPage,
+}[baseUrl] || 10;
+const pages = getPagination(currentPage, totalPages);
+const start = (currentPage - 1) * itemsPerPage + 1;
+const end = Math.min(currentPage * itemsPerPage, total);
+const itemType = {
+  '/blog/' : 'posts',
+}[baseUrl] || 'items';
 ---
 
-<div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-12">
-  <Container>
-    <div class="grid  grid-cols-11">
-      <div class="col-span-5  flex  items-center  justify-start">
-        {(prevUrl && (baseUrl != currentUrl)) && (
-          <a
-            class="flex  items-center  justify-start  hover:text-primary  hover:underline"
-            href={prevUrl}
-          >
-            <Icon class="mr-1  size-3" name="chevron-left" />
-            Newer posts
-          </a>
-        )}
-      </div>
-      <div class="flex  items-center  justify-center">
-        <a class="hover:text-primary" href={baseUrl}>
-          <Icon class="size-5" name="grid-2" />
-        </a>
-      </div>
-      <div class="col-span-5  flex  items-center  justify-end">
-        {(nextUrl && (`${baseUrl}${length}/` != currentUrl)) && (
-          <a
-            class="flex  items-center  justify-end  hover:text-primary  hover:underline"
-            href={nextUrl}
-          >
-            Older posts
-            <Icon class="ml-1  size-3" name="chevron-right" />
-          </a>
-        )}
-      </div>
+<div class="border-zinc-200  border-t  flex  items-center  justify-between  mt-auto  py-4  text-sm  md:py-8">
+  <p class="hidden  md:block">Showing <strong>{start.toLocaleString()}</strong> to <strong>{end.toLocaleString()}</strong> of <strong>{total.toLocaleString()}</strong> {itemType}</p>
+  <nav aria-label="Pagination" class="flex  gap-2  items-center  justify-between  w-full  md:justify-end  md:w-auto">
+    <div class="flex  justify-start">
+      <a
+        aria-disabled={currentPage <= 1}
+        class={`
+          flex  items-center  gap-1  px-3  py-2  rounded-md  transition
+          ${currentPage <= 1 ? 'cursor-not-allowed  opacity-50' : 'hover:bg-zinc-100  hover:underline'}
+        `}
+        href={currentPage > 1 ? getPageUrl((currentPage - 1), baseUrl, searchParams, forceQueryString) : undefined}
+        tabindex={currentPage <= 1 ? -1 : 0}
+      >
+        <Icon class="size-3" name="chevron-left" />
+        Previous
+      </a>
     </div>
-  </Container>
+    <div class="flex  flex-1  items-center  justify-center  opacity-90  sm:hidden">
+      Page {currentPage} of {totalPages}
+    </div>
+    <div class="hidden  items-center  justify-center  gap-2  sm:flex">
+      {pages.map((page) => (
+        (page === '...') && (
+          <span class="flex  items-center  justify-center  opacity-80">
+            <Icon class="size-4" name="ellipsis" />
+          </span>
+        )
+        || (
+            <a
+              aria-current={page === currentPage ? 'page' : undefined}
+              href={getPageUrl(Number(page), baseUrl, searchParams, forceQueryString)}
+              class={`
+                px-3  py-2  rounded-md  transition
+                ${page === currentPage ? 'bg-primary-700  text-white' : 'hover:bg-zinc-100  hover:underline'}
+              `}
+            >
+              {page}
+            </a>
+          )
+        )
+      )}
+    </div>
+    <div class="flex  justify-end">
+      <a
+        aria-disabled={currentPage >= totalPages}
+        class={`
+          flex  items-center  gap-1  px-3  py-2  rounded-md  transition
+          ${currentPage >=totalPages ? 'cursor-not-allowed  opacity-50' : 'hover:bg-zinc-100  hover:underline'}
+        `}
+        href={currentPage < totalPages ? getPageUrl((currentPage + 1), baseUrl, searchParams, forceQueryString) : undefined}
+        tabindex={currentPage >= totalPages ? -1 : 0}
+      >
+        Next
+        <Icon class="size-3" name="chevron-right" />
+      </a>
+    </div>
+  </nav>
 </div>

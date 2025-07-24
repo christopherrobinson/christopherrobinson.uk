@@ -1,11 +1,9 @@
 ---
-import Container from '@/components/Container.astro';
 import FormattedDate from '@/components/Helpers/FormattedDate.astro';
 import Layout from '@/layouts/Default.astro';
 
 export const getStaticPaths = async () => {
-  const posts = (await getCollection('blog'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const posts = await getBlogPosts();
 
   return posts.map((post, i) => ({
     params: {
@@ -23,6 +21,8 @@ const { post, prevPost, nextPost } = Astro.props;
 const { data } = post;
 const { cover, date, meta, tags, title } = data;
 const { remarkPluginFrontmatter, Content } = await render(post);
+const { readingTime } = remarkPluginFrontmatter;
+const { minutes } = readingTime;
 const backgroundImage = cover && (await getImage({ src: cover }));
 ---
 
@@ -48,22 +48,22 @@ const backgroundImage = cover && (await getImage({ src: cover }));
     <div class="gap-4  grid  grid-cols-1  lg:gap-8  lg:grid-cols-12">
       <div class="col-span-1  py-5  lg:py-16  lg:col-span-2">
         <div class="lg:sticky  lg:top-[139px]">
-          <ul class="grid  grid-cols-2  justify-between  text-sm  sm:grid-cols-3  lg:block  lg:space-y-2">
-            <li class="flex  items-start  mb-2  lg:mb-0">
+          <ul class="space-y-2  text-sm">
+            <li class="flex  items-start">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <Icon class="text-zinc-600  h-4" name="calendar-day" />
+                <Icon class="text-primary-700  h-4" name="calendar-day" />
               </span>
               <FormattedDate date={date} />
             </li>
-            <li class="flex  items-start  mb-2  lg:mb-0">
+            <li class="flex  items-start">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <Icon class="text-zinc-600  h-4" name="stopwatch" />
+                <Icon class="text-primary-700  h-4" name="stopwatch" />
               </span>
-              {remarkPluginFrontmatter.minutesRead} read
+              {minutes} minute read
             </li>
-            <li class="col-span-2  flex  items-start  sm:col-span-1">
+            <li class="flex  items-start">
               <span class="flex  items-center  justify-center  h-5  mr-2  w-4">
-                <Icon class="text-zinc-600  h-4" name="tag" />
+                <Icon class="text-primary-700  h-4" name="tag" />
               </span>
               <ol class="flex  flex-wrap  -mx-0.5">
                 {tags?.map((tag: string, i: number, tags: string[]) => (
@@ -87,25 +87,20 @@ const backgroundImage = cover && (await getImage({ src: cover }));
       </div>
     </div>
   </Container>
-  <div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-12">
+  <div class="bg-zinc-100  border-t  border-zinc-200  hidden  mt-auto  py-8  sm:py-12  xl:block">
     <Container>
-      <div class="grid  grid-cols-11">
-        <div class="col-span-5  flex  items-center  justify-start">
+      <div class="grid  grid-cols-2">
+        <div class="flex  items-center  justify-start">
           {nextPost && (
-            <a class="flex  items-center  justify-start  hover:text-primary  hover:underline" href={`/blog/${nextPost.id}/`}>
+            <a class="flex  items-center  justify-start  hover:text-primary-700  hover:underline" href={`/blog/${nextPost.id}/`}>
               <Icon class="mr-1  size-3" name="chevron-left" />
               {nextPost.data.title}
             </a>
           )}
         </div>
-        <div class="flex  items-center  justify-center">
-          <a class="hover:text-primary" href="/blog/">
-            <Icon class="size-5" name="grid-2" />
-          </a>
-        </div>
-        <div class="col-span-5  flex  items-center  justify-end">
+        <div class="flex  items-center  justify-end">
           {prevPost && (
-            <a class="flex  items-center  justify-end  hover:text-primary  hover:underline" href={`/blog/${prevPost.id}/`}>
+            <a class="flex  items-center  justify-end  hover:text-primary-700  hover:underline" href={`/blog/${prevPost.id}/`}>
               {prevPost.data.title}
               <Icon class="ml-1  size-3" name="chevron-right" />
             </a>

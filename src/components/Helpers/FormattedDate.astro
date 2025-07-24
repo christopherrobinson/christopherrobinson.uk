@@ -1,10 +1,7 @@
 ---
-export interface FormattedDateProps {
-  date: Date;
-  options?: Intl.DateTimeFormatOptions;
-}
+import type { FormattedDateProps } from '@/types/FormattedDate';
 
-const { date, options } = Astro.props;
+const { date, options } = Astro.props as FormattedDateProps;
 ---
 
 <time datetime={date.toISOString()}>

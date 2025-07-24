@@ -1,30 +1,37 @@
 ---
+import type { BaseHeadProps } from '@/types/BaseHead';
 import { GOOGLE_TAG_MANAGER_ID } from 'astro:env/client';
 import faviconSrc from '@/images/favicon.png';
 import faviconSvgSrc from '@/images/favicon.svg';
 
-export interface BaseHeadProps {
-  description?: string;
-  title?: string;
-}
-
-const { description, title } = Astro.props;
+const { pathname } = Astro.url;
+const { description, og, robots, title, twitter } = Astro.props as BaseHeadProps;
 const appleTouchIcon = await getImage({ format: 'png', height: 180, src: faviconSrc, width: 180 });
+const canonicalUrl = new URL(pathname, Astro.site);
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' });
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const metaTitle = stripHtml(title ?? '').result || site.name;
 ---
 
 <meta charset="utf-8">
-<title>{title ? `${stripHtml(title).result} | ` : ``}{site.name}</title>
-<link rel="apple-touch-icon" href={appleTouchIcon.src} />
+<title>{!metaTitle.includes(site.name) ? `${metaTitle} | ${site.name}` : metaTitle}</title>
+<link rel="apple-touch-icon" href={appleTouchIcon.src}>
 <link rel="canonical" href={canonicalUrl}>
-<link rel="icon" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
-<link rel="manifest" href="/manifest.json" />
-{description && (
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href={faviconSvg.src} type="image/svg+xml">
+<link rel="manifest" href="/manifest.json">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{(description !== undefined) && (
   <meta name="description" content={stripHtml(description).result}>
 )}
-<meta name="viewport" content="width=device-width,initial-scale=1">
+{(robots !== undefined) && (
+  <meta name="robots" content={robots}>
+)}
+{og && Object.entries(og).map(([key, value]) => (
+  <meta property={`og:${key}`} content={String(value)}>
+))}
+{twitter && Object.entries(twitter).map(([key, value]) => (
+  <meta name={`twitter:${key}`} content={String(value)}>
+))}
 <style>
   @font-face {
     font-display: swap;
@@ -57,5 +64,4 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 <link rel="preload" href="/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Google Tag Manager -->
 <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GOOGLE_TAG_MANAGER_ID}');`}></script>
-<!-- End Google Tag Manager -->
 <ViewTransitions />

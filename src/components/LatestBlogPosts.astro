@@ -1,25 +1,17 @@
 ---
-import BlogPostCard from '@/components/BlogPostCard.astro';
-import Container from '@/components/Container.astro';
+import type { LatestBlogPostsProps } from '@/types/LatestBlogPosts';
 
-export interface LatestBlogPostsProps {
-  heading?: string;
-  limit?: number;
-}
-
-const { heading, limit } = Astro.props;
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, limit ?? 3);
+const { heading, limit } = Astro.props as LatestBlogPostsProps;
+const posts = await getBlogPosts({ limit: (limit ?? 3) });
 ---
 
-<div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  text-zinc-800  sm:py-16">
+<div class="bg-zinc-100  border-t  border-zinc-200  mt-auto  py-8  sm:py-16">
   <Container>
     {heading && (
       <div class="flex  items-baseline  justify-between  mb-8">
         <h2 class="font-light  font-serif  text-2xl  lg:text-3xl">{heading}</h2>
         <a
-          class="flex  items-center  justify-end  text-zinc-600  hover:text-zinc-600  hover:underline"
+          class="flex  items-center  justify-end  hover:text-primary-700  hover:underline"
           href="/blog/"
         >
           View all
@@ -32,14 +24,15 @@ const posts = (await getCollection('blog'))
         const { data, id } = post
         const { cover, date, title } = data
         const { remarkPluginFrontmatter } = await render(post);
+        const { excerpt, readingTime } = remarkPluginFrontmatter;
 
         return (
           <BlogPostCard
             cover={cover}
             date={date}
-            excerpt={remarkPluginFrontmatter.excerpt}
+            excerpt={excerpt}
             id={id}
-            minutesRead={remarkPluginFrontmatter.minutesRead}
+            readingTime={readingTime}
             title={title}
           />
         )

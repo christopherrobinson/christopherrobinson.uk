@@ -20,6 +20,7 @@
       "@/layouts/*": ["src/layouts/*"],
       "@/schema/*": ["src/schema/*"],
       "@/styles/*": ["src/styles/*"],
+      "@/types/*": ["src/types/*"],
     },
     "skipLibCheck": true,
     "strict": true,
