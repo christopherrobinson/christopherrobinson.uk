@@ -7,6 +7,6 @@ export const remarkReadingTime = () => {
     const readingTime = getReadingTime(textOnPage);
     const minutes     = Math.ceil(readingTime.minutes);
 
-    data.astro.frontmatter.minutesRead = `${minutes} minute${(minutes > 1 ? `s` : ``)}`;
+    data.astro.frontmatter.readingTime = { minutes };
   };
 };
