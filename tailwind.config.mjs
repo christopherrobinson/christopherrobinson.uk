@@ -2,7 +2,14 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+  content: {
+    files: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+    transform: {
+      md: (content) => {
+        return content.match(/class="([^"]*)"/g)?.join(' ') || '';
+      },
+    },
+  },
   theme: {
     extend: {
       colors: {
