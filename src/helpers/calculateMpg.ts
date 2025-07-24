@@ -3,7 +3,7 @@ export const calculateMpg = (litres: number, miles: number): string => {
     return '0.0';
   }
 
-  return ((miles / litres) * 4.544).toLocaleString('en-gb', {
+  return ((miles / litres) * 4.546).toLocaleString('en-gb', {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   });

@@ -1,12 +1,8 @@
 ---
-import Container from '@/components/Container.astro';
-import Elsewhere from '@/components/Layout/Footer/Elsewhere.astro';
+import type { FooterProps } from '@/types/Footer';
+import social from '@/data/social.json';
 
-export interface FooterProps {
-  minimal?: boolean;
-}
-
-const { minimal } = Astro.props;
+const { minimal } = Astro.props as FooterProps;
 ---
 
 <footer class="bg-zinc-900  mt-auto  text-white/80">
@@ -47,7 +43,15 @@ const { minimal } = Astro.props;
             <strong class="border-b  border-white/60  font-light  font-serif  inline-block  mb-4  pb-1  text-lg">
               Elsewhere
             </strong>
-            <Elsewhere />
+            <ul>
+              {social.map(({ href, name, title }) => (
+                <li>
+                  <a class="hover:text-white" href={href} target="_blank" title={title}>
+                    <Fragment set:html={name} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </Container>

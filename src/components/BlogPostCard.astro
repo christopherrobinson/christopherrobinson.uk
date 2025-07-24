@@ -1,29 +1,21 @@
 ---
-import type { ImageMetadata } from 'astro';
+import type { BlogPostCardProps } from '@/types/BlogPostCard';
 import FormattedDate from '@/components/Helpers/FormattedDate.astro';
 
-export interface BlogPostCardProps {
-  cover?: ImageMetadata;
-  date: Date;
-  excerpt: string;
-  id: string;
-  minutesRead: number;
-  title: string;
-}
-
-const { cover, date, excerpt, id, minutesRead, title } = Astro.props;
-const backgroundImage = cover && (await getImage({ src: cover }));
+const { cover, date, excerpt, id, readingTime, title } = Astro.props as BlogPostCardProps;
+const { minutes } = readingTime;
+const backgroundImage = cover && (await getImage({ height: 576, src: cover, width: 576 }));
 ---
 
 <div class="@container">
   <a
-    class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  overflow-hidden  rounded-md  transition  hover:border-zinc-200  hover:shadow-sm  @min-[608px]:flex-row"
+    class="bg-white  border  border-zinc-200  flex  flex-col  group  h-full  overflow-hidden  rounded-lg  transition  hover:border-secondary-200  hover:shadow-sm  hover:text-zinc-950  @min-[608px]:flex-row"
     href={`/blog/${id}/`}
   >
     <div
       class={`
-        aspect-video  bg-center  bg-cover  flex  items-center  justify-center  relative  shrink-0  w-full  @[608px]:w-60
-        ${!cover && (`bg-zinc-100`)}
+        aspect-video  bg-center  bg-cover  bg-secondary-100  flex  items-center  justify-center  relative  shrink-0  w-full  @[608px]:w-60
+        ${cover ? 'bg-zinc-100' : ''}
       `}
       style={cover && { backgroundImage: `url('${backgroundImage?.src}')` } || ``}
     >
@@ -36,19 +28,19 @@ const backgroundImage = cover && (await getImage({ src: cover }));
     </div>
     <div class="flex  flex-col  grow  h-full  p-6  space-y-4">
       <h2 class="text-xl  transition  group-focus:text-primary-700  group-hover:text-primary-700">{title}</h2>
-      <p class="grow">{excerpt}</p>
-      <ul class="flex  flex-wrap  justify-between  mt-auto  pt-1  text-sm  text-zinc-600">
+      {excerpt && <p class="grow">{excerpt}</p>}
+      <ul class="flex  flex-wrap  justify-between  mt-auto  pt-1  text-sm  text-zinc-600  group-hover:text-zinc-950">
         <li class="flex  items-center">
           <span class="flex  items-center  justify-center  h-4  mr-1  w-4">
-            <Icon class="text-zinc-600  h-3" name="calendar-day" />
+            <Icon class="text-primary-700  h-3" name="calendar-day" />
           </span>
           <FormattedDate date={date} />
         </li>
         <li class="flex  items-center">
           <span class="flex  items-center  justify-center  h-4  mr-1  w-4">
-            <Icon class="text-zinc-600  h-3" name="stopwatch" />
+            <Icon class="text-primary-700  h-3" name="stopwatch" />
           </span>
-          <span>{minutesRead}</span>
+          <span>{minutes} minute read</span>
         </li>
       </ul>
     </div>

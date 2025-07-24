@@ -4,8 +4,9 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-/* Set dark mode using [data-theme] attribute */
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
 /* Additional configuration */
 @config '../../tailwind.config.mjs';
+
+@theme {
+  --breakpoint-xs: 30rem;
+}

@@ -1,9 +1,7 @@
 ---
-export interface ContactFormProps {
-  actionUrl: string;
-}
+import type { ContactFormProps } from '@/types/ContactForm';
 
-const { actionUrl } = Astro.props;
+const { actionUrl } = Astro.props as ContactFormProps;
 ---
 
 <div class="bg-zinc-100  border  border-zinc-200  mb-8  rounded-sm  sm:mb-16  sm:p-4">

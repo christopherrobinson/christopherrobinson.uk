@@ -1,11 +1,9 @@
 ---
-export interface ContainerProps {
-  class?: string;
-}
+import { type ContainerProps } from '@/types/Container';
 
-const { class: className } = Astro.props;
+const { class: className } = Astro.props as ContainerProps;
 ---
 
-<div class:list={["mx-auto  max-w-7xl  px-4  w-full  lg:px-8", className]}>
+<div class:list={["mx-auto  max-w-[96rem]  px-4  w-full  lg:px-8", className]}>
   <slot />
 </div>

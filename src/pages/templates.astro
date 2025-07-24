@@ -1,18 +1,18 @@
 ---
 import type { ImageMetadata } from 'astro';
-import Container from '@/components/Container.astro';
-import { Content } from '@/content/pages/templates/index.md';
 import Layout from '@/layouts/Default.astro';
 import templates from '@/data/templates.json';
 
+const data = await getEntry('pages', 'templates');
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/templates/*.png')
 ---
 
 <Layout heading="Free HTML Templates">
   <Container>
-    <div class="max-w-none  prose  py-8  sm:py-16  md:prose-md  lg:prose-lg">
-      <Content />
-    </div>
+    {data && (
+      <div class="max-w-none  prose  py-8  sm:py-16  md:prose-md  lg:prose-lg" set:html={data?.rendered?.html}>
+      </div>
+    )}
     <div class="gap-4  grid  pb-8  sm:pb-16  sm:grid-cols-2  lg:gap-8  lg:grid-cols-3">
       {templates.map(({ name }) => (
         <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  rounded-md">
