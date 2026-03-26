@@ -15,14 +15,22 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify({ imageCDN: false }),
+  adapter: netlify({
+    imageCDN: false,
+  }),
   env: {
     schema: {
       GOOGLE_TAG_MANAGER_ID: envField.string({ access: 'public', context: 'client', optional: true }),
     },
   },
   experimental: {
+    chromeDevtoolsWorkspace: true,
     contentIntellisense: true,
+    queuedRendering: {
+      enabled: true,
+    },
+    rustCompiler: true,
+    svgo: true,
   },
   i18n: {
     defaultLocale: 'en',
@@ -54,7 +62,7 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
   site: site.url,
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
   vite: {
     plugins: [
       basicSsl(),
@@ -62,22 +70,24 @@ export default defineConfig({
       Unimport.vite({
         dirs: [
           './src/components/**/*',
-          './src/config/*',
-          './src/helpers/*',
+          './src/config/**/*',
+          './src/helpers/**/*',
+          './src/types/**/*',
         ],
         dts: true,
         include: [/\.astro$/, /\.[jt]sx?$/],
         presets: [
           { from: 'astro:assets',          imports: [ 'getImage', 'Image', 'Picture' ] },
           { from: 'astro:components',      imports: [ 'Debug' ] },
-          { from: 'astro:content',         imports: [ 'defineCollection', 'getCollection', 'getEntry', 'render', 'z' ] },
-          { from: 'astro:transitions',     imports: [ 'ViewTransitions' ] },
+          { from: 'astro:content',         imports: [ 'defineCollection', 'getCollection', 'getEntry', 'render' ] },
+          { from: 'astro:transitions',     imports: [ 'ClientRouter' ] },
           { from: 'astro/loaders',         imports: [ 'glob' ] },
+          { from: 'astro/zod',             imports: [ 'z' ] },
           { from: 'astro-capo',            imports: [ 'Head' ] },
           { from: 'astro-icon/components', imports: [ 'Icon' ] },
           { from: 'react',                 imports: [ 'useState' ] },
           { from: 'string-strip-html',     imports: [ 'stripHtml' ] },
-          { from: 'vitest',                imports: [ 'beforeEach', 'describe', 'expect', 'it', 'vi' ] },
+          { from: 'vitest',                imports: [ 'beforeEach', 'describe', 'expect', 'it', 'vi' ], condition: (filepath) => /\.test\.[jt]sx?$/.test(filepath) },
         ],
       }),
     ],

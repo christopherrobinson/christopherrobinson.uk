@@ -1,6 +1,4 @@
 ---
-import type { ContactFormProps } from '@/types/ContactForm';
-
 const { actionUrl } = Astro.props as ContactFormProps;
 ---
 
@@ -138,19 +136,17 @@ const { actionUrl } = Astro.props as ContactFormProps;
 </div>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const remaining      = document.querySelector<HTMLElement>('[data-remaining]');
-    const remainingInput = document.querySelector<HTMLInputElement>('[name="' + remaining?.getAttribute('data-remaining') + '"]');
+  const remaining      = document.querySelector<HTMLElement>('[data-remaining]');
+  const remainingInput = document.querySelector<HTMLInputElement>('[name="' + remaining?.getAttribute('data-remaining') + '"]');
 
-    if (remaining && remainingInput) {
-      remaining.innerHTML = remainingInput.maxLength.toString();
-      remainingInput.addEventListener(
-        'keyup',
-        (() => {
-          remaining.innerHTML = (remainingInput.maxLength - remainingInput.value.length).toString();
-        }),
-        { passive: true },
-      )
-    }
-  });
+  if (remaining && remainingInput) {
+    remaining.innerHTML = remainingInput.maxLength.toString();
+    remainingInput.addEventListener(
+      'keyup',
+      (() => {
+        remaining.innerHTML = (remainingInput.maxLength - remainingInput.value.length).toString();
+      }),
+      { passive: true },
+    )
+  }
 </script>

@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ params }) => {
     const imagePath = path.resolve(`public/images/vehicles/${vehicleSlug}.jpg`);
     const buffer = await generateMpgImage(((totalMiles / totalLitres) * 4.546), imagePath);
 
-    return new Response(buffer, {
+    return new Response(Uint8Array.from(buffer), {
       status: 200,
       headers: {
         'Content-Type': 'image/png',
@@ -46,6 +46,8 @@ export const GET: APIRoute = async ({ params }) => {
     });
   }
   catch (error) {
-    return new Response('Failed to generate image', { status: 500 });
+    return new Response('Failed to generate image', {
+      status: 500,
+    });
   }
 };

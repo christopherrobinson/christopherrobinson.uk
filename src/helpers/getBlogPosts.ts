@@ -1,5 +1,3 @@
-import type { GetBlogPostsProps } from '@/types/GetBlogPosts';
-
 let blogCache: any[] | null = null;
 
 export const getBlogPosts = async (options: GetBlogPostsProps = {}) => {

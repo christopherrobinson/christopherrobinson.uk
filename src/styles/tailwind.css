@@ -7,6 +7,12 @@
 /* Additional configuration */
 @config '../../tailwind.config.mjs';
 
+@layer base {
+  :root {
+    --tw-duration: 300ms;
+  }
+}
+
 @theme {
   --breakpoint-xs: 30rem;
 }

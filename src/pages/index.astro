@@ -10,9 +10,32 @@ import Layout from '@/layouts/Default.astro';
     title: "Front-End Umbraco Developer and Umbraco Professional in Chester",
   }}
 >
-  <div class="bg-primary-700  flex  items-center  grow  py-16  text-center  text-white  sm:py-32  md:py-48">
+  <div class="bg-primary-700  overflow-hidden  relative">
     <Container>
-      <h1 class="font-light  font-serif  text-3xl  sm:text-4xl  md:text-5xl">Hello! I'm Christopher 👋🏻</h1>
+      <div class="relative">
+        <div class="gap-8  grid  items-center  relative  z-10  lg:grid-cols-12">
+          <div class="flex  flex-col  gap-8  py-32  text-white/90  lg:col-span-6">
+            <div class="flex  flex-col  font-medium  font-serif  gap-2">
+              <h1 class="text-3xl  sm:text-4xl  xl:text-5xl">Christopher Robinson</h1>
+              <h2 class="text-lg  xl:text-xl">Front-End Developer and Umbraco Certified Expert</h2>
+            </div>
+            <p class="leading-relaxed">
+              I have <strong class="font-medium">over two decades of professional experience</strong> developing websites and applications of varying size and scale
+              based on web-standard technologies; from clean coded HTML and
+              reusable CSS components with responsive techniques and progressive
+              enhancement, through to the modern headless web with  <strong class="font-medium">React</strong>,  <strong class="font-medium">styled-components</strong>, and  <strong class="font-medium">GraphQL</strong> endpoints.
+            </p>
+            <div>
+              <a
+                class="bg-zinc-900  font-medium  inline-flex  gap-2  items-center  justify-center  px-4  py-3  rounded-md  text-sm  text-white  transition  hover:bg-zinc-950"
+                href="/about/"
+              >
+                Find out more about me <Icon class="size-4" name="arrow-right-from-bracket" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </Container>
   </div>
   <Container>
@@ -30,7 +53,7 @@ import Layout from '@/layouts/Default.astro';
       <span class="block  mt-3  text-center  text-sm   text-zinc-600">Photo of Christopher Robinson</span>
     </div>
     <div class="max-w-none  prose  py-8  sm:py-16  md:prose-md  lg:prose-lg">
-      <p>I have <strong>two decades of professional experience</strong> developing websites and applications of varying size and scale based on web-standard technologies; from clean coded HTML and reusable CSS components with responsive techniques and progressive enhancement, through to the modern headless web with <strong>React</strong>, <strong>styled-components</strong>, and <strong>GraphQL</strong> endpoints.</p>
+      <p>I have <strong>over two decades of professional experience</strong> developing websites and applications of varying size and scale based on web-standard technologies; from clean coded HTML and reusable CSS components with responsive techniques and progressive enhancement, through to the modern headless web with <strong>React</strong>, <strong>styled-components</strong>, and <strong>GraphQL</strong> endpoints.</p>
       <p>I am an <strong>Umbraco Certified Expert</strong> and have been creating Umbraco websites using ASP.NET (MVC, C#, Angular) for over seventeen years. Although this site is <a href="https://astro.build/" rel="external  nofollow  noopener  noreferrer" target="_blank">built using Astro</a> and the source code is available on <a href="https://github.com/christopherrobinson/christopherrobinson.uk" rel="external  nofollow  noopener  noreferrer" target="_blank">my GitHub profile</a>.</p>
       <p>Outside of my professional life, I enjoy hiking, riding motorbikes, and exploring new places. Want to know more? Head over to the <a href="/about/">About</a> page.</p>
     </div>

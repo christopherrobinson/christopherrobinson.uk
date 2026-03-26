@@ -1,6 +1,4 @@
 ---
-import { type NavItemProps } from '@/types/NavItem';
-
 const { href } = Astro.props as NavItemProps;
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === `/${pathname.split('/')[1]}/`;

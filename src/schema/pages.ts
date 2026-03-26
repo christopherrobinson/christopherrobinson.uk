@@ -1,3 +1,5 @@
+import { z } from 'astro/zod';
+
 export const pagesSchema = () => z.object({
   meta: z.object({
     description: z.string().optional(),

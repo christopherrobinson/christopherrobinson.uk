@@ -1,3 +1,5 @@
+import { z } from 'astro/zod';
+
 export const vehiclesSchema = () => z.object({
   fuelups: z.array(z.object({
     date: z.string().or(z.date()).transform((v) => new Date(v)),
