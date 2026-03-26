@@ -1,25 +1,20 @@
 ---
 import Layout from '@/layouts/Default.astro';
 
-export const getStaticPaths = async ({ paginate }) => {
+export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getBlogPosts();
   const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
-  const paths = [];
 
-  for (const tag of tags) {
-    const posts = (await getBlogPosts()).filter((post) => post.data.tags.includes(tag));
+  return tags.flatMap((tag) => {
+    const taggedPosts = posts.filter((post) => post.data.tags.includes(tag));
 
-    const paginatedPaths = paginate(posts, {
+    return paginate(taggedPosts, {
       pageSize: postsPerPage,
       params: { slug: createSlug(tag) },
       props: { tag },
     });
-
-    paths.push(...paginatedPaths);
-  }
-
-  return paths;
-};
+  });
+});
 
 const { slug } = Astro.params;
 const { page, tag } = Astro.props;

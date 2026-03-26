@@ -1,6 +1,4 @@
 ---
-import { type PaginationProps } from '@/types/Pagination';
-
 const { baseUrl, currentPage, forceQueryString, total, totalPages } = Astro.props as PaginationProps;
 const { searchParams } = Astro.url;
 const itemsPerPage = {

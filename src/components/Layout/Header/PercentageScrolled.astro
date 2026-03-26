@@ -6,29 +6,27 @@ type Props = Record<string, never>;
 </div>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    if (typeof document !== 'undefined') {
-      const html            = document.documentElement;
-      const body            = document.body;
-      let   scrolled        = Math.round((html['scrollTop'] || body['scrollTop']) / ((html['scrollHeight'] || body['scrollHeight']) - window.innerHeight) * 100);
-      const scrolledElement = document.querySelector<HTMLElement>('[data-id="percentage-scrolled"]');
+  if (typeof document !== 'undefined') {
+    const html            = document.documentElement;
+    const body            = document.body;
+    let   scrolled        = Math.round((html['scrollTop'] || body['scrollTop']) / ((html['scrollHeight'] || body['scrollHeight']) - window.innerHeight) * 100);
+    const scrolledElement = document.querySelector<HTMLElement>('[data-id="percentage-scrolled"]');
 
-      if (scrolledElement) {
-        scrolledElement.style.width = `${scrolled}%`;
+    if (scrolledElement) {
+      scrolledElement.style.width = `${scrolled}%`;
 
-        if (html['scrollHeight'] <= html.clientHeight) {
-          scrolledElement.style.width = '100%';
-        }
-
-        window.addEventListener(
-          'scroll',
-          () => {
-            scrolled = Math.round((html['scrollTop'] || body['scrollTop']) / ((html['scrollHeight'] || body['scrollHeight']) - window.innerHeight) * 100);
-            scrolledElement.style.width = `${scrolled}%`;
-          },
-          { passive: true },
-        );
+      if (html['scrollHeight'] <= html.clientHeight) {
+        scrolledElement.style.width = '100%';
       }
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          scrolled = Math.round((html['scrollTop'] || body['scrollTop']) / ((html['scrollHeight'] || body['scrollHeight']) - window.innerHeight) * 100);
+          scrolledElement.style.width = `${scrolled}%`;
+        },
+        { passive: true },
+      );
     }
-  });
+  }
 </script>

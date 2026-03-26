@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
-module.exports = {
+export default {
   content: {
     files: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
     transform: {
@@ -31,9 +31,6 @@ module.exports = {
         sans: ['Geist Sans', ...fontFamily.sans],
         serif: ['Noto Serif', ...fontFamily.serif],
         mono: ['Geist Mono', ...fontFamily.mono],
-      },
-      transitionDuration: {
-        DEFAULT: '300ms',
       },
       typography: (theme) => ({
         DEFAULT: {

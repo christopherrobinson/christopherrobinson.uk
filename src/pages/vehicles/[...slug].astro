@@ -17,17 +17,25 @@ const { page } = Astro.props;
 const { data } = page;
 const { fuelups, name } = data;
 
-const totalCost = fuelups.reduce((n: number, { litres, price }) => n + (litres * price), 0).toLocaleString('en-gb', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const totalFuelups = fuelups.length;
-const totalLitres = fuelups.reduce((n: number, { litres }) => n + litres, 0);
-const totalMiles = fuelups.reduce((n: number, { miles }) => n + miles, 0);
-const averageMpg = calculateMpg(totalLitres, totalMiles);
+const totals = fuelups.reduce((accumulator, { litres, miles, price }) => {
+  accumulator.cost += litres * price;
+  accumulator.litres += litres;
+  accumulator.miles += miles;
+
+  return accumulator;
+}, {
+  cost: 0,
+  litres: 0,
+  miles: 0,
+});
+
+const averageMpg = calculateMpg(totals.litres, totals.miles);
 const summary = [
   { name: 'Average MPG', value: averageMpg },
-  { name: 'Fuelups', value: totalFuelups },
-  { name: 'Miles Driven', value: totalMiles },
-  { name: 'Litres Used', value: totalLitres },
-  { name: 'Total Spent', value: `£${totalCost}` },
+  { name: 'Fuelups', value: formatNumber(fuelups.length) },
+  { name: 'Miles Driven', value: formatNumber(totals.miles) },
+  { name: 'Litres Used', value: formatNumber(totals.litres) },
+  { name: 'Total Spent', value: `£${formatNumber(totals.cost, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` },
 ];
 ---
 
@@ -39,13 +47,13 @@ const summary = [
         {summary.map(({ name, value }) => (
           <div class="bg-white  border  border-zinc-200  flex  flex-col  h-full  overflow-hidden  p-4  rounded-md  space-y-1">
             <h2 class="font-medium  text-sm">{name}</h2>
-            <p class="font-mono  text-xl">{value.toLocaleString('en-gb')}</p>
+            <p class="font-mono  text-xl">{value}</p>
           </div>
         ))}
       </div>
       <canvas class="aspect-2/1  w-full" data-fuelups={btoa(JSON.stringify(fuelups))} id="fuelups-chart"></canvas>
       <div class="border  border-zinc-200  overflow-x-auto  rounded-md  sm:overflow-hidden">
-        <table class="border-collapse  -mb-[1px]  table-auto  text-left  text-sm  w-full  whitespace-nowrap">
+        <table class="border-collapse  -mb-px  table-auto  text-left  text-sm  w-full  whitespace-nowrap">
           <thead>
             <tr class="border-b  border-zinc-200  bg-zinc-100">
               <th class="px-3  py-2">Date</th>
@@ -57,14 +65,14 @@ const summary = [
             </tr>
           </thead>
           <tbody class="divide-solid  divide-y  divide-zinc-200  font-mono  text-zinc-600">
-            {fuelups?.sort((a, b) => b.date.valueOf() - a.date.valueOf()).map(({ date, litres, miles, price }: { date: Date, litres: number, miles: number, price: number }) => {
+            {[...fuelups].sort((a, b) => b.date.valueOf() - a.date.valueOf()).map(({ date, litres, miles, price }) => {
               const fuelupMpg = calculateMpg(litres, miles);
 
               return (
                 <tr class="even:bg-zinc-50">
                   <td class="px-3  py-2"><FormattedDate date={date} /></td>
-                  <td class="px-3  py-2">{miles.toLocaleString('en-gb', { minimumFractionDigits: 1 })}</td>
-                  <td class="px-3  py-2">{litres.toLocaleString('en-gb', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                  <td class="px-3  py-2">{formatNumber(miles, { minimumFractionDigits: 1 })}</td>
+                  <td class="px-3  py-2">{formatNumber(litres, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                   <td class="px-3  py-2">
                     <span class="justify-between  flex  w-12">
                       {fuelupMpg}
@@ -73,8 +81,8 @@ const summary = [
                       </span>
                     </span>
                   </td>
-                  <td class="px-3  py-2">{price}</td>
-                  <td class="px-3  py-2">&pound;{(litres * price).toLocaleString('en-gb', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                  <td class="px-3  py-2">{`£${formatNumber(price, { minimumFractionDigits: 3, maximumFractionDigits: 3 })}/L`}</td>
+                  <td class="px-3  py-2">{`£${formatNumber(litres * price, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}</td>
                 </tr>
               )
             })}
@@ -88,99 +96,91 @@ const summary = [
 <script>
 import Chart from 'chart.js/auto';
 
-document.addEventListener('astro:page-load', () => {
-  if (typeof document !== 'undefined') {
-    (async function () {
-      const element = document.getElementById('fuelups-chart') as HTMLCanvasElement;
-      if (!element) return;
+if (typeof document !== 'undefined') {
+  const element = document.getElementById('fuelups-chart') as HTMLCanvasElement;
+  const encodedFuelups = element?.dataset.fuelups;
 
-      const encodedObject = element.dataset.fuelups;
-      if (!encodedObject) return;
+  if (element && encodedFuelups) {
+    const fuelups = JSON.parse(window.atob(encodedFuelups));
+    const getMonthKey = (date: Date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    const getAverage = (values: number[]) => +(values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(1);
+    const formatMonthLabel = (key: string) => {
+      const [year, month] = key.split('-');
 
-      const fuelups = JSON.parse(window.atob(encodedObject));
-
-      const mpgByMonth: Record<string, number[]> = {};
-      const costByMonth: Record<string, number> = {};
-
-      fuelups.forEach(entry => {
-        const date = new Date(entry.date);
-        const key = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`;
-        const mpg = (entry.miles / entry.litres) * 4.546;
-        const cost = entry.litres * entry.price;
-
-        if (!mpgByMonth[key]) {
-          mpgByMonth[key] = [];
-          costByMonth[key] = 0;
-        }
-
-        mpgByMonth[key].push(mpg);
-        costByMonth[key] += cost;
+      return new Date(Number(year), Number(month) - 1).toLocaleDateString('en-GB', {
+        month: 'long',
+        year: 'numeric'
       });
+    };
 
-      const monthlyKeys = Object.keys(mpgByMonth).sort();
+    const { mpgByMonth, totalLitres, totalMiles } = fuelups.reduce((accumulator: {
+      mpgByMonth: Record<string, number[]>;
+      totalLitres: number;
+      totalMiles: number;
+    }, entry) => {
+      const key = getMonthKey(new Date(entry.date));
+      const mpg = (entry.miles / entry.litres) * 4.546;
 
-      const monthlyAverages = monthlyKeys.map(key => {
-        const values = mpgByMonth[key];
-        const avg = values.reduce((a, b) => a + b, 0) / values.length;
-        return +avg.toFixed(1);
-      });
+      if (!accumulator.mpgByMonth[key]) {
+        accumulator.mpgByMonth[key] = [];
+      }
 
-      const monthlyLabels = monthlyKeys.map(key => {
-        const [year, month] = key.split('-');
-        const date = new Date(Number(year), Number(month) - 1);
-        return date.toLocaleDateString('en-GB', {
-          month: 'long',
-          year: 'numeric'
-        });
-      });
+      accumulator.mpgByMonth[key].push(mpg);
+      accumulator.totalLitres += entry.litres;
+      accumulator.totalMiles += entry.miles;
 
-      const totalMiles = fuelups.reduce((sum, e) => sum + e.miles, 0);
-      const totalLitres = fuelups.reduce((sum, e) => sum + e.litres, 0);
-      const overallAverage = +(totalMiles / totalLitres * 4.546).toFixed(1);
+      return accumulator;
+    }, {
+      mpgByMonth: {},
+      totalLitres: 0,
+      totalMiles: 0,
+    });
 
-      new Chart(element, {
-        data: {
-          datasets: [
-            {
-              borderColor: '#037960',
-              borderWidth: 2,
-              data: monthlyAverages,
-              pointRadius: 4,
-              tension: 0.3,
-            },
-            {
-              borderColor: '#1e1d23',
-              borderWidth: 2,
-              borderDash: [8, 8],
-              data: new Array(monthlyLabels.length).fill(overallAverage),
-              pointRadius: 0,
-            }
-          ],
-          labels: monthlyLabels
-        },
-        options: {
-          plugins: {
-            legend: {
-              display: false
-            },
-            tooltip: {
-              displayColors: false,
-              callbacks: {
-                label: (context) => `Average: ${context.parsed.y} MPG`
-              }
-            }
+    const monthlyKeys = Object.keys(mpgByMonth).sort();
+    const monthlyAverages = monthlyKeys.map((key) => getAverage(mpgByMonth[key]));
+    const monthlyLabels = monthlyKeys.map(formatMonthLabel);
+    const overallAverage = +((totalMiles / totalLitres) * 4.546).toFixed(1);
+
+    new Chart(element, {
+      data: {
+        datasets: [
+          {
+            borderColor: '#037960',
+            borderWidth: 2,
+            data: monthlyAverages,
+            pointRadius: 4,
+            tension: 0.3,
           },
-          responsive: true,
-          scales: {
-            y: { title: { display: true , text: 'MPG'   } },
-            x: { title: { display: false, text: 'Month' } }
-          }
+          {
+            borderColor: '#1e1d23',
+            borderWidth: 2,
+            borderDash: [8, 8],
+            data: new Array(monthlyLabels.length).fill(overallAverage),
+            pointRadius: 0,
+          },
+        ],
+        labels: monthlyLabels,
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false,
+          },
+          tooltip: {
+            displayColors: false,
+            callbacks: {
+              label: (context) => `Average: ${context.parsed.y} MPG`,
+            },
+          },
         },
-        type: 'line'
-      });
-    })();
+        responsive: true,
+        scales: {
+          y: { title: { display: true , text: 'MPG'   } },
+          x: { title: { display: false, text: 'Month' } },
+        },
+      },
+      type: 'line',
+    });
   }
-});
-
-
+}
 </script>

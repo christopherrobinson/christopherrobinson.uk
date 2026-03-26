@@ -22,13 +22,17 @@ import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.as
           <Icon class="shrink-0  size-4" name="bars" />
         </button>
       </div>
-      <div class="hidden  -mr-4  sm:block">
+      <div class="hidden  -my-4  sm:block">
         <ul class="flex  items-center  lowercase  text-sm">
           <NavItem href="/about/">About</NavItem>
           <NavItem href="/blog/">Blog</NavItem>
           <NavItem href="/projects/">Projects</NavItem>
-          <NavItem href="/contact/">Contact</NavItem>
         </ul>
+      </div>
+      <div class="hidden  sm:block">
+        <a class="bg-zinc-900  block  lowercase  px-3  py-2  rounded-md  text-sm  text-white  transition" href="/contact/">
+          get in touch
+        </a>
       </div>
     </div>
   </Container>
@@ -61,26 +65,22 @@ import PercentageScrolled from '@/components/Layout/Header/PercentageScrolled.as
 </div>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  const navigation            = document.getElementById('navigation');
+  const navigationOverlay     = document.getElementById('navigationOverlay');
+  const openNavigationButton  = document.getElementById('openNavigation');
+  const closeNavigationButton = document.getElementById('closeNavigation');
 
-    const navigation            = document.getElementById('navigation');
-    const navigationOverlay     = document.getElementById('navigationOverlay');
-    const openNavigationButton  = document.getElementById('openNavigation');
-    const closeNavigationButton = document.getElementById('closeNavigation');
+  openNavigationButton?.addEventListener('click', () => {
+    navigation?.classList.remove('-right-80');
+    navigation?.classList.add('right-0');
+    navigationOverlay?.classList.remove('hidden', 'opacity-0');
+    navigationOverlay?.classList.add('block', 'opacity-1000');
+  });
 
-    openNavigationButton?.addEventListener('click', () => {
-      navigation?.classList.remove('-right-80');
-      navigation?.classList.add('right-0');
-      navigationOverlay?.classList.remove('hidden', 'opacity-0');
-      navigationOverlay?.classList.add('block', 'opacity-1000');
-    });
-
-    closeNavigationButton?.addEventListener('click', () => {
-      navigation?.classList.add('-right-80');
-      navigation?.classList.remove('right-0');
-      navigationOverlay?.classList.add('hidden', 'opacity-0');
-      navigationOverlay?.classList.remove('block', 'opacity-100');
-    });
-
+  closeNavigationButton?.addEventListener('click', () => {
+    navigation?.classList.add('-right-80');
+    navigation?.classList.remove('right-0');
+    navigationOverlay?.classList.add('hidden', 'opacity-0');
+    navigationOverlay?.classList.remove('block', 'opacity-100');
   });
 </script>

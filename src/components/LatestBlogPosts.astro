@@ -1,6 +1,4 @@
 ---
-import type { LatestBlogPostsProps } from '@/types/LatestBlogPosts';
-
 const { heading, limit } = Astro.props as LatestBlogPostsProps;
 const posts = await getBlogPosts({ limit: (limit ?? 3) });
 ---

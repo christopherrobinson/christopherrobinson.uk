@@ -1,4 +1,4 @@
-export const getPageUrl = (page: number, baseUrl: string, params: URLSearchParams, forceQueryString: boolean) => {
+export const getPageUrl = (page: number, baseUrl: string, params: URLSearchParams, forceQueryString = false) => {
   const hasSearchParams = forceQueryString || Array.from(params.keys()).length > 0;
 
   if (!hasSearchParams) {
