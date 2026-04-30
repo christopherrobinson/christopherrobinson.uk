@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
@@ -12,15 +12,15 @@
     "noEmit": false,
     "noImplicitAny": false,
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/content/*": ["src/content/*"],
-      "@/data/*": ["src/data/*"],
-      "@/images/*": ["src/images/*"],
-      "@/helpers/*": ["src/helpers/*"],
-      "@/layouts/*": ["src/layouts/*"],
-      "@/schema/*": ["src/schema/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/types/*": ["src/types/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/content/*": ["./src/content/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/images/*": ["./src/images/*"],
+      "@/helpers/*": ["./src/helpers/*"],
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/schema/*": ["./src/schema/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/types/*": ["./src/types/*"]
     },
     "skipLibCheck": true,
     "stripInternal": true,

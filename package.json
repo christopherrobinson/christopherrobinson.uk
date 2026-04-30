@@ -17,38 +17,45 @@
     "test": "vitest --run"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/compiler-rs": "^0.1.6",
-    "@astrojs/netlify": "7.0.5",
-    "@astrojs/react": "^5.0.2",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/compiler-rs": "^0.1.10",
+    "@astrojs/netlify": "7.0.8",
+    "@astrojs/react": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^25.5.0",
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-basic-ssl": "^2.3.0",
-    "astro": "^6.1.1",
+    "astro": "^6.2.1",
     "astro-capo": "^0.0.1",
-    "astro-compress": "^2.4.0",
+    "astro-compress": "^2.4.1",
     "astro-icon": "^1.1.5",
     "astro-remark-description": "^1.1.2",
     "chart.js": "^4.5.1",
     "mdast-util-to-string": "^4.0.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "reading-time": "^1.5.0",
     "sharp": "^0.34.5",
     "sharp-ico": "^0.1.5",
     "string-strip-html": "^13.5.3",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.4",
     "text-to-svg": "^3.1.5",
-    "typescript": "^6.0.2",
-    "unimport": "^6.0.2",
+    "typescript": "^6.0.3",
+    "unimport": "^6.2.0",
     "unist-util-visit": "^5.1.0",
-    "vitest": "^4.1.2"
+    "vitest": "^4.1.5"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@10.33.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "sharp"
+    ]
+  }
 }
