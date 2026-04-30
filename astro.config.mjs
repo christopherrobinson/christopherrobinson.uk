@@ -1,4 +1,4 @@
-import { defineConfig, envField } from 'astro/config';
+import { defineConfig, envField, svgoOptimizer } from 'astro/config';
 import icon from 'astro-icon';
 import remarkDescription from 'astro-remark-description';
 import netlify from '@astrojs/netlify';
@@ -30,7 +30,7 @@ export default defineConfig({
       enabled: true,
     },
     rustCompiler: true,
-    svgo: true,
+    svgOptimizer: svgoOptimizer(),
   },
   i18n: {
     defaultLocale: 'en',
@@ -60,6 +60,8 @@ export default defineConfig({
   },
   prefetch: {
     defaultStrategy: 'hover',
+  },
+  server: {
   },
   site: site.url,
   trailingSlash: 'always',
