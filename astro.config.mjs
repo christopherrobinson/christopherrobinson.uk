@@ -1,4 +1,5 @@
 import { defineConfig, envField, svgoOptimizer } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import icon from 'astro-icon';
 import remarkDescription from 'astro-remark-description';
 import netlify from '@astrojs/netlify';
@@ -48,11 +49,13 @@ export default defineConfig({
     (await import('astro-compress')).default(),
   ],
   markdown: {
-    remarkPlugins: [
-      [remarkDescription, { name: 'excerpt' }],
-      [remarkExternalLinks, {}],
-      [remarkReadingTime, {}],
-    ],
+    processor: unified({
+      remarkPlugins: [
+        [remarkDescription, { name: 'excerpt' }],
+        [remarkExternalLinks, {}],
+        [remarkReadingTime, {}],
+      ],
+    }),
     shikiConfig: {
       theme: 'dracula',
       wrap: false,
