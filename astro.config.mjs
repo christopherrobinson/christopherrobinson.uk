@@ -18,6 +18,7 @@ import { remarkReadingTime } from './src/helpers/remarkReadingTime';
 export default defineConfig({
   adapter: netlify({
     imageCDN: false,
+    middlewareMode: 'edge',
   }),
   env: {
     schema: {
@@ -27,10 +28,6 @@ export default defineConfig({
   experimental: {
     chromeDevtoolsWorkspace: true,
     contentIntellisense: true,
-    queuedRendering: {
-      enabled: true,
-    },
-    rustCompiler: true,
     svgOptimizer: svgoOptimizer(),
   },
   i18n: {
@@ -46,7 +43,12 @@ export default defineConfig({
           `${site.url}/templates/${createSlug(name)}/preview/`),
       ],
     }),
-    (await import('astro-compress')).default(),
+    (await import('astro-compress')).default({
+      CSS: {
+        csso: false,
+        lightningcss: true,
+      },
+    }),
   ],
   markdown: {
     processor: unified({
@@ -67,7 +69,6 @@ export default defineConfig({
   server: {
   },
   site: site.url,
-  trailingSlash: 'always',
   vite: {
     plugins: [
       basicSsl(),
