@@ -1,5 +1,5 @@
 [build]
-  environment = { NODE_VERSION = "22" }
+  environment = { NODE_VERSION = "24" }
   base = "/"
   command = "pnpm run build"
   publish = "dist"

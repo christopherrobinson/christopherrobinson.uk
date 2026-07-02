@@ -9,7 +9,7 @@ export const getStaticPaths = async ({ paginate }) => {
 
 const { page } = Astro.props;
 const { pathname } = Astro.url;
-const { currentPage, data = [], lastPage, total, url } = page;
+const { currentPage, data = [], lastPage, total } = page;
 ---
 
 <Layout
